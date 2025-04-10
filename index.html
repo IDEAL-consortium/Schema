@@ -33,6 +33,13 @@
       border-collapse: collapse;
       margin: 0;
     }
+    th:nth-child(3), td:nth-child(3) {
+      min-width: 220px;
+    }
+    th:nth-child(6), td:nth-child(6),
+    th:nth-child(7), td:nth-child(7) {
+      width: 100px;
+    }
     th, td {
       border: 1px solid #ddd;
       padding: 0.6rem;
@@ -178,7 +185,7 @@
       <tr>
         <td>Registry URL</td>
         <td>Study</td>
-        <td>AEA Registry</td>
+        <td><a href="https://www.socialscienceregistry.org/">AEA Registry – American Economic Association</a></td>
         <td>Permanent URL or DOI to access the registration.</td>
         <td>Open text</td>
         <td>—</td>
@@ -337,7 +344,7 @@
       <tr>
         <td>Unit of analysis</td>
         <td>Treatment effect</td>
-        <td>ClinicalTrials.gov</td>
+        <td><a href="https://clinicaltrials.gov/">ClinicalTrials.gov – Clinical Trial Registry</a></td>
         <td>Unit at which treatment effect was measured.</td>
         <td>Open text and Text-CV</td>
         <td>From Cavanagh et al. (2023)</td>
@@ -355,7 +362,7 @@
       <tr>
         <td>Recruitment of experimental sample</td>
         <td>Study or arm</td>
-        <td>ClinicalTrials.gov</td>
+        <td><a href="https://clinicaltrials.gov/">ClinicalTrials.gov – Clinical Trial Registry</a></td>
         <td>Key info about how the sample was recruited.</td>
         <td>Open text</td>
         <td>—</td>
@@ -364,7 +371,7 @@
       <tr>
         <td>Sampling from recruited</td>
         <td>Treatment effect</td>
-        <td>ClinicalTrials.gov</td>
+        <td><a href="https://clinicaltrials.gov/">ClinicalTrials.gov – Clinical Trial Registry</a></td>
         <td>How the unit was sampled after recruitment.</td>
         <td>Text-CV</td>
         <td>Randomized, Non-randomized, N/A</td>
@@ -373,7 +380,7 @@
       <tr>
         <td>Deviation from sample inclusion</td>
         <td>Treatment effect</td>
-        <td>ClinicalTrials.gov</td>
+        <td><a href="https://clinicaltrials.gov/">ClinicalTrials.gov – Clinical Trial Registry</a></td>
         <td>Any dropouts prior to treatment assignment.</td>
         <td>Open text</td>
         <td>—</td>
@@ -382,7 +389,7 @@
       <tr>
         <td>Baseline average female share</td>
         <td>Study</td>
-        <td>ClinicalTrials.gov</td>
+        <td><a href="https://clinicaltrials.gov/">ClinicalTrials.gov – Clinical Trial Registry</a></td>
         <td>Proportion of females in the study population.</td>
         <td>Numeric</td>
         <td>—</td>
@@ -391,7 +398,7 @@
       <tr>
         <td>Baseline average age</td>
         <td>Study</td>
-        <td>ClinicalTrials.gov</td>
+        <td><a href="https://clinicaltrials.gov/">ClinicalTrials.gov – Clinical Trial Registry</a></td>
         <td>Average age of the study population.</td>
         <td>Numeric</td>
         <td>—</td>
@@ -474,7 +481,7 @@
       <tr>
         <td>Timeline of intervention</td>
         <td>Treatment arm</td>
-        <td>AEA Registry</td>
+        <td><a href="https://www.socialscienceregistry.org/">AEA Registry – American Economic Association</a></td>
         <td>Start and end date of intervention.</td>
         <td>Date (YYYY-MM-DD)</td>
         <td>—</td>
@@ -487,25 +494,396 @@
 <details id="section-7">
   <summary>7. Outcome</summary>
   <p><em>Section Description Here</em></p>
-  <!-- Outcome table will go here -->
+  <table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Level</th>
+      <th>Relevant Standard</th>
+      <th>Definition</th>
+      <th>Response Options</th>
+      <th>Controlled Vocabulary</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Name of the outcome measure</td>
+      <td>Treatment effect</td>
+      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
+      <td>Name of the specific outcome being measured.</td>
+      <td>Open text</td>
+      <td>—</td>
+      <td>Should match terminology used in results section.</td>
+    </tr>
+    <tr>
+      <td>Outcome measure category</td>
+      <td>Treatment effect</td>
+      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
+      <td>General category of outcome (e.g., education, health).</td>
+      <td>Text-CV</td>
+      <td>From predefined list</td>
+      <td>Used for filtering and tagging effects.</td>
+    </tr>
+    <tr>
+      <td>Outcome measurement tool</td>
+      <td>Treatment effect</td>
+      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
+      <td>The tool or method used to measure the outcome.</td>
+      <td>Open text</td>
+      <td>—</td>
+      <td>Include citations if using standard tools.</td>
+    </tr>
+    <tr>
+      <td>Outcome measure statistical type</td>
+      <td>Treatment effect</td>
+      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
+      <td>Type of variable: binary, continuous, etc.</td>
+      <td>Text-CV</td>
+      <td>Binary, continuous, categorical, index</td>
+      <td>Verify how outcome is modeled.</td>
+    </tr>
+    <tr>
+      <td>Outcome measure standardized</td>
+      <td>Treatment effect</td>
+      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
+      <td>Whether the outcome has been standardized.</td>
+      <td>Yes/No/Don't know</td>
+      <td>—</td>
+      <td>Standardization is common in meta-analysis.</td>
+    </tr>
+    <tr>
+      <td>Standardization description</td>
+      <td>Treatment effect</td>
+      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
+      <td>Description of the standardization process.</td>
+      <td>Open text</td>
+      <td>—</td>
+      <td>Include reference group if z-scored.</td>
+    </tr>
+    <tr>
+      <td>Outcome measure coding</td>
+      <td>Treatment effect</td>
+      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
+      <td>Whether coding was needed to interpret results.</td>
+      <td>Yes/No/Ambiguous/Don't know</td>
+      <td>—</td>
+      <td>Useful for text-mining approaches.</td>
+    </tr>
+    <tr>
+      <td>Outcome data source</td>
+      <td>Treatment effect</td>
+      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
+      <td>Where outcome data was obtained.</td>
+      <td>Text-CV</td>
+      <td>Survey, admin data, sensors, etc.</td>
+      <td>Useful for evaluating external validity.</td>
+    </tr>
+    <tr>
+      <td>Outcome measure collection start date</td>
+      <td>Treatment effect</td>
+      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
+      <td>Start date of outcome measurement.</td>
+      <td>Date (YYYY-MM-DD)</td>
+      <td>—</td>
+      <td>Used to match with intervention timeline.</td>
+    </tr>
+    <tr>
+      <td>Outcome measure collection end date</td>
+      <td>Treatment effect</td>
+      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
+      <td>End date of outcome measurement.</td>
+      <td>Date (YYYY-MM-DD)</td>
+      <td>—</td>
+      <td>Used to determine follow-up period.</td>
+    </tr>
+    <tr>
+      <td>Outcome mean</td>
+      <td>Treatment effect</td>
+      <td>—</td>
+      <td>Mean value of the outcome for treatment/control.</td>
+      <td>Numeric</td>
+      <td>—</td>
+      <td>Record separately for each group if available.</td>
+    </tr>
+    <tr>
+      <td>Outcome SD</td>
+      <td>Treatment effect</td>
+      <td>—</td>
+      <td>Standard deviation of the outcome.</td>
+      <td>Numeric</td>
+      <td>—</td>
+      <td>Used for calculating standardized effects.</td>
+    </tr>
+    <tr>
+      <td>Outcome sample size</td>
+      <td>Treatment effect</td>
+      <td>—</td>
+      <td>Sample size for the outcome measure.</td>
+      <td>Numeric</td>
+      <td>—</td>
+      <td>Record for both treatment and control.</td>
+    </tr>
+    <tr>
+      <td>Additional information for clustered RCTs</td>
+      <td>Study</td>
+      <td>—</td>
+      <td>ICC, number of clusters, cluster sizes, etc.</td>
+      <td>Open text / Numeric</td>
+      <td>—</td>
+      <td>Important for adjusting SEs.</td>
+    </tr>
+  </tbody>
+</table>
 </details>
 
 <details id="section-8">
   <summary>8. Estimates</summary>
   <p><em>Section Description Here</em></p>
-  <!-- Estimates table will go here -->
+  <table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Level</th>
+      <th>Relevant Standard</th>
+      <th>Definition</th>
+      <th>Response Options</th>
+      <th>Controlled Vocabulary</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Estimation parameter</td>
+      <td>Treatment effect</td>
+      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
+      <td>Statistical parameter estimated.</td>
+      <td>Text-CV</td>
+      <td>Mean difference, risk ratio, etc.</td>
+      <td>Follow CONSORT reporting standards.</td>
+    </tr>
+    <tr>
+      <td>Estimand</td>
+      <td>Treatment effect</td>
+      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
+      <td>Target quantity being estimated.</td>
+      <td>Text-CV</td>
+      <td>ATE, ITT, LATE, etc.</td>
+      <td>Clarify population, treatment, outcome, and contrast.</td>
+    </tr>
+    <tr>
+      <td>Null hypothesis</td>
+      <td>Treatment effect</td>
+      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
+      <td>Hypothesis being tested.</td>
+      <td>Text-CV</td>
+      <td>H0: no effect</td>
+      <td>Used to interpret significance.</td>
+    </tr>
+    <tr>
+      <td>Statistical test of hypothesis</td>
+      <td>Treatment effect</td>
+      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
+      <td>Statistical test used (t-test, regression, etc.).</td>
+      <td>Text-CV</td>
+      <td>OLS, logit, IV, etc.</td>
+      <td>Critical for replication and comparison.</td>
+    </tr>
+    <tr>
+      <td>Contrast for the treatment effect</td>
+      <td>Treatment effect</td>
+      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
+      <td>Description of the control group or comparison.</td>
+      <td>Open text</td>
+      <td>—</td>
+      <td>Clarify contrast in multi-arm trials.</td>
+    </tr>
+    <tr>
+      <td>Estimate of the treatment effect</td>
+      <td>Treatment effect</td>
+      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
+      <td>Numerical value of the effect estimate.</td>
+      <td>Numeric</td>
+      <td>—</td>
+      <td>Report sign, magnitude, and units.</td>
+    </tr>
+    <tr>
+      <td>Unit of measure of the treatment effect</td>
+      <td>Treatment effect</td>
+      <td>—</td>
+      <td>Units in which the estimate is expressed.</td>
+      <td>Open text</td>
+      <td>—</td>
+      <td>Example: test score points, percentage, SDs.</td>
+    </tr>
+    <tr>
+      <td>Precision</td>
+      <td>Treatment effect</td>
+      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
+      <td>Type of precision measure reported.</td>
+      <td>Text-CV</td>
+      <td>SE, CI, p-value</td>
+      <td>Use standard labels.</td>
+    </tr>
+    <tr>
+      <td>Precision value</td>
+      <td>Treatment effect</td>
+      <td>—</td>
+      <td>Numerical value of the precision measure.</td>
+      <td>Numeric</td>
+      <td>—</td>
+      <td>Ensure it matches the type above.</td>
+    </tr>
+    <tr>
+      <td>Subgroup of heterogeneous analysis</td>
+      <td>Treatment effect</td>
+      <td>—</td>
+      <td>Name or label for the subgroup.</td>
+      <td>Text-CV</td>
+      <td>Gender, age, etc.</td>
+      <td>Indicate subgroup ID if nested in broader group.</td>
+    </tr>
+    <tr>
+      <td>Description of heterogeneous analysis</td>
+      <td>Treatment effect</td>
+      <td>—</td>
+      <td>Description of how subgroup analysis was performed.</td>
+      <td>Open text</td>
+      <td>—</td>
+      <td>Clarify model interaction or stratification.</td>
+    </tr>
+    <tr>
+      <td>Estimates of heterogeneous treatment effects</td>
+      <td>Treatment effect</td>
+      <td>—</td>
+      <td>Effect size for subgroup-specific estimates.</td>
+      <td>Structured response</td>
+      <td>—</td>
+      <td>Multiple rows if needed.</td>
+    </tr>
+  </tbody>
+</table>
 </details>
 
 <details id="section-9">
   <summary>9. Quality and Robustness</summary>
   <p><em>Section Description Here</em></p>
-  <!-- Quality and Robustness table will go here -->
+  <table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Level</th>
+      <th>Relevant Standard</th>
+      <th>Definition</th>
+      <th>Response Options</th>
+      <th>Controlled Vocabulary</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Attrition</td>
+      <td>Study</td>
+      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
+      <td>Percentage or number of dropouts.</td>
+      <td>Numeric</td>
+      <td>—</td>
+      <td>May be reported for treatment/control separately.</td>
+    </tr>
+    <tr>
+      <td>Dealing with attrition</td>
+      <td>Study</td>
+      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
+      <td>How the study dealt with missing observations.</td>
+      <td>Text-CV</td>
+      <td>Listwise deletion, imputation, etc.</td>
+      <td>Indicate robustness checks, if any.</td>
+    </tr>
+    <tr>
+      <td>Balance test</td>
+      <td>Study</td>
+      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
+      <td>Whether the study reports a balance test.</td>
+      <td>Yes/No/Not reported/Don't know</td>
+      <td>—</td>
+      <td>Look for baseline covariates comparisons.</td>
+    </tr>
+    <tr>
+      <td>Compliance Control</td>
+      <td>Study</td>
+      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
+      <td>Compliance rate in the control group.</td>
+      <td>Numeric</td>
+      <td>—</td>
+      <td>Define clearly; may require calculation.</td>
+    </tr>
+    <tr>
+      <td>Compliance Treatment</td>
+      <td>Study</td>
+      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
+      <td>Compliance rate in the treatment group.</td>
+      <td>Numeric</td>
+      <td>—</td>
+      <td>Compare with control for crossover analysis.</td>
+    </tr>
+    <tr>
+      <td>Covariates included</td>
+      <td>Study</td>
+      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
+      <td>List of covariates used in the estimation model.</td>
+      <td>Open text</td>
+      <td>—</td>
+      <td>Use to evaluate specification consistency.</td>
+    </tr>
+    <tr>
+      <td>Imbalanced covariates included</td>
+      <td>Study</td>
+      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
+      <td>Whether imbalanced covariates were adjusted for.</td>
+      <td>Yes/No/Other</td>
+      <td>—</td>
+      <td>Cross-check with balance test results.</td>
+    </tr>
+  </tbody>
+</table>
 </details>
 
 <details id="section-10">
   <summary>10. Coding Tool Name and Version</summary>
   <p><em>Section Description Here</em></p>
-  <!-- Coding Tool Name and Version table will go here -->
+  <table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Level</th>
+      <th>Relevant Standard</th>
+      <th>Definition</th>
+      <th>Response Options</th>
+      <th>Controlled Vocabulary</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Tool name</td>
+      <td>Paper</td>
+      <td>—</td>
+      <td>Name of the software or tool used for coding.</td>
+      <td>Open text</td>
+      <td>—</td>
+      <td>Used for transparency and reproducibility.</td>
+    </tr>
+    <tr>
+      <td>Tool version</td>
+      <td>Paper</td>
+      <td>—</td>
+      <td>Version number or release year of the tool used.</td>
+      <td>Open text</td>
+      <td>—</td>
+      <td>Important if multiple tool versions exist.</td>
+    </tr>
+  </tbody>
+</table>
 </details>
 
 <div style="text-align:center; margin-top:2rem;">
