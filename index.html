@@ -8,29 +8,90 @@
     body {
       font-family: sans-serif;
       margin: 2rem;
+      background-color: #f9f9f9;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    details {
+      margin-bottom: 1.5rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    summary {
+      cursor: pointer;
+      padding: 1rem;
+      font-weight: bold;
+      background-color: #e3e3e3;
+      border-bottom: 1px solid #ccc;
     }
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 1rem;
+      margin: 0;
     }
     th, td {
-      border: 1px solid #ccc;
-      padding: 0.5rem;
+      border: 1px solid #ddd;
+      padding: 0.6rem;
       text-align: left;
       vertical-align: top;
+      background-color: #fff;
     }
     th {
-      background-color: #f2f2f2;
+      background-color: #f0f0f0;
+      color: #333;
+    }
+    tbody tr:nth-child(odd) {
+      background-color: #f9f9f9;
     }
   </style>
+<style>
+    #toc {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 0.5rem 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      z-index: 1000;
+    }
+    #toc select {
+      padding: 0.5rem;
+      font-size: 1rem;
+      width: 100%;
+    }
+</style>
 </head>
-<body>
+<body id="top">
+
+<div id="toc">
+  <label for="section-jump"><strong>Jump to section:</strong></label>
+  <select id="section-jump" onchange="document.getElementById(this.value).scrollIntoView({behavior: 'smooth'});">
+    <option value="section-1">Title and Publication Details</option>
+    <option value="section-2">Resources</option>
+    <option value="section-3">Partners and Funders</option>
+    <option value="section-4">Topics and Objectives</option>
+    <option value="section-5">Sampling</option>
+    <option value="section-6">Intervention</option>
+    <option value="section-7">Outcome</option>
+    <option value="section-8">Estimates</option>
+    <option value="section-9">Quality and Robustness</option>
+    <option value="section-10">Coding Tool Name and Version</option>
+  </select>
+</div>
 
 <h1>IDEAL Metadata Schema</h1>
 
-<!-- Your Table Starts Here -->
-<table>
+<!-- Collapsible Sections Start -->
+
+<details open id="section-1">
+  <summary>1. Title and Publication Details</summary>
+  <div>
+    <table>
   <thead>
     <tr>
       <th>Topic</th>
@@ -48,27 +109,17 @@
       <td>Title and publication details</td>
       <td>Title</td>
       <td>Paper</td>
-      <td>
-        <a href="https://ddialliance.org/Specification/DDI-Codebook/2.5/XMLSchema/">DDI 2.5</a><br>
-        <a href="https://clinicaltrials.gov/">ClinicalTrials.gov</a>
-      </td>
+      <td><a href="https://ddialliance.org/Specification/DDI-Codebook/2.5/XMLSchema/">DDI 2.5</a><br><a href="https://clinicaltrials.gov/">ClinicalTrials.gov</a></td>
       <td>The full title of the paper.</td>
       <td>Open text</td>
       <td>—</td>
-      <td>
-        - Can be automatically pulled into SurveyCTO.<br>
-        - Include subtitle in the coding instruction.<br>
-        - Tag if experiment was reported elsewhere.
-      </td>
+      <td>- Can be automatically pulled into SurveyCTO.<br>- Include subtitle in the coding instruction.<br>- Tag if experiment was reported elsewhere.</td>
     </tr>
     <tr>
       <td>Title and publication details</td>
       <td>Citation</td>
       <td>Paper</td>
-      <td>
-        <a href="https://ddialliance.org/Specification/DDI-Codebook/2.5/XMLSchema/">DDI 2.5</a><br>
-        <a href="https://clinicaltrials.gov/">ClinicalTrials.gov</a>
-      </td>
+      <td><a href="https://ddialliance.org/Specification/DDI-Codebook/2.5/XMLSchema/">DDI 2.5</a><br><a href="https://clinicaltrials.gov/">ClinicalTrials.gov</a></td>
       <td>Complete bibliographic reference.</td>
       <td>Open text</td>
       <td>—</td>
@@ -78,9 +129,7 @@
       <td>Title and publication details</td>
       <td>DOI/URL</td>
       <td>Paper</td>
-      <td>
-        <a href="https://ddialliance.org/Specification/DDI-Codebook/2.5/XMLSchema/">DDI 2.5</a>
-      </td>
+      <td><a href="https://ddialliance.org/Specification/DDI-Codebook/2.5/XMLSchema/">DDI 2.5</a></td>
       <td>DOI or permanent URL to access the paper.</td>
       <td>Open text</td>
       <td>—</td>
@@ -88,7 +137,841 @@
     </tr>
   </tbody>
 </table>
-<!-- Your Table Ends Here -->
+  </div>
+</details>
 
+<details id="section-2">
+  <summary>2. Resources</summary>
+  <div>
+    <table>
+  <thead>
+    <tr>
+      <th>Topic</th>
+      <th>Field</th>
+      <th>Level</th>
+      <th>Relevant Standard</th>
+      <th>Definition</th>
+      <th>Response Options</th>
+      <th>Controlled Vocabulary</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Resources</td>
+      <td>Type of resource</td>
+      <td>Paper</td>
+      <td><a href="https://clinicaltrials.gov/">ClinicalTrials.gov</a></td>
+      <td>The type of resource being shared.</td>
+      <td>Text-CV</td>
+      <td>Published data, code, consent forms, etc.</td>
+      <td>Used to identify shared data/code documentation for replication.</td>
+    </tr>
+    <tr>
+      <td>Resources</td>
+      <td>URL of resource</td>
+      <td>Study</td>
+      <td><a href="https://clinicaltrials.gov/">ClinicalTrials.gov</a></td>
+      <td>URL to access the resource.</td>
+      <td>Open text</td>
+      <td>—</td>
+      <td>Permanent URLs like DOIs preferred.</td>
+    </tr>
+    <tr>
+      <td>Resources</td>
+      <td>Registration ID</td>
+      <td>Study</td>
+      <td><a href="https://clinicaltrials.gov/">ClinicalTrials.gov</a>, AEA Registry</td>
+      <td>Unique identifier from a registry.</td>
+      <td>Open text</td>
+      <td>—</td>
+      <td>Used to cross-reference external trial registries.</td>
+    </tr>
+    <tr>
+      <td>Resources</td>
+      <td>Registry URL</td>
+      <td>Study</td>
+      <td>AEA Registry</td>
+      <td>Permanent URL or DOI to access the registration.</td>
+      <td>Open text</td>
+      <td>—</td>
+      <td>Used to verify pre-registration details.</td>
+    </tr>
+    <tr>
+      <td>Resources</td>
+      <td>Review board name</td>
+      <td>Study</td>
+      <td><a href="https://clinicaltrials.gov/">ClinicalTrials.gov</a></td>
+      <td>The name of the ethics review board.</td>
+      <td>Open text</td>
+      <td>—</td>
+      <td>Used to assess ethical oversight.</td>
+    </tr>
+    <tr>
+      <td>Resources</td>
+      <td>Review number</td>
+      <td>Study</td>
+      <td><a href="https://clinicaltrials.gov/">ClinicalTrials.gov</a></td>
+      <td>ID assigned by the review board.</td>
+      <td>Open text</td>
+      <td>—</td>
+      <td>May be omitted if protocol not approved.</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+</details>
+
+<details id="section-3">
+  <summary>3. Partners and Funders</summary>
+  <div>
+    <table>
+  <thead>
+    <tr>
+      <th>Topic</th>
+      <th>Field</th>
+      <th>Level</th>
+      <th>Relevant Standard</th>
+      <th>Definition</th>
+      <th>Response Options</th>
+      <th>Controlled Vocabulary</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Partners and Funders</td>
+      <td>Name of agency involved</td>
+      <td>Study</td>
+      <td><a href="https://clinicaltrials.gov/">ClinicalTrials.gov</a></td>
+      <td>Organization providing support or funding.</td>
+      <td>Open text</td>
+      <td>—</td>
+      <td>Should include institutional affiliations.</td>
+    </tr>
+    <tr>
+      <td>Partners and Funders</td>
+      <td>Role of agencies</td>
+      <td>Study</td>
+      <td>—</td>
+      <td>Role(s) of the organization in the study.</td>
+      <td>Text-CV</td>
+      <td>Design, funding, data collection, etc.</td>
+      <td>Test inclusion of “other, specify” option.</td>
+    </tr>
+    <tr>
+      <td>Partners and Funders</td>
+      <td>Type of agency</td>
+      <td>Study</td>
+      <td>—</td>
+      <td>Type of organization.</td>
+      <td>Text-CV</td>
+      <td>Govt, NGO, academic, etc.</td>
+      <td>Controlled vocabulary under development.</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+</details>
+
+<details id="section-4">
+  <summary>4. Topics and Objectives</summary>
+  <div>
+    <table>
+  <thead>
+    <tr>
+      <th>Topic</th>
+      <th>Field</th>
+      <th>Level</th>
+      <th>Relevant Standard</th>
+      <th>Definition</th>
+      <th>Response Options</th>
+      <th>Controlled Vocabulary</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Topics and Objectives</td>
+      <td>Topic of study</td>
+      <td>Study</td>
+      <td><a href="https://ddialliance.org/Specification/DDI-Codebook/2.5/XMLSchema/">DDI 2.5</a></td>
+      <td>The broad substantive topic(s) that the data cover.</td>
+      <td>Text-CV</td>
+      <td>List of topics (codes)</td>
+      <td>Cardinality can be > 1.</td>
+    </tr>
+    <tr>
+      <td>Topics and Objectives</td>
+      <td>Keywords</td>
+      <td>Study</td>
+      <td>—</td>
+      <td>List of keywords selected by the author.</td>
+      <td>Open text</td>
+      <td>—</td>
+      <td>Used for indexing and searchability.</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+</details>
+
+<details id="section-5">
+  <summary>5. Sampling</summary>
+  <div>
+    <table>
+  <thead>
+    <tr>
+      <th>Topic</th>
+      <th>Field</th>
+      <th>Level</th>
+      <th>Relevant Standard</th>
+      <th>Definition</th>
+      <th>Response Options</th>
+      <th>Controlled Vocabulary</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Sampling</td>
+      <td>Country</td>
+      <td>Treatment effect</td>
+      <td><a href="https://ddialliance.org/Specification/DDI-Codebook/2.5/XMLSchema/">DDI 2.5</a></td>
+      <td>Country or countries where the study was implemented.</td>
+      <td>Text-CV</td>
+      <td>ISO country codes</td>
+      <td>Add "other" and "did not report" options.</td>
+    </tr>
+    <tr>
+      <td>Sampling</td>
+      <td>Sub-national location</td>
+      <td>Treatment effect</td>
+      <td><a href="https://ddialliance.org/Specification/DDI-Codebook/2.5/XMLSchema/">DDI 2.5</a></td>
+      <td>Geographic location sampled within the country.</td>
+      <td>Open text</td>
+      <td>—</td>
+      <td>Examples: villages in Busia, cities in Indonesia.</td>
+    </tr>
+    <tr>
+      <td>Sampling</td>
+      <td>Unit of randomization</td>
+      <td>Arm</td>
+      <td>AEA Registry, ClinicalTrials.gov</td>
+      <td>Unit at which randomization was done and treatment assigned.</td>
+      <td>Open text and Text-CV</td>
+      <td>From Cavanagh et al. (2023)</td>
+      <td>Use controlled vocab from Appendix B and refine in pilot.</td>
+    </tr>
+    <tr>
+      <td>Sampling</td>
+      <td>Unit of analysis</td>
+      <td>Treatment effect</td>
+      <td>ClinicalTrials.gov</td>
+      <td>Unit at which treatment effect was measured.</td>
+      <td>Open text and Text-CV</td>
+      <td>From Cavanagh et al. (2023)</td>
+      <td>Compare to unit of randomization to assess mismatch.</td>
+    </tr>
+    <tr>
+      <td>Sampling</td>
+      <td>Eligibility of experimental population</td>
+      <td>Study</td>
+      <td>DDI 2.5, ClinicalTrials.gov</td>
+      <td>Criteria for inclusion/exclusion in the experimental sample.</td>
+      <td>Open text</td>
+      <td>—</td>
+      <td>Record for both unit of randomization and analysis.</td>
+    </tr>
+    <tr>
+      <td>Sampling</td>
+      <td>Recruitment of experimental sample</td>
+      <td>Study or arm</td>
+      <td>ClinicalTrials.gov</td>
+      <td>Key info about how the sample was recruited.</td>
+      <td>Open text</td>
+      <td>—</td>
+      <td>Include if recruitment was random or non-random.</td>
+    </tr>
+    <tr>
+      <td>Sampling</td>
+      <td>Sampling from recruited</td>
+      <td>Treatment effect</td>
+      <td>ClinicalTrials.gov</td>
+      <td>How the unit was sampled after recruitment.</td>
+      <td>Text-CV</td>
+      <td>Randomized, Non-randomized, N/A</td>
+      <td>Specify unit of analysis and unit of randomization.</td>
+    </tr>
+    <tr>
+      <td>Sampling</td>
+      <td>Deviation from sample inclusion</td>
+      <td>Treatment effect</td>
+      <td>ClinicalTrials.gov</td>
+      <td>Any dropouts prior to treatment assignment.</td>
+      <td>Open text</td>
+      <td>—</td>
+      <td>Used to monitor reporting completeness.</td>
+    </tr>
+    <tr>
+      <td>Sampling</td>
+      <td>Baseline average female share</td>
+      <td>Study</td>
+      <td>ClinicalTrials.gov</td>
+      <td>Proportion of females in the study population.</td>
+      <td>Numeric</td>
+      <td>—</td>
+      <td>Control group average if baseline unavailable.</td>
+    </tr>
+    <tr>
+      <td>Sampling</td>
+      <td>Baseline average age</td>
+      <td>Study</td>
+      <td>ClinicalTrials.gov</td>
+      <td>Average age of the study population.</td>
+      <td>Numeric</td>
+      <td>—</td>
+      <td>Control group average if baseline unavailable.</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+</details>
+
+<details id="section-6">
+  <summary>6. Intervention</summary>
+  <div>
+    <table>
+  <thead>
+    <tr>
+      <th>Topic</th>
+      <th>Field</th>
+      <th>Level</th>
+      <th>Relevant Standard</th>
+      <th>Definition</th>
+      <th>Response Options</th>
+      <th>Controlled Vocabulary</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Intervention</td>
+      <td>Name of intervention</td>
+      <td>Treatment arm</td>
+      <td><a href="https://clinicaltrials.gov/">ClinicalTrials.gov</a></td>
+      <td>Descriptive name used to refer to the intervention arm.</td>
+      <td>Open text</td>
+      <td>—</td>
+      <td>Used for labeling and comparison of arms.</td>
+    </tr>
+    <tr>
+      <td>Intervention</td>
+      <td>Details of intervention</td>
+      <td>Treatment arm</td>
+      <td><a href="https://clinicaltrials.gov/">ClinicalTrials.gov</a>, AEA Registry</td>
+      <td>Details that distinguish the intervention from others.</td>
+      <td>Open text</td>
+      <td>—</td>
+      <td>Includes dosage, duration, method, etc.</td>
+    </tr>
+    <tr>
+      <td>Intervention</td>
+      <td>Name of arm</td>
+      <td>Treatment arm</td>
+      <td><a href="https://clinicaltrials.gov/">ClinicalTrials.gov</a></td>
+      <td>Label used for each group/arm in the study.</td>
+      <td>Open text</td>
+      <td>—</td>
+      <td>Used for assigning outcome and estimates.</td>
+    </tr>
+    <tr>
+      <td>Intervention</td>
+      <td>Number of randomization units per arm</td>
+      <td>Treatment arm</td>
+      <td>—</td>
+      <td>Number of clusters or individuals per arm.</td>
+      <td>Numeric</td>
+      <td>—</td>
+      <td>Used to assess sample size per treatment.</td>
+    </tr>
+    <tr>
+      <td>Intervention</td>
+      <td>Mapping of intervention to arms</td>
+      <td>Treatment arm</td>
+      <td><a href="https://clinicaltrials.gov/">ClinicalTrials.gov</a></td>
+      <td>How interventions are assigned to each arm.</td>
+      <td>Format</td>
+      <td>—</td>
+      <td>Important for cross-referencing.</td>
+    </tr>
+    <tr>
+      <td>Intervention</td>
+      <td>Intervention assignment strategy</td>
+      <td>Study</td>
+      <td><a href="https://clinicaltrials.gov/">ClinicalTrials.gov</a></td>
+      <td>Strategy used to assign participants to interventions.</td>
+      <td>Text-CV</td>
+      <td>Simple, complete, stratified, cluster</td>
+      <td>Used to evaluate internal validity.</td>
+    </tr>
+    <tr>
+      <td>Intervention</td>
+      <td>Timeline of intervention</td>
+      <td>Treatment arm</td>
+      <td>AEA Registry</td>
+      <td>Start and end date of intervention.</td>
+      <td>Date (YYYY-MM-DD)</td>
+      <td>—</td>
+      <td>Used to align with outcome collection.</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+</details>
+
+<details id="section-7">
+  <summary>7. Outcome</summary>
+  <div>
+    <table>
+  <thead>
+    <tr>
+      <th>Topic</th>
+      <th>Field</th>
+      <th>Level</th>
+      <th>Relevant Standard</th>
+      <th>Definition</th>
+      <th>Response Options</th>
+      <th>Controlled Vocabulary</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Outcome</td>
+      <td>Name of the outcome measure</td>
+      <td>Treatment effect</td>
+      <td>CONSORT</td>
+      <td>Name of the specific outcome being measured.</td>
+      <td>Open text</td>
+      <td>—</td>
+      <td>Should match terminology used in results section.</td>
+    </tr>
+    <tr>
+      <td>Outcome</td>
+      <td>Outcome measure category</td>
+      <td>Treatment effect</td>
+      <td>CONSORT</td>
+      <td>General category of outcome (e.g., education, health).</td>
+      <td>Text-CV</td>
+      <td>From predefined list</td>
+      <td>Used for filtering and tagging effects.</td>
+    </tr>
+    <tr>
+      <td>Outcome</td>
+      <td>Outcome measurement tool</td>
+      <td>Treatment effect</td>
+      <td>CONSORT</td>
+      <td>The tool or method used to measure the outcome.</td>
+      <td>Open text</td>
+      <td>—</td>
+      <td>Include citations if using standard tools.</td>
+    </tr>
+    <tr>
+      <td>Outcome</td>
+      <td>Outcome measure statistical type</td>
+      <td>Treatment effect</td>
+      <td>CONSORT</td>
+      <td>Type of variable: binary, continuous, etc.</td>
+      <td>Text-CV</td>
+      <td>Binary, continuous, categorical, index</td>
+      <td>Verify how outcome is modeled.</td>
+    </tr>
+    <tr>
+      <td>Outcome</td>
+      <td>Outcome measure standardized</td>
+      <td>Treatment effect</td>
+      <td>CONSORT</td>
+      <td>Whether the outcome has been standardized.</td>
+      <td>Yes/No/Don't know</td>
+      <td>—</td>
+      <td>Standardization is common in meta-analysis.</td>
+    </tr>
+    <tr>
+      <td>Outcome</td>
+      <td>Standardization description</td>
+      <td>Treatment effect</td>
+      <td>CONSORT</td>
+      <td>Description of the standardization process.</td>
+      <td>Open text</td>
+      <td>—</td>
+      <td>Include reference group if z-scored.</td>
+    </tr>
+    <tr>
+      <td>Outcome</td>
+      <td>Outcome measure coding</td>
+      <td>Treatment effect</td>
+      <td>CONSORT</td>
+      <td>Whether coding was needed to interpret results.</td>
+      <td>Yes/No/Ambiguous/Don't know</td>
+      <td>—</td>
+      <td>Useful for text-mining approaches.</td>
+    </tr>
+    <tr>
+      <td>Outcome</td>
+      <td>Outcome data source</td>
+      <td>Treatment effect</td>
+      <td>CONSORT</td>
+      <td>Where outcome data was obtained.</td>
+      <td>Text-CV</td>
+      <td>Survey, admin data, sensors, etc.</td>
+      <td>Useful for evaluating external validity.</td>
+    </tr>
+    <tr>
+      <td>Outcome</td>
+      <td>Outcome measure collection start date</td>
+      <td>Treatment effect</td>
+      <td>CONSORT</td>
+      <td>Start date of outcome measurement.</td>
+      <td>Date (YYYY-MM-DD)</td>
+      <td>—</td>
+      <td>Used to match with intervention timeline.</td>
+    </tr>
+    <tr>
+      <td>Outcome</td>
+      <td>Outcome measure collection end date</td>
+      <td>Treatment effect</td>
+      <td>CONSORT</td>
+      <td>End date of outcome measurement.</td>
+      <td>Date (YYYY-MM-DD)</td>
+      <td>—</td>
+      <td>Used to determine follow-up period.</td>
+    </tr>
+    <tr>
+      <td>Outcome</td>
+      <td>Outcome mean</td>
+      <td>Treatment effect</td>
+      <td>—</td>
+      <td>Mean value of the outcome for treatment/control.</td>
+      <td>Numeric</td>
+      <td>—</td>
+      <td>Record separately for each group if available.</td>
+    </tr>
+    <tr>
+      <td>Outcome</td>
+      <td>Outcome SD</td>
+      <td>Treatment effect</td>
+      <td>—</td>
+      <td>Standard deviation of the outcome.</td>
+      <td>Numeric</td>
+      <td>—</td>
+      <td>Used for calculating standardized effects.</td>
+    </tr>
+    <tr>
+      <td>Outcome</td>
+      <td>Outcome sample size</td>
+      <td>Treatment effect</td>
+      <td>—</td>
+      <td>Sample size for the outcome measure.</td>
+      <td>Numeric</td>
+      <td>—</td>
+      <td>Record for both treatment and control.</td>
+    </tr>
+    <tr>
+      <td>Outcome</td>
+      <td>Additional information for clustered RCTs</td>
+      <td>Study</td>
+      <td>—</td>
+      <td>ICC, number of clusters, cluster sizes, etc.</td>
+      <td>Open text / Numeric</td>
+      <td>—</td>
+      <td>Important for adjusting SEs.</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+</details>
+
+<details id="section-8">
+  <summary>8. Estimates</summary>
+  <div>
+    <table>
+  <thead>
+    <tr>
+      <th>Topic</th>
+      <th>Field</th>
+      <th>Level</th>
+      <th>Relevant Standard</th>
+      <th>Definition</th>
+      <th>Response Options</th>
+      <th>Controlled Vocabulary</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Estimates</td>
+      <td>Estimation parameter</td>
+      <td>Treatment effect</td>
+      <td>CONSORT</td>
+      <td>Statistical parameter estimated.</td>
+      <td>Text-CV</td>
+      <td>Mean difference, risk ratio, etc.</td>
+      <td>Follow CONSORT reporting standards.</td>
+    </tr>
+    <tr>
+      <td>Estimates</td>
+      <td>Estimand</td>
+      <td>Treatment effect</td>
+      <td>CONSORT</td>
+      <td>Target quantity being estimated.</td>
+      <td>Text-CV</td>
+      <td>ATE, ITT, LATE, etc.</td>
+      <td>Clarify population, treatment, outcome, and contrast.</td>
+    </tr>
+    <tr>
+      <td>Estimates</td>
+      <td>Null hypothesis</td>
+      <td>Treatment effect</td>
+      <td>CONSORT</td>
+      <td>Hypothesis being tested.</td>
+      <td>Text-CV</td>
+      <td>H0: no effect</td>
+      <td>Used to interpret significance.</td>
+    </tr>
+    <tr>
+      <td>Estimates</td>
+      <td>Statistical test of hypothesis</td>
+      <td>Treatment effect</td>
+      <td>CONSORT</td>
+      <td>Statistical test used (t-test, regression, etc.).</td>
+      <td>Text-CV</td>
+      <td>OLS, logit, IV, etc.</td>
+      <td>Critical for replication and comparison.</td>
+    </tr>
+    <tr>
+      <td>Estimates</td>
+      <td>Contrast for the treatment effect</td>
+      <td>Treatment effect</td>
+      <td>CONSORT</td>
+      <td>Description of the control group or comparison.</td>
+      <td>Open text</td>
+      <td>—</td>
+      <td>Clarify contrast in multi-arm trials.</td>
+    </tr>
+    <tr>
+      <td>Estimates</td>
+      <td>Estimate of the treatment effect</td>
+      <td>Treatment effect</td>
+      <td>CONSORT</td>
+      <td>Numerical value of the effect estimate.</td>
+      <td>Numeric</td>
+      <td>—</td>
+      <td>Report sign, magnitude, and units.</td>
+    </tr>
+    <tr>
+      <td>Estimates</td>
+      <td>Unit of measure of the treatment effect</td>
+      <td>Treatment effect</td>
+      <td>—</td>
+      <td>Units in which the estimate is expressed.</td>
+      <td>Open text</td>
+      <td>—</td>
+      <td>Example: test score points, percentage, SDs.</td>
+    </tr>
+    <tr>
+      <td>Estimates</td>
+      <td>Precision</td>
+      <td>Treatment effect</td>
+      <td>CONSORT</td>
+      <td>Type of precision measure reported.</td>
+      <td>Text-CV</td>
+      <td>SE, CI, p-value</td>
+      <td>Use standard labels.</td>
+    </tr>
+    <tr>
+      <td>Estimates</td>
+      <td>Precision value</td>
+      <td>Treatment effect</td>
+      <td>—</td>
+      <td>Numerical value of the precision measure.</td>
+      <td>Numeric</td>
+      <td>—</td>
+      <td>Ensure it matches the type above.</td>
+    </tr>
+    <tr>
+      <td>Estimates</td>
+      <td>Subgroup of heterogeneous analysis</td>
+      <td>Treatment effect</td>
+      <td>—</td>
+      <td>Name or label for the subgroup.</td>
+      <td>Text-CV</td>
+      <td>Gender, age, etc.</td>
+      <td>Indicate subgroup ID if nested in broader group.</td>
+    </tr>
+    <tr>
+      <td>Estimates</td>
+      <td>Description of heterogeneous analysis</td>
+      <td>Treatment effect</td>
+      <td>—</td>
+      <td>Description of how subgroup analysis was performed.</td>
+      <td>Open text</td>
+      <td>—</td>
+      <td>Clarify model interaction or stratification.</td>
+    </tr>
+    <tr>
+      <td>Estimates</td>
+      <td>Estimates of heterogeneous treatment effects</td>
+      <td>Treatment effect</td>
+      <td>—</td>
+      <td>Effect size for subgroup-specific estimates.</td>
+      <td>Structured response</td>
+      <td>—</td>
+      <td>Multiple rows if needed.</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+</details>
+
+<details id="section-9">
+  <summary>9. Quality and Robustness</summary>
+  <div>
+    <table>
+  <thead>
+    <tr>
+      <th>Topic</th>
+      <th>Field</th>
+      <th>Level</th>
+      <th>Relevant Standard</th>
+      <th>Definition</th>
+      <th>Response Options</th>
+      <th>Controlled Vocabulary</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Quality and Robustness</td>
+      <td>Attrition</td>
+      <td>Study</td>
+      <td>CONSORT</td>
+      <td>Percentage or number of dropouts.</td>
+      <td>Numeric</td>
+      <td>—</td>
+      <td>May be reported for treatment/control separately.</td>
+    </tr>
+    <tr>
+      <td>Quality and Robustness</td>
+      <td>Dealing with attrition</td>
+      <td>Study</td>
+      <td>CONSORT</td>
+      <td>How the study dealt with missing observations.</td>
+      <td>Text-CV</td>
+      <td>Listwise deletion, imputation, etc.</td>
+      <td>Indicate robustness checks, if any.</td>
+    </tr>
+    <tr>
+      <td>Quality and Robustness</td>
+      <td>Balance test</td>
+      <td>Study</td>
+      <td>CONSORT</td>
+      <td>Whether the study reports a balance test.</td>
+      <td>Yes/No/Not reported/Don't know</td>
+      <td>—</td>
+      <td>Look for baseline covariates comparisons.</td>
+    </tr>
+    <tr>
+      <td>Quality and Robustness</td>
+      <td>Compliance Control</td>
+      <td>Study</td>
+      <td>CONSORT</td>
+      <td>Compliance rate in the control group.</td>
+      <td>Numeric</td>
+      <td>—</td>
+      <td>Define clearly; may require calculation.</td>
+    </tr>
+    <tr>
+      <td>Quality and Robustness</td>
+      <td>Compliance Treatment</td>
+      <td>Study</td>
+      <td>CONSORT</td>
+      <td>Compliance rate in the treatment group.</td>
+      <td>Numeric</td>
+      <td>—</td>
+      <td>Compare with control for crossover analysis.</td>
+    </tr>
+    <tr>
+      <td>Quality and Robustness</td>
+      <td>Covariates included</td>
+      <td>Study</td>
+      <td>CONSORT</td>
+      <td>List of covariates used in the estimation model.</td>
+      <td>Open text</td>
+      <td>—</td>
+      <td>Use to evaluate specification consistency.</td>
+    </tr>
+    <tr>
+      <td>Quality and Robustness</td>
+      <td>Imbalanced covariates included</td>
+      <td>Study</td>
+      <td>CONSORT</td>
+      <td>Whether imbalanced covariates were adjusted for.</td>
+      <td>Yes/No/Other</td>
+      <td>—</td>
+      <td>Cross-check with balance test results.</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+</details>
+
+<details id="section-10">
+  <summary>10. Coding Tool Name and Version</summary>
+  <div>
+    <table>
+  <thead>
+    <tr>
+      <th>Topic</th>
+      <th>Field</th>
+      <th>Level</th>
+      <th>Relevant Standard</th>
+      <th>Definition</th>
+      <th>Response Options</th>
+      <th>Controlled Vocabulary</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Coding Tool Name and Version</td>
+      <td>Tool name</td>
+      <td>Paper</td>
+      <td>—</td>
+      <td>Name of the software or tool used for coding.</td>
+      <td>Open text</td>
+      <td>—</td>
+      <td>Used for transparency and reproducibility.</td>
+    </tr>
+    <tr>
+      <td>Coding Tool Name and Version</td>
+      <td>Tool version</td>
+      <td>Paper</td>
+      <td>—</td>
+      <td>Version number or release year of the tool used.</td>
+      <td>Open text</td>
+      <td>—</td>
+      <td>Important if multiple tool versions exist.</td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+</details>
+
+<div style="text-align:center; margin-top:2rem;">
+  <a href="#top" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
+    ⬆️ Back to top
+  </a>
+</div>
 </body>
 </html>
