@@ -70,32 +70,85 @@
       font-size: 1rem;
       width: 100%;
     }
+    
+   .grid-container {
+  	display: grid;
+ 	 gap: 5px;
+ 	 grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));;
+  	background-color: #FFFEFE;
+  	padding: 10px;
+	text-align: center;
+	vertical-align: middle;
+	place-items: center;
+   }
+  
+    
   </style>
 </head>
   
 <body id="top">
 
-<div id="toc">
-  <label for="section-jump"><strong>Jump to section:</strong></label>
-  <select id="section-jump" onchange="document.getElementById(this.value).scrollIntoView({behavior: 'smooth'});">
-    <option value="section-1">Title and Publication Details</option>
-    <option value="section-2">Resources</option>
-    <option value="section-3">Partners and Funders</option>
-    <option value="section-4">Topics and Objectives</option>
-    <option value="section-5">Sampling</option>
-    <option value="section-6">Intervention</option>
-    <option value="section-7">Outcome</option>
-    <option value="section-8">Estimates</option>
-    <option value="section-9">Quality and Robustness</option>
-    <option value="section-10">Coding Tool Name and Version</option>
-  </select>
-</div>
-
 <h1>IDEAL Metadata Schema</h1>
+
+<hr  style="color: #F1F1F1">
+    <p style="color: #00566F; margin: 0% 0% 0% 0%">Consortium Members:</p>
+   
+    <div class="grid-container" style="margin: 0% 0% 0% 0%">
+    
+      <div class="grid-item">
+        <div class="img-container">
+            <div class="fill">
+        		<a target="_blank" rel="noopener noreferrer" href="https://www.worldbank.org/en/research/brief/ideal"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/World_Bank_Group_logo.svg/300px-World_Bank_Group_logo.svg.png" style="object-fit: contain; width: 160px; " /></a>
+	   </div>
+      	</div>
+     </div>
+     
+     <div class="grid-item">
+        <div class="img-container">
+            <div class="fill">
+        		<a target="_blank" rel="noopener noreferrer" href="https://www.worldbank.org/en/programs/sief-trust-fund"><img src="https://poverty-action.org/sites/default/files/atoms/image/2020/08/21/SIEF-Logo.jpg" style="object-fit: contain; width: 200px;" /></a>
+            </div>
+      	</div>
+     </div>
+     
+     <div class="grid-item">
+        <div class="img-container">
+            <div class="fill">
+        		<a target="_blank" rel="noopener noreferrer" href="https://www.worldbank.org/en/about/unit/unit-dec/impactevaluation"><img src="https://worldbank.scene7.com/is/image/worldbankprod/DIME-logo-new?wid=780&hei=439&qlt=85,0&resMode=sharp" style="object-fit: contain; width: 120px;" /></a>
+            </div>
+      	</div>
+     </div>
+      
+      <div class="grid-item">
+        <div class="img-container">
+            <div class="fill">
+        		<a target="_blank" rel="noopener noreferrer" href="https://cega.berkeley.edu/our-work/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/CEGA_Logo.png/800px-CEGA_Logo.png" style="object-fit: contain; width: 160px;" /></a>
+            </div>
+      	</div>
+     </div>
+        
+      <div class="grid-item">
+        <div class="img-container">
+            <div class="fill">
+        		<a target="_blank" rel="noopener noreferrer" href="https://www.kellogg.northwestern.edu/academics-research/global-poverty-research-lab//"><img src="https://bpb-us-e1.wpmucdn.com/sites.northwestern.edu/dist/8/4150/files/2020/02/GPRL_vertical-768x394.png" style="object-fit: contain; width: 150px;" /></a>
+            </div>
+      	</div>
+     </div>
+        
+      <div class="grid-item">
+        <div class="img-container">
+            <div class="fill">
+        		<a target="_blank" rel="noopener noreferrer" href="https://www.aidgrade.org"><img src="https://www.aidgrade.org/wp-content/uploads/2013/03/AidGrade-logo.jpg" style="object-fit: contain; width: 160px;" /></a>
+            </div>
+      	</div>
+     </div>
+     
+    </div> 
+<hr  style="color: #F1F1F1">
 
 <details open id="section-1">
   <summary>1. Title and Publication Details</summary>
-  <p><em>This section captures basic bibliographic information about the study, including the full title, citation, and DOI or permanent URL. These details allow coders to link each extracted record to its original source.</em></p>
+  <p  style="margin: 1rem;"><em>This section captures basic bibliographic information about the study, including the full title, citation, and DOI or permanent URL. These details allow coders to link each extracted record to its original source.</em></p>
   <table>
     <thead>
       <tr>
@@ -142,7 +195,7 @@
 
 <details id="section-2">
   <summary>2. Resources</summary>
-  <p><em>This section tracks the supporting materials available for the study, such as datasets, analytic code, protocols, and ethics documentation.</em></p>
+  <p style="margin: 1rem;"><em>This section tracks the supporting materials available for the study, such as datasets, analytic code, protocols, and ethics documentation.</em></p>
   <table>
     <thead>
       <tr>
@@ -216,7 +269,7 @@
 
 <details id="section-3">
   <summary>3. Partners and Funders</summary>
-  <p><em>This section records the organizations involved in funding, designing, or implementing the study.</em></p>
+  <p style="margin: 1rem;"><em>This section records the organizations involved in funding, designing, or implementing the study.</em></p>
   <table>
     <thead>
       <tr>
@@ -263,7 +316,7 @@
 
 <details id="section-4">
   <summary>4. Topics and Objectives</summary>
-  <p><em>This section summarizes the substantive focus of the study. It includes both controlled topic classifications (e.g., development sector keywords) and author-selected keywords for flexible search and thematic grouping.</em></p>
+  <p style="margin: 1rem;"><em>This section summarizes the substantive focus of the study. It includes both controlled topic classifications (e.g., development sector keywords) and author-selected keywords for flexible search and thematic grouping.</em></p>
   <table>
     <thead>
       <tr>
@@ -301,7 +354,7 @@
 
 <details id="section-5">
   <summary>5. Sampling</summary>
-  <p><em>This section provides key information about how the study population was selected, randomized, and analyzed. It includes the unit of randomization and analysis, subnational locations, and baseline demographics like gender and age</em></p>
+  <p style="margin: 1rem;"><em>This section provides key information about how the study population was selected, randomized, and analyzed. It includes the unit of randomization and analysis, subnational locations, and baseline demographics like gender and age</em></p>
   <table>
     <thead>
       <tr>
@@ -411,7 +464,7 @@
 
 <details id="section-6">
   <summary>6. Intervention</summary>
-  <p><em>This section describes the intervention(s) tested in the study, including their content, assignment strategy, and duration. By mapping interventions to arms, this section supports the clear identification of experimental conditions.</em></p>
+  <p style="margin: 1rem;"><em>This section describes the intervention(s) tested in the study, including their content, assignment strategy, and duration. By mapping interventions to arms, this section supports the clear identification of experimental conditions.</em></p>
   <table>
     <thead>
       <tr>
@@ -494,7 +547,7 @@
 
 <details id="section-7">
   <summary>7. Outcome</summary>
-  <p><em>This section documents all outcome measures used to estimate treatment effects, including their names, tools, categories, and statistical properties.</em></p>
+  <p style="margin: 1rem;"><em>This section documents all outcome measures used to estimate treatment effects, including their names, tools, categories, and statistical properties.</em></p>
   <table>
   <thead>
     <tr>
@@ -886,15 +939,10 @@
   </tbody>
 </table>
 </details>
-
-<div style="text-align:center; margin-top:2rem;">
-  <a href="#top" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
-    ⬆️ Back to top
-  </a>
-  </div>
+  
 <div style="text-align:center; margin-top:2rem;">
   <a href="#" onclick="window.print(); return false;">
-    📄 Download as PDF
+    📄 Click here to  <strong>download</strong> IDEAL Schema as PDF
   </a>
 </div>
 
