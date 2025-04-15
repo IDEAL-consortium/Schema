@@ -220,7 +220,9 @@
       <tr>
         <td>Type of resource</td>
         <td>Paper</td>
-        <td><strong>Clinical Trials:</strong> Available IPD/Information Type: The type of data set or supporting information being shared. (Individual Participant Data Set, Study Protocol, Statistical Analysis Plan, Informed Consent Form, Clinical Study Report, Analytic Code, Other (specify))<br><strong>DDI 2.5:</strong> otherMat: This section allows for the inclusion of other materials that are related to the study as identified and labeled by the DTD/Schema users (encoders). The' materials may be entered as PCDATA (ASCII text) directly into the document (through use of the "txt" element). This section may also serve as a "container" for other electronic materials such as setup files by providing a brief description of the study-related materials accompanied by the attributes "type" and "level" defining the material further. The "URI" attribute may be used to indicate the location of the other study-related materials. Other Study-Related Materials may include: questionnaires, coding notes, SPSS/SAS/Stata setup files (and others), user manuals, continuity guides, sample computer software programs, glossaries of terms, interviewer/project instructions, maps, database schema, data dictionaries, show cards, coding information, interview schedules, missing values information, frequency files, variable maps, etc.
+        <td><strong>Clinical Trials:</strong> Available IPD/Information Type: The type of data set or supporting information being shared. (Individual Participant Data Set, Study Protocol, Statistical Analysis Plan, Informed Consent Form, Clinical Study Report, Analytic Code, Other (specify))<br>
+	<br>
+        <strong>DDI 2.5:</strong> otherMat: This section allows for the inclusion of other materials that are related to the study as identified and labeled by the DTD/Schema users (encoders). The' materials may be entered as PCDATA (ASCII text) directly into the document (through use of the "txt" element). This section may also serve as a "container" for other electronic materials such as setup files by providing a brief description of the study-related materials accompanied by the attributes "type" and "level" defining the material further. The "URI" attribute may be used to indicate the location of the other study-related materials. Other Study-Related Materials may include: questionnaires, coding notes, SPSS/SAS/Stata setup files (and others), user manuals, continuity guides, sample computer software programs, glossaries of terms, interviewer/project instructions, maps, database schema, data dictionaries, show cards, coding information, interview schedules, missing values information, frequency files, variable maps, etc.<br>
         <td>The type of resource being shared.</td>
         <td>Text-CV</td>
         <td>a. Published data or data repository entry<br>b. Analytic code<br>c. Statistical Analysis Plan<br>e. Populated pre-analysis plan<br>f. Informed Consent Form or Consent Language<br>g. Research ethics documentation (IRB protocol, structured ethics appendix, description of consent process, etc.)<br>h. Clinical Study Report<br>i. Study Protocol<br>g. Academic publication or working paper<br>h. Other (specify)</td>
@@ -229,7 +231,9 @@
       <tr>
         <td>URL of resource</td>
         <td>Study</td>
-        <td><strong>Clinical Trials:</strong> Available IPD/Information URL: The web address used to request or access the data set or supporting information.<br><strong>DDI 2.5:</strong> holdings: Information concerning either the physical or electronic holdings of the cited work. Attributes include: location--The physical location where a copy is held; callno--The call number for a work at the location specified; and URI--A URN or URL for accessing the electronic copy of the cited work.
+        <td><strong>Clinical Trials:</strong> Available IPD/Information URL: The web address used to request or access the data set or supporting information.<br>
+		<br>
+		<strong>DDI 2.5:</strong> holdings: Information concerning either the physical or electronic holdings of the cited work. Attributes include: location--The physical location where a copy is held; callno--The call number for a work at the location specified; and URI--A URN or URL for accessing the electronic copy of the cited work.<br>
         <td>URL to access the resource. Permanent URL (e.g. DOI) if available.</td>
         <td>Open text</td>
         <td>—</td>
@@ -238,7 +242,9 @@
       <tr>
         <td>Registration ID</td>
         <td>Study</td>
-        <td><strong>Clinical Trials:</strong> An identifier(s) (ID), if any, other than the organization's Unique Protocol Identification Number or the NCT number that is assigned to the clinical study. This includes any unique clinical study identifiers assigned by other publicly available clinical trial registries. If the clinical study is funded in whole or in part by a U.S. Federal Government agency, the complete grant or contract number must be submitted as a Secondary ID.<br><strong>AEA Registry:</strong> Secondary Identifying Numbers:   Secondary Identifying Numbers: An identifier(s), if any, other than the DOI or the AEARCT ID that is assigned to the trial. This includes any unique identifiers assigned by other publicly available trial registries, funders, or sponsors (e.g. ClinicalTrials.gov, ISRCT, etc.)
+        <td><strong>Clinical Trials:</strong> An identifier(s) (ID), if any, other than the organization's Unique Protocol Identification Number or the NCT number that is assigned to the clinical study. This includes any unique clinical study identifiers assigned by other publicly available clinical trial registries. If the clinical study is funded in whole or in part by a U.S. Federal Government agency, the complete grant or contract number must be submitted as a Secondary ID.<br>
+	<br>
+	<strong>AEA Registry:</strong> Secondary Identifying Numbers: An identifier(s), if any, other than the DOI or the AEARCT ID that is assigned to the trial. This includes any unique identifiers assigned by other publicly available trial registries, funders, or sponsors (e.g. ClinicalTrials.gov, ISRCT, etc.)
         <td>Registration ID (unique identifier issued by the organization where the trial is registered).</td>
         <td>Open text</td>
         <td>—</td>
@@ -247,7 +253,9 @@
       <tr>
         <td>Registry URL</td>
         <td>Study</td>
-        <td><strong>AEA Registry:</strong> Links to any other related websites, documents, etc.<br><strong>DDI 2.5:</strong> holdings: Information concerning electronic holdings with a URI for access.
+        <td><strong>AEA Registry:</strong> Links to any other related websites, documents, etc.<br>
+	<br>
+	<strong>DDI 2.5:</strong> Holdings: Information concerning either the physical or electronic holdings of the cited work. Attributes include: location--The physical location where a copy is held; callno--The call number for a work at the location specified; and URI--A URN or URL for accessing the electronic copy of the cited work.
         <td>Permanent URL or DOI to access the registration.</td>
         <td>Open text</td>
         <td>—</td>
@@ -256,8 +264,8 @@
       <tr>
         <td>Review board name</td>
         <td>Study</td>
-        <td><a href="https://clinicaltrials.gov/">ClinicalTrials.gov</a></td>
-        <td>The name of the ethics review board.</td>
+        <td><strong>Clinical trials:</strong> Full name of the approving human subjects review board.<br>
+        <td>The full name of the approving ethics review board.</td>
         <td>Open text</td>
         <td>—</td>
         <td>Used to assess ethical oversight.</td>
@@ -265,7 +273,7 @@
       <tr>
         <td>Review number</td>
         <td>Study</td>
-        <td><a href="https://clinicaltrials.gov/">ClinicalTrials.gov</a></td>
+        <td><strong>Clinical trial:</strong> Number assigned by the human subjects review board upon approval of the protocol. May be omitted if status is anything other than approved.<br>
         <td>ID assigned by the review board.</td>
         <td>Open text</td>
         <td>—</td>
