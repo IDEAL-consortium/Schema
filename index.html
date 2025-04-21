@@ -334,7 +334,6 @@
 		<br>- research design or analysis
 		<br>- funding or material support
 		<br>- Other</td>
-        <td>—</td>
       </tr>
       <tr>
         <td>Type of agency</td>
@@ -374,16 +373,18 @@
       <tr>
         <td>Topic of study</td>
         <td>Study</td>
-        <td><a href="https://ddialliance.org/Specification/DDI-Codebook/2.5/XMLSchema/">DDI 2.5</a></td>
+        <td><strong>DDI 2.5:</strong>  topcClas: The classification field indicates the broad substantive topic(s) that the data cover. Library of Congress subject terms may be used here. The "vocab" attribute is provided for specification of the controlled vocabulary in use, e.g., LCSH, MeSH, etc. The "vocabURI" attribute specifies the location for the full controlled vocabulary. Maps to Dublin Core Subject element. Inclusion of this element in the codebook is recommended.
+ 	<br>
+	<br>CESSDA Controlled Vocabulary for CESSDA Topic Classification (recommended by World Bank Metadata Guidelines)
         <td>The broad substantive topic(s) that the data cover.</td>
         <td>Text-CV</td>
-        <td>List of topics (codes)</td>
+        <td>CESSDA List of topics <a href="https://vocabularies.cessda.eu/vocabulary/TopicClassification">(codes)</a></td>
         <td>Cardinality can be > 1.</td>
       </tr>
       <tr>
         <td>Keywords</td>
         <td>Study</td>
-        <td>—</td>
+        <td>No standard</td>
         <td>List of keywords selected by the author.</td>
         <td>Open text</td>
         <td>—</td>
@@ -412,92 +413,152 @@
       <tr>
         <td>Country</td>
         <td>Treatment effect</td>
-        <td><a href="https://ddialliance.org/Specification/DDI-Codebook/2.5/XMLSchema/">DDI 2.5</a></td>
-        <td>Country or countries where the study was implemented.</td>
-        <td>Text-CV</td>
-        <td>ISO country codes</td>
-        <td>Add "other" and "did not report" options.</td>
+        <td><strong>DDI 2.5</strong>: nation: Indicates the country or countries covered in the file. Attribute "abbr" may be used to list common abbreviations; use of ISO country codes is recommended. Maps to Dublin Core Coverage element. Inclusion of this element is recommended. For forward-compatibility, DDI 3 XHTML tags may be used in this element.</td>
+        <td>The country or countries where the study was implemented.</td>
+        <td>Text-controlled vocabulary</td>
+        <td>ISO country codes, not reported, other</td>
+        <td>If single country study: automatically populate the country-entered study level to the treatment effect level. If multiple countries: enter the different countries at the treatment effect level.
+	<br>
+	<br>Add option to mention “other” and “did not report” for papers.
+	<br>
+	<br>Pilot to assess how many papers are reporting pooled treatment effect for multi country RCT.</td>
       </tr>
       <tr>
         <td>Sub-national location</td>
         <td>Treatment effect</td>
-        <td><a href="https://ddialliance.org/Specification/DDI-Codebook/2.5/XMLSchema/">DDI 2.5</a></td>
+        <td><strong>DDI 2.5:</strong> geogCover: Information on the geographic coverage of the data. Includes the total geographic scope of the data, and any additional levels of geographic coding provided in the variables. Maps to Dublin Core Coverage element. Inclusion of this element in the codebook is recommended. Fpor forward-compatibility, DDI 3 XHTML tags may be used in this element.</td>
         <td>Geographic location sampled within the country.</td>
-        <td>Open text</td>
+        <td>Open text (pilot)</td>
         <td>—</td>
-        <td>Examples: villages in Busia, cities in Indonesia.</td>
+        <td>If multiple countries are selected, the coder would enter the different types of locations at the treatment effect level.
+	<br>
+	<br>We can give examples such as villages in Busia, four cities in Indonesia, etc.</td>
       </tr>
       <tr>
         <td>Unit of randomization</td>
         <td>Arm</td>
-        <td>AEA Registry, ClinicalTrials.gov</td>
+        <td><strong>AEA Registry:</strong> Randomization unit: This field describes the level at which randomization will take place: (e.g., individual, firm, school, experimental sessions). If there are more than one level of randomization, it should be explained (e.g. group level randomization for some treatment, and individual randomization for some treatments).
+	<br>
+	<br><strong>ClinicalTrials.gov:</strong> Type of Units Assigned: If assignment is based on a unit other than participants, a description of the unit of assignment (for example, eyes, lesions, implants). Limit: 40 characters.</td>
         <td>Unit at which randomization was done and treatment assigned.</td>
-        <td>Open text and Text-CV</td>
-        <td>From Cavanagh et al. (2023)</td>
-        <td>Use controlled vocab from Appendix B and refine in pilot.</td>
+        <td>Text-controlled vocabulary and open-text</td>
+        <td>See CV A in appendix B of Cavanagh et al (2023) <a href="https://documents1.worldbank.org/curated/en/099945502062327217/pdf/IDU081c960a8049b504197099ff0d12be0b95375.pdf"here></a>.</td>
+        <td>Start with controlled vocabulary from Cavanagh and amend in the pilot.</td>
       </tr>
       <tr>
         <td>Unit of analysis</td>
         <td>Treatment effect</td>
-        <td><a href="https://clinicaltrials.gov/">ClinicalTrials.gov – Clinical Trial Registry</a></td>
+        <td><strong>Clinical Trials:</strong> Type of Units Analyzed: If the analysis is based on a unit other than participants, a description of the unit of analysis (for example, eyes, lesions, implants).</td>
         <td>Unit at which treatment effect was measured.</td>
-        <td>Open text and Text-CV</td>
-        <td>From Cavanagh et al. (2023)</td>
-        <td>Compare to unit of randomization to assess mismatch.</td>
+        <td>Text-controlled vocabulary and open-text</td>
+        <td>See CV A in appendix B of Cavanagh et al (2023) <a href="https://documents1.worldbank.org/curated/en/099945502062327217/pdf/IDU081c960a8049b504197099ff0d12be0b95375.pdf"here></a>.</td>
+        <td>Start with controlled vocabulary from Cavanagh and amend in the pilot.
+	<br>
+ 	<br>Pilot to assess cases where unit of randomization is different from unit of analysis.</td>
       </tr>
       <tr>
         <td>Eligibility of experimental population</td>
         <td>Study</td>
-        <td>DDI 2.5, ClinicalTrials.gov</td>
-        <td>Criteria for inclusion/exclusion in the experimental sample.</td>
+        <td><strong>Clinical Trials:</strong> Eligibility criteria: A limited list of criteria for selection of participants in the clinical study, provided in terms of inclusion and exclusion criteria and suitable for assisting potential participants in identifying clinical studies of interest. Use a bulleted list for each criterion below the headers "Inclusion Criteria" and "Exclusion Criteria".
+	<br>
+	<br><strong>DDI 2.5:</strong> Universe: The group of persons or other elements that are the object of research and to which any analytic results refer. Age,nationality, and residence commonly help to delineate a given universe, but any of a number of factors may be involved, such as sex, race, income, veteran status, criminal convictions, etc. The universe may consist of elements other than persons, such as housing units, court cases, deaths, countries, etc. In general, it should be possible to tell from the description of the universe whether a given individual or element (hypothetical or real) is a member of the population under study. A "level" attribute is included to permit coding of the level to which universe applies, i.e., the study level, the file level (if different from study), the record group, the variable group, the nCube group, the variable, or the nCube level. The "clusion" attribute provides for specification of groups included (I) in or excluded (E) from the universe.
+	</td>
+        <td>Describes a criteria for eligibility of units in the study, provided in terms of inclusion and exclusion criteria.</td>
         <td>Open text</td>
         <td>—</td>
-        <td>Record for both unit of randomization and analysis.</td>
+        <td>Enter for:
+	<br>
+	<br>* Unit of randomization
+	<br>* Unit of analysis (This is why cardinality is 1..n)
+	<br>
+	<br>Eligibility, recruitment, sampling, and deviation fields all to be automatically triaged for verification.
+	<br>
+	<br>Open text for the pilot with responses such as – income, age, urban/rural. 
+</td>
       </tr>
       <tr>
         <td>Recruitment of experimental sample</td>
         <td>Study or arm</td>
-        <td><a href="https://clinicaltrials.gov/">ClinicalTrials.gov – Clinical Trial Registry</a></td>
-        <td>Key info about how the sample was recruited.</td>
+        <td><strong>Clinical Trials:</strong> Recruitment details: Key information relevant to the recruitment process for the overall study, such as dates of the recruitment period and types of location (For example, medical clinic), to provide context.
+	</td>
+        <td>Description of the recruitment process for the overall study.</td>
         <td>Open text</td>
         <td>—</td>
-        <td>Include if recruitment was random or non-random.</td>
+        <td>Enter for:
+	<br>* Unit of randomization
+	<br>* Unit of analysis
+	<br>
+	<br>Eligibility, recruitment, sampling, and deviation fields all to be automatically triaged for verification.
+	<br>
+	<br>Add a field to ask first if it was random or not, or mention in the code protocol to specified if it was random or not in this field.
+	<br>
+	<br>Random recruitment – Open text detail for the pilot 
+	<br>
+	<br>Non-random recruitment – Open text detail for the pilot with recruitment drives, applications, media announcements </td>
       </tr>
       <tr>
         <td>Sampling from recruited</td>
         <td>Treatment effect</td>
-        <td><a href="https://clinicaltrials.gov/">ClinicalTrials.gov – Clinical Trial Registry</a></td>
-        <td>How the unit was sampled after recruitment.</td>
-        <td>Text-CV</td>
+        <td><strong>Clinical Trials:</strong> Allocation: The method by which participants are assigned to arms in a clinical trial.
+	<br>
+	<br> N/A (not applicable): For a single-arm trial
+	<br>Randomized: Participants are assigned to intervention groups by chance
+	<br>Nonrandomized: Participants are expressly assigned to intervention groups through a non-random method, such as physician choice
+</td>
+        <td>Describes how the unit was sampled from the eligible population/universe (after recruitment, if any).</td>
+        <td>Text-controlled vocabulary</td>
         <td>Randomized, Non-randomized, N/A</td>
-        <td>Specify unit of analysis and unit of randomization.</td>
+        <td>Enter for:
+	<br>* Unit of randomization
+	<br>* Unit of analysis
+	<br>
+	<br>Eligibility, recruitment, sampling, and deviation fields all to be automatically triaged for verification.</td>
       </tr>
       <tr>
         <td>Deviation from sample inclusion</td>
         <td>Treatment effect</td>
-        <td><a href="https://clinicaltrials.gov/">ClinicalTrials.gov – Clinical Trial Registry</a></td>
-        <td>Any dropouts prior to treatment assignment.</td>
+        <td><strong>Clinical Trials:</strong> Pre-assignment Details: Description of significant events in the study (for example, wash out, run-in) that occur after participant enrollment, but prior to assignment of participants to an arm or group, if any. For example, an explanation of why enrolled participants were excluded from the study before assignment to arms or groups.
+</td>
+        <td>Description of deviation from the sample, prior to assignment of participants to an arm or group, if any.</td>
         <td>Open text</td>
         <td>—</td>
-        <td>Used to monitor reporting completeness.</td>
+        <td>Enter for: 
+	<br>* Unit of randomization
+	<br>* Unit of analysis
+	<br>
+	<br>Open text for the pilot with information on units that dropped from the sampling after inclusion (To assess how many papers report this)
+	<br>
+	<br>Eligibility, recruitment, sampling, and deviation fields all to be automatically triaged for verification.</td>
       </tr>
       <tr>
         <td>Baseline average female share</td>
         <td>Study</td>
-        <td><a href="https://clinicaltrials.gov/">ClinicalTrials.gov – Clinical Trial Registry</a></td>
+        <td><strong>Clinical Trials:</strong> Baseline Measure Title: The name of the baseline or demographic characteristic measured in the clinical study. Select as many as needed. (Age, Sex/Gender, Race and Ethnicity,Region of Enrollment)
+ 	<br>
+	<br>Measure Type: The type of data for the baseline measure. Select one. (Count of Participants, Mean, Median, Least Squares Mean, Geometric Mean, Geometric Least Squares Mean, Number, Count of Units)
+	<br>
+	<br>Baseline Measure Data: The value(s) for each baseline measure, for each arm/group and the entire study population (total).</td>
         <td>Proportion of females in the study population.</td>
         <td>Numeric</td>
         <td>—</td>
-        <td>Control group average if baseline unavailable.</td>
+        <td>Report control group average if baseline not available.
+	<br>
+	<br>Not applicable (if unit of observation is not a person)</td>
       </tr>
       <tr>
         <td>Baseline average age</td>
         <td>Study</td>
-        <td><a href="https://clinicaltrials.gov/">ClinicalTrials.gov – Clinical Trial Registry</a></td>
+        <td><strong>Clinical Trials:</strong> Baseline Measure Title: The name of the baseline or demographic characteristic measured in the clinical study. Select as many as needed. (Age, Sex/Gender, Race and Ethnicity,Region of Enrollment)
+ 	<br>
+	<br>Measure Type: The type of data for the baseline measure. Select one. (Count of Participants, Mean, Median, Least Squares Mean, Geometric Mean, Geometric Least Squares Mean, Number, Count of Units)
+	<br>
+	<br>Baseline Measure Data: The value(s) for each baseline measure, for each arm/group and the entire study population (total).</td>
         <td>Average age of the study population.</td>
         <td>Numeric</td>
         <td>—</td>
-        <td>Control group average if baseline unavailable.</td>
+        <td>>Report control group average if baseline not available.
+	<br>
+	<br>Not applicable (if unit of observation is not a person)</td>
       </tr>
     </tbody>
   </table>
