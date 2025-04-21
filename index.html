@@ -35,10 +35,10 @@
       margin: 0;
     }
     th:nth-child(3), td:nth-child(3) {
-      min-width: 220px;
+      min-width: 200px;
     }
     th:nth-child(6), td:nth-child(6) {
-  width: 120px; /* Controlled Vocabulary */
+  width: 130px; /* Controlled Vocabulary */
     }
     th:nth-child(7), td:nth-child(7) {
     width: 170px; /* Notes */
@@ -227,7 +227,16 @@
         <strong>DDI 2.5:</strong> otherMat: This section allows for the inclusion of other materials that are related to the study as identified and labeled by the DTD/Schema users (encoders). The' materials may be entered as PCDATA (ASCII text) directly into the document (through use of the "txt" element). This section may also serve as a "container" for other electronic materials such as setup files by providing a brief description of the study-related materials accompanied by the attributes "type" and "level" defining the material further. The "URI" attribute may be used to indicate the location of the other study-related materials. Other Study-Related Materials may include: questionnaires, coding notes, SPSS/SAS/Stata setup files (and others), user manuals, continuity guides, sample computer software programs, glossaries of terms, interviewer/project instructions, maps, database schema, data dictionaries, show cards, coding information, interview schedules, missing values information, frequency files, variable maps, etc.<br>
         <td>The type of resource being shared.</td>
         <td>Text-CV</td>
-        <td>a. Published data or data repository entry<br>b. Analytic code<br>c. Statistical Analysis Plan<br>e. Populated pre-analysis plan<br>f. Informed Consent Form or Consent Language<br>g. Research ethics documentation (IRB protocol, structured ethics appendix, description of consent process, etc.)<br>h. Clinical Study Report<br>i. Study Protocol<br>g. Academic publication or working paper<br>h. Other (specify)</td>
+        <td>a. Published data or data repository entry
+		<br>b. Analytic code
+		<br>c. Statistical Analysis Plan
+		<br>e. Populated pre-analysis plan
+		<br>f. Informed Consent Form or Consent Language
+		<br>g. Research ethics documentation (IRB protocol, structured ethics appendix, description of consent process, etc.)
+		<br>h. Clinical Study Report
+		<br>i. Study Protocol
+		<br>g. Academic publication or working paper
+		<br>h. Other (specify)</td>
         <td>Used to identify shared data/code documentation for replication.</td>
       </tr>
       <tr>
@@ -304,8 +313,8 @@
       <tr>
         <td>Name of agency involved</td>
         <td>Study</td>
-        <td><a href="https://clinicaltrials.gov/">ClinicalTrials.gov</a></td>
-        <td>Organization providing support or funding.</td>
+        <td><strong>Clinical trials:</strong> CollaboratorName: Other organizations (if any) providing support. Support may include funding, design, implementation, data analysis or reporting. The responsible party is responsible for confirming all collaborators before listing them.</td>
+        <td>Name of the organization that supported or contributed to the study, including institutional affiliations of study authors.</td>
         <td>Open text</td>
         <td>—</td>
         <td>Should include institutional affiliations.</td>
@@ -313,20 +322,34 @@
       <tr>
         <td>Role of agencies</td>
         <td>Study</td>
-        <td>—</td>
+        <td>No standard</td>
         <td>Role(s) of the organization in the study.</td>
         <td>Text-CV</td>
         <td>Design, funding, data collection, etc.</td>
-        <td>Test inclusion of “other, specify” option.</td>
+	<td>CV for testing:
+		<br>- intervention implementation
+		<br>- study recruitment
+		<br>- data collection implementation
+		<br>- data provision
+		<br>- research design or analysis
+		<br>- funding or material support
+		<br>- Other</td>
+        <td>—</td>
       </tr>
       <tr>
         <td>Type of agency</td>
         <td>Study</td>
-        <td>—</td>
-        <td>Type of organization.</td>
+        <td>No standard</td>
+        <td>Type of organization</td>
         <td>Text-CV</td>
-        <td>Govt, NGO, academic, etc.</td>
-        <td>Controlled vocabulary under development.</td>
+        <td>CV needs work - should include:
+		<br>- Government agency
+		<br>- Statistical agency
+		<br>- For-profit organization
+		<br>- Non-profit, charitable foundation, or NGO
+		<br>- Independent academic or research institution
+		<br>- Other</td>
+        <td>Pilot the CV with the "other, specify" option.</td>
       </tr>
     </tbody>
   </table>
