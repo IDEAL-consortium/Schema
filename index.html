@@ -777,38 +777,55 @@
       <tr>
         <td>Outcome mean</td>
         <td>Outcome*Treatment Arm*round</td>
-        <td><strong>Clinical Trials:</strong> Measure Type: Count of Participants, Mean, Median, Least Squares Mean, Geometric Mean, etc.</td>
+        <td><strong>Clinical Trials:</strong> Measure Type: The type of data for the outcome measure. Select one. (Count of Participants, Mean, Median, Least Squares Mean, Geometric Mean, Geometric Least Squares Mean, Number, Count of Units)</td>
         <td>Specifies the reported outcome quantity such as average, size, or count.</td>
         <td>Numeric</td>
-        <td>—</td>
-        <td>Coding protocol should list what information to extract if mean, SD, N are missing.</td>
+        <td>Select one. (Count of Participants, Mean, Median, Least Squares Mean, Geometric Mean, Geometric Least Squares Mean, Number, Count of Units)</td>
+        <td>Coding protocol should list what other information needs to be extracted if all three (mean, SD, N) not available.</td>
       </tr>
       <tr>
         <td>Outcome SD</td>
         <td>Outcome*Treatment Arm*round</td>
-        <td><strong>Clinical Trials:</strong> Measure of Dispersion/Precision: Standard Deviation, Standard Error, Confidence Intervals, etc.</td>
+        <td><strong>Clinical Trials:</strong> Measure of Dispersion/Precision Select one. Not Applicable (only if Measure Type is "Number," "Count of Participants," or "Count of Units"), Standard Deviation, Standard Error, Inter-Quartile Range, Full Range, 80% Confidence Interval, 90% Confidence Interval, 95% Confidence Interval, 97.5% Confidence Interval, 99% Confidence Interval, Other Confidence Interval Level, Geometric Coefficient of Variation (only when Measure Type is "Geometric Mean")</td>
         <td>Specifies amount of dispersion in the outcome.</td>
         <td>Numeric</td>
-        <td>—</td>
-        <td>Coding protocol should list what information to extract if mean, SD, N are missing.</td>
+        <td>Select one. Not Applicable (only if Measure Type is "Number," "Count of Participants," or "Count of Units"), Standard Deviation, Standard Error, Inter-Quartile Range, Full Range, 80% Confidence Interval, 90% Confidence Interval, 95% Confidence Interval, 97.5% Confidence Interval, 99% Confidence Interval, Other Confidence Interval Level, Geometric Coefficient of Variation (only when Measure Type is "Geometric Mean")</td>
+        <td>Coding protocol should list what other information needs to be extracted if all three (mean, SD, N) not available.</td>
       </tr>
       <tr>
         <td>Outcome sample size</td>
         <td>Outcome*Treatment Arm*round</td>
-        <td><strong>Clinical Trials:</strong> Number of Participants or Units Analyzed for the outcome.</td>
+        <td><strong>Clinical Trials:</strong> Number of Participants Analyzed: The number of participants analyzed for the outcome measure in the row and for each arm/group, if different from the overall Number of Participants Analyzed.
+	<br>Number of Units Analyzed: The number of units analyzed for the outcome measure in the row and for each arm/group, if different from the overall Number of Units Analyzed.</td>
         <td>Number of units analyzed to measure the outcome.</td>
         <td>Numeric</td>
         <td>—</td>
-        <td>Coding protocol should list what information to extract if mean, SD, N are missing.</td>
+        <td>Coding protocol should list what other information needs to be extracted if all three (mean, SD, N) not available.</td>
       </tr>
       <tr>
         <td>Additional information for clustered RCTs</td>
         <td>Outcome*Treatment Arm*round*cluster</td>
-        <td><strong>AEA Registry:</strong> Information on clustering: number of clusters, cluster size, ICC, etc.</td>
+        <td><strong>AEA Registry:</strong> Was the treatment clustered: This field asks whether the treatment was clustered into groups for the randomization (as opposed to being randomized by individual subjects).
+		<br> ○ Yes; No
+		<br> Planned Number of Clusters (unit of randomization): This field describes how many groupings or clusters will be sampled, and asks to define the cluster unit (e.g. 200 schools).
+		<br> Sample size (or number of clusters) by treatment arms: This field describes the sample size or clusters by treatment arms. 
+		<br> Arm type(s) identify the role of the intervention that participants receive. Types of arms include experimental arm(s) and no intervention arm. For example, the trial includes 50 schools in the control, 50 schools receive the teacher training treatment, 50 schools receive the scholarship treatment, and 50 schools receive both treatments.
+</td>
         <td>Additional details on treatment clustering, if applicable.</td>
-        <td>Numeric</td>
-        <td>—</td>
-        <td>Priority list and stopping rule to be developed; pilot to assess reporting rates.</td>
+        <td>Numeric: In addition to mean, sd, sample size by cluster for each arm, for each wave, a subset of the following information: 
+	<br>
+	<br> *Number of clusters
+	<br> *Number of observations per cluster
+	<br> *Cluster robust standard error
+	<br> *Intra-cluster correlation (or statistics to retrieve ICC)
+	<br> *Degree of freedom (for small number of clusters)</td>
+        <td>Coding protocols to set up a priority list and stopping rule. All of this information is not required. 
+	<br> 
+	<br> Pilot to see how widely ICC (or necessary stats to retrieve ICC) is reported in papers. </td>
+        <td>Coding protocols to set up a priority list and stopping rule. All of this information is not required.
+	<br> 
+	<br>Pilot to see how widely ICC (or necessary stats to retrieve ICC) is reported in papers
+</td>
     </tr>
   </tbody>
 </table>
