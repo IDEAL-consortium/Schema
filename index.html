@@ -37,12 +37,6 @@
     th:nth-child(3), td:nth-child(3) {
       min-width: 200px;
     }
-    th:nth-child(6), td:nth-child(6) {
-  width: 130px; /* Controlled Vocabulary */
-    }
-    th:nth-child(7), td:nth-child(7) {
-    width: 170px; /* Notes */
-    }
     th, td {
       border: 1px solid #ddd;
       padding: 0.6rem;
@@ -60,6 +54,10 @@
     tbody tr:nth-child(odd) {
       background-color: #f9f9f9;
     }
+    td {
+	word-wrap: break-word;
+	word-break: break-word;
+	}
     #toc {
       position: fixed;
       top: 1rem;
@@ -583,17 +581,19 @@
       <tr>
         <td>Name of intervention</td>
         <td>Treatment arm</td>
-        <td><a href="https://clinicaltrials.gov/">ClinicalTrials.gov</a></td>
-        <td>Descriptive name used to refer to the intervention arm.</td>
+        <td><strong>Clinical Trials:</strong> Intervention Name: A brief descriptive name used to refer to the intervention(s) studied in each arm of the clinical study. A non-proprietary name of the intervention must be used, if available. If a non-proprietary name is not available, a brief descriptive name or identifier must be used.</td>
+        <td>A brief descriptive name used by the paper to refer to each intervention arm. </td>
         <td>Open text</td>
         <td>—</td>
-        <td>Used for labeling and comparison of arms.</td>
+        <td>Build a controlled vocabulary for interventions after pilot with an "other" option.</td>
       </tr>
       <tr>
         <td>Details of intervention</td>
         <td>Treatment arm</td>
-        <td><a href="https://clinicaltrials.gov/">ClinicalTrials.gov</a>, AEA Registry</td>
-        <td>Details that distinguish the intervention from others.</td>
+        <td></td><strong>Clinical Trials:Intervention Description: Details that can be made public about the intervention, other than the Intervention Name(s) and Other Intervention Name(s), sufficient to distinguish the intervention from other, similar interventions studied in the same or another clinical study. For example, interventions involving drugs may include dosage form, dosage, frequency, and duration.</strong>
+  	<br>
+  	<br> <strong>AEA Registry: This field provides a detailed summary of the intervention(s): what is the intervention(s), who is the target group of the intervention(s), and what is the intended purpose(s). This is a public field viewable to all, once the trial is registered.</strong></td>
+        <td>A detailed summary of the intervention for each intervention arm that helps to distinguish one intervention arm from another intervention arm.</td>
         <td>Open text</td>
         <td>—</td>
         <td>Includes dosage, duration, method, etc.</td>
@@ -601,47 +601,60 @@
       <tr>
         <td>Name of arm</td>
         <td>Treatment arm</td>
-        <td><a href="https://clinicaltrials.gov/">ClinicalTrials.gov</a></td>
-        <td>Label used for each group/arm in the study.</td>
+        <td><strong>Clinical Trials:</strong> 
+	<br>Arm/Group Title: Descriptive label used to identify each arm or comparison group. 
+	<br>Note: "Arm" means a pre-specified group or subgroup of participant(s) in a clinical trial assigned to receive specific intervention(s) (or no intervention) according to a protocol.</td>
+        <td>Descriptive label used in the paper to identify each intervention arm.</td>
         <td>Open text</td>
         <td>—</td>
-        <td>Used for assigning outcome and estimates.</td>
+        <td>Pilot to assess how papers report this.</td>
       </tr>
       <tr>
         <td>Number of randomization units per arm</td>
         <td>Treatment arm</td>
-        <td>—</td>
-        <td>Number of clusters or individuals per arm.</td>
+        <td>No standard</td>
+        <td>The number of randomization units assigned to each intervention arm across all periods/phases.</td>
         <td>Numeric</td>
         <td>—</td>
-        <td>Used to assess sample size per treatment.</td>
+        <td>Pilot to assess how papers report this.</td>
       </tr>
       <tr>
         <td>Mapping of intervention to arms</td>
         <td>Treatment arm</td>
-        <td><a href="https://clinicaltrials.gov/">ClinicalTrials.gov</a></td>
-        <td>How interventions are assigned to each arm.</td>
+        <td><strong>Clinical Trials:</strong> Arm or Group/Interventional Cross-Reference: If multiple Arms or Groups have been specified, indicate which Interventions (or exposures) are in each Arm or Group of the study, using the Cross-Reference check boxes.</td>
+        <td>The link between interventions and arms.</td>
         <td>Format</td>
         <td>—</td>
-        <td>Important for cross-referencing.</td>
+        <td>—</td>
       </tr>
       <tr>
         <td>Intervention assignment strategy</td>
         <td>Study</td>
-        <td><a href="https://clinicaltrials.gov/">ClinicalTrials.gov</a></td>
-        <td>Strategy used to assign participants to interventions.</td>
-        <td>Text-CV</td>
-        <td>Simple, complete, stratified, cluster</td>
-        <td>Used to evaluate internal validity.</td>
+        <td><strong>Clinical Trials:</strong> Interventional Study Model: The strategy for assigning interventions to participants.
+	<br>
+	<br> -Single Group: Clinical trials with a single arm
+	<br> -Parallel: Participants are assigned to one of two or more groups in parallel for the duration of the study
+	<br> -Crossover: Participants receive one of two (or more) alternative interventions during the initial phase of the study and receive the other intervention during the second phase of the study
+	<br> -Factorial: Two or more interventions, each alone and in combination, are evaluated in parallel against a control group
+	<br>-Sequential: Groups of participants are assigned to receive interventions based on prior milestones being reached in the study, such as in some dose escalation and adaptive design studies</a></td>
+        <td>Description of strategy used in the paper to assign participants to each intervention arm. </td>
+        <td>CV</td>
+        <td>Simple Randomization;
+	<br>Complete Randomization;
+	<br>Stratified Randomization; 
+	<br>Cluster Randomization; Other</td>
+        <td>Pilot to assess how this is reported in the paper.</td>
       </tr>
       <tr>
         <td>Timeline of intervention</td>
         <td>Treatment arm</td>
-        <td><a href="https://www.socialscienceregistry.org/">AEA Registry – American Economic Association</a></td>
-        <td>Start and end date of intervention.</td>
-        <td>Date (YYYY-MM-DD)</td>
+        <td><strong>AEA Registry:</strong> Intervention Start Date: The date that the intervention starts, or the date by which you expect the intervention to start. In the case in which you have several interventions that start at different times, this field gives you the lower time limit of all of them.
+	<br>Field Type: date (YYYY/MM/DD)
+	<br>Intervention End Date: The date that the intervention ends, or the planned end date of administering the intervention. In the case in which you have several interventions that end at different times, this field gives you the upper time limit of all of them. Field Type: date (YYYY/MM/DD)</td>
+        <td>The time period defined by the start date of intervention and the end date of intervention.</td>
+        <td>Start and end date format</td>
         <td>—</td>
-        <td>Used to align with outcome collection.</td>
+        <td>Pilot to assess whether dates are reported more or month/year estimates.</td>
       </tr>
     </tbody>
   </table>
@@ -665,129 +678,137 @@
   <tbody>
     <tr>
       <td>Name of the outcome measure</td>
-      <td>Treatment effect</td>
-      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
-      <td>Name of the specific outcome being measured.</td>
+      <td>Outcome</td>
+      <td><strong>Clinical Trials: Outcome Measure Title: Name of the specific outcome measure.</strong></a></td>
+      <td>The name the author(s) uses for the outcome measure.</td>
       <td>Open text</td>
       <td>—</td>
       <td>Should match terminology used in results section.</td>
     </tr>
     <tr>
       <td>Outcome measure category</td>
-      <td>Treatment effect</td>
-      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
-      <td>General category of outcome (e.g., education, health).</td>
-      <td>Text-CV</td>
-      <td>From predefined list</td>
-      <td>Used for filtering and tagging effects.</td>
+      <td><strong>Clinical Trials:</strong> Outcome Measure Description: Additional information about the outcome measure, including a description of the metric used to characterize the specific outcome measure, if not included in the Outcome Measure Title.</td>
+	<td>Description of the metric used to characterize the specific outcome measure, if not included in the Outcome Measure Title.</td>
+        <td>Controlled vocabulary: Group to build.
+	<br>Examples such as: behavioral score, anthropometric measure, school test score</td>
+        <td></td>
+        <td></td>
     </tr>
     <tr>
       <td>Outcome measurement tool</td>
-      <td>Treatment effect</td>
-      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
-      <td>The tool or method used to measure the outcome.</td>
-      <td>Open text</td>
-      <td>—</td>
-      <td>Include citations if using standard tools.</td>
+ 	<td>Outcome</td>
+        <td><strong>Clinical Trials:</strong> Outcome Measure Description: Additional information about the outcome measure, including a description of the metric used to characterize the specific outcome measure, if not included in the Outcome Measure Title.</td>
+        <td>Name of the specific tool used for measurement.</td>
+        <td>Open text</td>
+        <td>—</td>
+        <td>Add citation of the tool used if available.</td>
     </tr>
     <tr>
-      <td>Outcome measure statistical type</td>
-      <td>Treatment effect</td>
-      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
-      <td>Type of variable: binary, continuous, etc.</td>
-      <td>Text-CV</td>
-      <td>Binary, continuous, categorical, index</td>
-      <td>Verify how outcome is modeled.</td>
-    </tr>
-    <tr>
-      <td>Outcome measure standardized</td>
-      <td>Treatment effect</td>
-      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
-      <td>Whether the outcome has been standardized.</td>
-      <td>Yes/No/Don't know</td>
-      <td>—</td>
-      <td>Standardization is common in meta-analysis.</td>
-    </tr>
-    <tr>
-      <td>Standardization description</td>
-      <td>Treatment effect</td>
-      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
-      <td>Description of the standardization process.</td>
-      <td>Open text</td>
-      <td>—</td>
-      <td>Include reference group if z-scored.</td>
-    </tr>
-    <tr>
-      <td>Outcome measure coding</td>
-      <td>Treatment effect</td>
-      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
-      <td>Whether coding was needed to interpret results.</td>
-      <td>Yes/No/Ambiguous/Don't know</td>
-      <td>—</td>
-      <td>Useful for text-mining approaches.</td>
-    </tr>
-    <tr>
-      <td>Outcome data source</td>
-      <td>Treatment effect</td>
-      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
-      <td>Where outcome data was obtained.</td>
-      <td>Text-CV</td>
-      <td>Survey, admin data, sensors, etc.</td>
-      <td>Useful for evaluating external validity.</td>
-    </tr>
-    <tr>
-      <td>Outcome measure collection start date</td>
-      <td>Treatment effect</td>
-      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
-      <td>Start date of outcome measurement.</td>
-      <td>Date (YYYY-MM-DD)</td>
-      <td>—</td>
-      <td>Used to match with intervention timeline.</td>
-    </tr>
-    <tr>
-      <td>Outcome measure collection end date</td>
-      <td>Treatment effect</td>
-      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
-      <td>End date of outcome measurement.</td>
-      <td>Date (YYYY-MM-DD)</td>
-      <td>—</td>
-      <td>Used to determine follow-up period.</td>
-    </tr>
-    <tr>
-      <td>Outcome mean</td>
-      <td>Treatment effect</td>
-      <td>—</td>
-      <td>Mean value of the outcome for treatment/control.</td>
-      <td>Numeric</td>
-      <td>—</td>
-      <td>Record separately for each group if available.</td>
-    </tr>
-    <tr>
-      <td>Outcome SD</td>
-      <td>Treatment effect</td>
-      <td>—</td>
-      <td>Standard deviation of the outcome.</td>
-      <td>Numeric</td>
-      <td>—</td>
-      <td>Used for calculating standardized effects.</td>
-    </tr>
-    <tr>
-      <td>Outcome sample size</td>
-      <td>Treatment effect</td>
-      <td>—</td>
-      <td>Sample size for the outcome measure.</td>
-      <td>Numeric</td>
-      <td>—</td>
-      <td>Record for both treatment and control.</td>
-    </tr>
-    <tr>
-      <td>Additional information for clustered RCTs</td>
-      <td>Study</td>
-      <td>—</td>
-      <td>ICC, number of clusters, cluster sizes, etc.</td>
-      <td>Open text / Numeric</td>
-      <td>—</td>
-      <td>Important for adjusting SEs.</td>
+       <td>Outcome measure statistical type</td>
+        <td>Treatment effect</td>
+        <td><strong>No standard:</strong> see notes for potential definition from Lipsey and Wilson (2000)</td>
+        <td>Indicates type of outcome measure: binary, continuous, categorical.</td>
+        <td>Controlled vocabulary: inherently dichotomous (proportions, odds ratio), inherently continuous (continuous, artificially dichotomized), dichotomous (probit), dichonomous (logit)</td>
+        <td>Lipsey and Wilson (2000). Practical Meta-Analysis. SAGE publications, Inc. 
+		<br>
+		<br>Figure 3.1 (pp. 58) Effect size decision tree for studies involving group contrasts on dependent variables
+		<br>Table 3.2 (pp. 72) Effect size, standard erro and inverse variance weight formulas for each effect size type
+	</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Outcome measure standardized</td>
+        <td>Outcome or treatment effect</td>
+        <td><strong>No standard</strong></td>
+        <td>Indicates whether the outcome measure is standardized.</td>
+        <td>Yes/No/Don't know</td>
+        <td>—</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td>Standardization description</td>
+        <td>Outcome or treatment effect</td>
+        <td><strong>No standard</strong></td>
+        <td>Indicates how the outcome measure was standardized.</td>
+        <td>Open text extracted from the paper for the pilot.</td>
+        <td>>Pilot to assess how this is reported in papers.</td>
+        <td>Pilot to assess how this is reported in papers.</td>
+      </tr>
+      <tr>
+        <td>Outcome measure coding</td>
+        <td>Outcome</td>
+        <td><strong>No standard</strong></td>
+        <td>Indicates whether the outcome suggests an overall positive and desirable impact according to the author.</td>
+        <td>Select one: Yes/No/Ambiguous/Don't know</td>
+        <td>>Pilot to assess how this is reported in papers.</td>
+        <td>Pilot to assess how this is reported in papers.</td>
+      </tr>
+      <tr>
+        <td>Outcome data source</td>
+        <td>Outcome</td>
+        <td><strong>DDI 2.5:</strong>  dataKind: The type of data included in the file: survey data, census/enumeration data, aggregate data, clinical data, event/transaction data, program source code, machine-readable text, administrative records data, experimental data, psychological test, textual data, coded textual, coded documents, time budget diaries, observation data/ratings, process-produced data, etc. This element maps to Dublin Core Type element. The type attribute can be used for forward-compatibility with DDI 3, by providing a type for use of controlled vocabulary, as this is descriptive in DDI 2 and CodeValue in DDI 3.</td>
+        <td>Describes type of data used to measure the outcome.</td>
+        <td>Controlled variable: survey, census, etc. (Needs to be developed) or DDI CV: Sample survey data, Census/enumeration data, Administrative records data, Aggregate data, Clinical data, Event/transaction data, Observation data/ratings, Process-produced data, Time-budget diaries, Choice experiment for preference elicitation, Economic games with participant interaction, Measurement and tests, Textual data, Others</td>
+        <td>Sample survey data, Census/enumeration data, Administrative records data, Aggregate data, Clinical data, Event/transaction data, Observation data/ratings, Process-produced data, Time-budget diaries, Choice experiment for preference elicitation, Economic games with participant interaction, Measurement and tests, Textual data, Others</td>
+        <td>Pilot to assess whether data sources are clearly reported.</td>
+      </tr>
+      <tr>
+        <td>Outcome measure collection start date</td>
+        <td>Outcome</td>
+        <td><strong>DDI 2.5:</strong> collDate: Contains the date(s) when the data were collected. Use the event attribute to specify "start", "end", or "single" for each date entered. The ISO standard for dates (YYYY-MM-DD) is recommended for use with the "date" attribute. The "cycle" attribute permits specification of the relevant cycle, wave, or round of data. Maps to Dublin Core Coverage element. Inclusion of this element in the codebook is recommended.</td>
+        <td>Specifies start date of data collection for the outcome.</td>
+        <td>Open text</td>
+        <td>—</td>
+        <td>Coding protocol:
+	<br>*Add to the data source roster
+ 	<br>*Add option of not provided</td>
+      </tr>
+      <tr>
+        <td>Outcome measure collection end date</td>
+        <td>Outcome</td>
+        <td><strong>DDI 2.5:</strong> collDate: Contains the date(s) when the data were collected. Use the event attribute to specify "start", "end", or "single" for each date entered. The ISO standard for dates (YYYY-MM-DD) is recommended for use with the "date" attribute. The "cycle" attribute permits specification of the relevant cycle, wave, or round of data. Maps to Dublin Core Coverage element. Inclusion of this element in the codebook is recommended.</td>
+        <td>Specifies end date of data collection for the outcome.</td>
+        <td>Open text</td>
+        <td>—</td>
+        <td>Coding protocol:
+	<br>*Add to the data source roster
+ 	<br>*Add option of not provide</td>
+      </tr>
+      <tr>
+        <td>Outcome mean</td>
+        <td>Outcome*Treatment Arm*round</td>
+        <td><strong>Clinical Trials:</strong> Measure Type: Count of Participants, Mean, Median, Least Squares Mean, Geometric Mean, etc.</td>
+        <td>Specifies the reported outcome quantity such as average, size, or count.</td>
+        <td>Numeric</td>
+        <td>—</td>
+        <td>Coding protocol should list what information to extract if mean, SD, N are missing.</td>
+      </tr>
+      <tr>
+        <td>Outcome SD</td>
+        <td>Outcome*Treatment Arm*round</td>
+        <td><strong>Clinical Trials:</strong> Measure of Dispersion/Precision: Standard Deviation, Standard Error, Confidence Intervals, etc.</td>
+        <td>Specifies amount of dispersion in the outcome.</td>
+        <td>Numeric</td>
+        <td>—</td>
+        <td>Coding protocol should list what information to extract if mean, SD, N are missing.</td>
+      </tr>
+      <tr>
+        <td>Outcome sample size</td>
+        <td>Outcome*Treatment Arm*round</td>
+        <td><strong>Clinical Trials:</strong> Number of Participants or Units Analyzed for the outcome.</td>
+        <td>Number of units analyzed to measure the outcome.</td>
+        <td>Numeric</td>
+        <td>—</td>
+        <td>Coding protocol should list what information to extract if mean, SD, N are missing.</td>
+      </tr>
+      <tr>
+        <td>Additional information for clustered RCTs</td>
+        <td>Outcome*Treatment Arm*round*cluster</td>
+        <td><strong>AEA Registry:</strong> Information on clustering: number of clusters, cluster size, ICC, etc.</td>
+        <td>Additional details on treatment clustering, if applicable.</td>
+        <td>Numeric</td>
+        <td>—</td>
+        <td>Priority list and stopping rule to be developed; pilot to assess reporting rates.</td>
     </tr>
   </tbody>
 </table>
