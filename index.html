@@ -932,155 +932,147 @@
     </tr>
     <tr>
       <td>Subgroup of heterogeneous analysis</td>
-      <td>Treatment effect</td>
-      <td>—</td>
-      <td>Name or label for the subgroup.</td>
-      <td>Text-CV</td>
-      <td>Gender, age, etc.</td>
-      <td>Indicate subgroup ID if nested in broader group.</td>
-    </tr>
-    <tr>
-      <td>Description of heterogeneous analysis</td>
-      <td>Treatment effect</td>
-      <td>—</td>
-      <td>Description of how subgroup analysis was performed.</td>
-      <td>Open text</td>
-      <td>—</td>
-      <td>Clarify model interaction or stratification.</td>
-    </tr>
-    <tr>
-      <td>Estimates of heterogeneous treatment effects</td>
-      <td>Treatment effect</td>
-      <td>—</td>
-      <td>Effect size for subgroup-specific estimates.</td>
-      <td>Structured response</td>
-      <td>—</td>
-      <td>Multiple rows if needed.</td>
-    </tr>
+        <td>Treatment effect</td>
+        <td><strong>CONSORT:</strong><br><br>Description of any other analyses performed, including subgroup analyses and adjusted analyses, distinguishing pre-specified from exploratory.</td>
+        <td>Variables used to characterize subgroups for heterogeneous analysis.</td>
+        <td>Text-controlled vocabulary</td>
+        <td>Age, gender, income, other (specify)</td>
+        <td>Develop a controlled vocabulary after pilot.<br><br>Select all variables that apply for each analysis. For example, select both gender and income for an analysis by \"women with income > 100 USD per day\".</td>
+      </tr>
+      <tr>
+        <td>Description of heterogeneous analysis</td>
+        <td>Treatment effect</td>
+        <td><strong>CONSORT:</strong><br><br>Description of any other analyses performed, including subgroup analyses and adjusted analyses, distinguishing pre-specified from exploratory.</td>
+        <td>Description of the heterogeneous analysis performed by subgroup variables.</td>
+        <td>Open text</td>
+        <td>—</td>
+        <td>Describe the specifications used to estimate heterogeneous effects (such as interaction term or subsample) or any other information as needed.</td>
+      </tr>
+      <tr>
+        <td>Estimates of heterogeneous treatment effects</td>
+        <td>Treatment effect</td>
+        <td><strong>No standard.</strong></td>
+        <td>Estimates and precision of related heterogeneous effects.</td>
+        <td>As each field requires</td>
+        <td>—</td>
+        <td>Repeat a set of fields for each treatment effect by subgroup (age, gender, and income) to calculate effect sizes if the answer is yes.<br><br>Need to come to consensus on which effects get recorded for each heterogeneous treatment effect.</td>
+ 	</tr>
   </tbody>
 </table>
 </details>
 
 <details id="section-9">
   <summary>9. Quality and Robustness</summary>
-  <p><em>This section includes fields that assess internal validity, such as attrition, compliance, covariate balance, and model specification.</em></p>
+  <p style="margin: 1rem;"><em>This section captures how the study accounts for validity threats such as attrition, imbalance, and compliance, and whether key checks and covariates were reported in the analysis.</em></p>
   <table>
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Level</th>
-      <th>Relevant Standard</th>
-      <th>Definition</th>
-      <th>Response Options</th>
-      <th>Controlled Vocabulary</th>
-      <th>Notes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Attrition</td>
-      <td>Study</td>
-      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
-      <td>Percentage or number of dropouts.</td>
-      <td>Numeric</td>
-      <td>—</td>
-      <td>May be reported for treatment/control separately.</td>
-    </tr>
-    <tr>
-      <td>Dealing with attrition</td>
-      <td>Study</td>
-      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
-      <td>How the study dealt with missing observations.</td>
-      <td>Text-CV</td>
-      <td>Listwise deletion, imputation, etc.</td>
-      <td>Indicate robustness checks, if any.</td>
-    </tr>
-    <tr>
-      <td>Balance test</td>
-      <td>Study</td>
-      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
-      <td>Whether the study reports a balance test.</td>
-      <td>Yes/No/Not reported/Don't know</td>
-      <td>—</td>
-      <td>Look for baseline covariates comparisons.</td>
-    </tr>
-    <tr>
-      <td>Compliance Control</td>
-      <td>Study</td>
-      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
-      <td>Compliance rate in the control group.</td>
-      <td>Numeric</td>
-      <td>—</td>
-      <td>Define clearly; may require calculation.</td>
-    </tr>
-    <tr>
-      <td>Compliance Treatment</td>
-      <td>Study</td>
-      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
-      <td>Compliance rate in the treatment group.</td>
-      <td>Numeric</td>
-      <td>—</td>
-      <td>Compare with control for crossover analysis.</td>
-    </tr>
-    <tr>
-      <td>Covariates included</td>
-      <td>Study</td>
-      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
-      <td>List of covariates used in the estimation model.</td>
-      <td>Open text</td>
-      <td>—</td>
-      <td>Use to evaluate specification consistency.</td>
-    </tr>
-    <tr>
-      <td>Imbalanced covariates included</td>
-      <td>Study</td>
-      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
-      <td>Whether imbalanced covariates were adjusted for.</td>
-      <td>Yes/No/Other</td>
-      <td>—</td>
-      <td>Cross-check with balance test results.</td>
-    </tr>
-  </tbody>
-</table>
+    <thead>
+      <tr>
+        <th>Field</th>
+        <th>Level</th>
+        <th>Relevant Standard</th>
+        <th>Definition</th>
+        <th>Response Options</th>
+        <th>Controlled Vocabulary</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Attrition</td>
+        <td>Treatment arm*round</td>
+        <td><strong>Clinical Trials:</strong><br><br>Per arm and per period:<br>Started: Number of participants initiating the period. In the first period, it is the number of participants assigned to each arm or group. If assignment is based on a unit other than participants, also include the number of units at the beginning of the period.<br>Completed: Number of participants at the end of the period. If assignment is based on a unit other than participants, also include the number of units at the end of the period.<br>Not Completed (calculated automatically): Number of participants (and units, if applicable) that did not complete the study or period. This is calculated automatically by subtracting Completed from Started.</td>
+        <td>Share of units of analysis that dropped out of study after treatment assignment, per arm and round.</td>
+        <td>Numeric</td>
+        <td>—</td>
+        <td>This incorporates two different concepts: survey nonresponse and item nonresponse. In the pilot, we should monitor how to address this.<br><br>We should also monitor whether we might need to ask a question "Is attrition reported?" Some papers may not report attrition but still experience it. There are papers where: (1) there is no attrition, (2) there is attrition but it is not reported, and (3) there is attrition and it is reported.</td>
+      </tr>
+      <tr>
+        <td>Dealing with attrition</td>
+        <td>Treatment effect</td>
+        <td><strong>No standard</strong></td>
+        <td>Steps the authors took in response to attrition.</td>
+        <td>CV</td>
+        <td>Balance test, Multiple imputation, Lee bounds, Attrition not differential, Other (open text)</td>
+        <td>Build CV from "other" category during pilot.<br><br>If we add a question in the data entry mask about whether attrition is/is not differential, we should remove that option from CV.<br><br>In the data entry mask, we may also ask: "Did authors take steps to address attrition?" They may just acknowledge it without action.</td>
+      </tr>
+      <tr>
+        <td>Balance test</td>
+        <td>Study</td>
+        <td><strong>No standard</strong></td>
+        <td>Indicates whether authors include a balance table of treatment conditions at baseline.</td>
+        <td>Select one (Yes/No/Not reported/Don't know)</td>
+        <td>—</td>
+        <td>Monitor in pilot if authors state treatment conditions are balanced but do not include a balance test.<br><br>If this occurs, we may need to ask two separate questions in the data entry mask: (1) Do authors state treatment conditions are balanced? (2) Do they include a balance table?<br><br>Also monitor how this connects with steps taken to address attrition.</td>
+      </tr>
+      <tr>
+        <td>Compliance Control</td>
+        <td>Treatment arm</td>
+        <td><strong>CONSORT:</strong><br><br>Compliance measures the share of the control group who actually received the treatment.</td>
+        <td>Share of control group who received any part of the treatment.</td>
+        <td>Numeric</td>
+        <td>—</td>
+        <td>We may need to break this into two questions in the data entry mask: (1) Did authors report compliance? (2) What was the share?</td>
+      </tr>
+      <tr>
+        <td>Compliance Treatment</td>
+        <td>Treatment arm</td>
+        <td><strong>CONSORT:</strong><br><br>Compliance measures the share of the treatment group who actually received the treatment.</td>
+        <td>Share of treatment group who received any part of the treatment.</td>
+        <td>Numeric</td>
+        <td>—</td>
+        <td>In the pilot, monitor the various ways this can be reported and think about how to standardize.</td>
+      </tr>
+      <tr>
+        <td>Covariates included</td>
+        <td>Treatment effect</td>
+        <td><strong>No standard</strong></td>
+        <td>Indicates the covariates, if any, included in the main specification.</td>
+        <td>Open text</td>
+        <td>Group to build controlled vocabulary from pilot</td>
+        <td>Specify which “default” specification to include — e.g., no controls except strata indicators, or no controls except strata and baseline value.</td>
+      </tr>
+      <tr>
+        <td>Imbalanced covariates included</td>
+        <td>Treatment effect</td>
+        <td><strong>No standard</strong></td>
+        <td>Indicates whether the authors include a specification in which imbalanced variables are included as controls.</td>
+        <td>Select one: Yes/No/Other</td>
+        <td>—</td>
+        <td>In the data entry mask, there may need to be an additional question that asks which are the imbalanced covariates.</td>
+      </tr>
+    </tbody>
+  </table>
 </details>
 
 <details id="section-10">
-  <summary>10. Coding Tool Name and Version</summary>
-  <p><em>This final section identifies the metadata extraction tool and its version used to generate the record.</em></p>
+  <summary>10. Coding Tool Version</summary>
+  <p style="margin: 1rem;"><em>This section tracks the version of the metadata collection tool used to extract the study's metadata, to ensure traceability and reproducibility of entries over time.</em></p>
   <table>
-  <thead>
-    <tr>
-      <th>Field</th>
-      <th>Level</th>
-      <th>Relevant Standard</th>
-      <th>Definition</th>
-      <th>Response Options</th>
-      <th>Controlled Vocabulary</th>
-      <th>Notes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Tool name</td>
-      <td>Paper</td>
-      <td>—</td>
-      <td>Name of the software or tool used for coding.</td>
-      <td>Open text</td>
-      <td>—</td>
-      <td>Used for transparency and reproducibility.</td>
-    </tr>
-    <tr>
-      <td>Tool version</td>
-      <td>Paper</td>
-      <td>—</td>
-      <td>Version number or release year of the tool used.</td>
-      <td>Open text</td>
-      <td>—</td>
-      <td>Important if multiple tool versions exist.</td>
-    </tr>
-  </tbody>
-</table>
+    <thead>
+      <tr>
+        <th>Field</th>
+        <th>Level</th>
+        <th>Relevant Standard</th>
+        <th>Definition</th>
+        <th>Response Options</th>
+        <th>Controlled Vocabulary</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Coding tool name and version</td>
+        <td>Study</td>
+        <td><strong>No standard</strong></td>
+        <td>The name and version of the metadata collection tool used to populate a particular record.</td>
+        <td>CV</td>
+        <td>a. IDEAL 1.0 2024</td>
+        <td>—</td>
+      </tr>
+    </tbody>
+  </table>
 </details>
+
   
 <div style="text-align:center; margin-top:2rem;">
   <a href="#" onclick="window.print(); return false;">
