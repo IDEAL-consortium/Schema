@@ -848,85 +848,87 @@
   </thead>
   <tbody>
     <tr>
-      <td>Estimation parameter</td>
-      <td>Treatment effect</td>
-      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
-      <td>Statistical parameter estimated.</td>
-      <td>Text-CV</td>
-      <td>Mean difference, risk ratio, etc.</td>
-      <td>Follow CONSORT reporting standards.</td>
-    </tr>
+   <td>Estimation parameter</td>
+        <td>Treatment effect</td>
+        <td><strong>Clinical Trials:</strong><br><br>Estimation parameter: Select one. (Cox Proportional Hazard, Hazard Ratio (HR), Hazard Ratio, Log Mean Difference (Final Values), Mean Difference (Net), Median Difference (Final Values), Median Difference (Net), Odds Ratio (OR), Odds Ratio, Log, Risk Difference (RD), Risk Ratio (RR), Risk Ratio, Log Slope, Other)<br><br>Other Parameter Name: The name of the estimation parameter, if \"Other\" Estimation Parameter is selected.<br><br>Estimated Value: The calculated value for the estimation parameter.</td>
+        <td>The name of the estimation parameter used to calculate the treatment effect.</td>
+        <td>Text-controlled vocabulary</td>
+        <td>Cox Proportional Hazard, Hazard Ratio (HR), Log Hazard Ratio, Log Mean Difference (Final Values), Mean Difference (Net), Median Difference (Final Values), Median Difference (Net), Odds Ratio (OR), Odds Ratio, Log, Risk Difference (RD), Risk Ratio (RR), Risk Ratio, Log Slope, cohen'd, hedges' g, other(specify)</td>
+        <td>Use the value options in Clinical Trials for pilot and refine the CV afterwards. Some options are more common and some are specific to clinical trials.<br><br>Pilot the stopping rule: starting with the standard formulas for effect sizes to see how much information papers usually report.</td>
+      </tr>
     <tr>
-      <td>Estimand</td>
-      <td>Treatment effect</td>
-      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
-      <td>Target quantity being estimated.</td>
-      <td>Text-CV</td>
-      <td>ATE, ITT, LATE, etc.</td>
-      <td>Clarify population, treatment, outcome, and contrast.</td>
+       <td>Estimand</td>
+        <td>Treatment effect</td>
+        <td>>No standard / [Standard found in an addeddum to Clinical Trials E9(R1)]. 
+	<br><strong>Clinical Trials E9(R1):</strong><br><br>An estimand is a precise description of the treatment effect reflecting the clinical question posed by a given clinical trial objective. It summarizes at a population level what the outcomes would be in the same patients under different treatment conditions being compared.</td>
+        <td>Description of the treatment effect under which the outcome is being estimated.</td>
+        <td>Text-controlled vocabulary</td>
+        <td>Intent-to-Treat (ITT), Treatment-on-the-Treated (TOT), not stated (implied TOT), not stated (implied ITT)</td>
+        <td>Can add \"Not sure/Not stated\" to the pilot CV.</td>
     </tr>
     <tr>
       <td>Null hypothesis</td>
-      <td>Treatment effect</td>
-      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
-      <td>Hypothesis being tested.</td>
-      <td>Text-CV</td>
-      <td>H0: no effect</td>
-      <td>Used to interpret significance.</td>
+       <td>Treatment effect</td>
+      <td><strong>Clinical Trials:</strong><br><br>Type of statistical test: Identifies the type of analysis (Superiority, Non-inferiority, Equivalence, Other (for example, single group or other descriptive analysis), Non-Inferiority or Equivalence (legacy selection), Superiority or Other (legacy selection)).</td>
+        <td>The mathematical expression of the null hypothesis being tested for the treatment effect.</td>
+        <td>Text-controlled vocabulary</td>
+        <td>Null=1, Null=0, Null>0, Null<0, Null=constant</td>
+        <td>This is often not reported explicitly in a paper. Coders may need additional training on how to identify the null hypothesis.</td>
     </tr>
     <tr>
       <td>Statistical test of hypothesis</td>
       <td>Treatment effect</td>
-      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
-      <td>Statistical test used (t-test, regression, etc.).</td>
-      <td>Text-CV</td>
-      <td>OLS, logit, IV, etc.</td>
-      <td>Critical for replication and comparison.</td>
+        <td><strong>Clinical Trials:</strong><br><br>Method: The statistical test used to calculate the p-value, if a P-Value is reported. Select one. (ANCOVA, ANOVA, Chi-Squared, Chi-Squared (Corrected), Cochran-Mantel-Haenszel, Fisher Exact, Kruskal-Wallis, Log Rank, Mantel Haenszel, McNemar, Mixed Models Analysis, Regression (Cox, Linear, Logistic), Sign Test, t-Test (1-Sided, 2-Sided), Wilcoxon (Mann-Whitney), Other).</td>
+        <td>The statistical test used to estimate the treatment effect.</td>
+        <td>Text-controlled vocabulary</td>
+        <td>ANCOVA, ANOVA, Chi-Squared, Chi-Squared (Corrected), Cochran-Mantel-Haenszel, Fisher Exact, Kruskal-Wallis, Log Rank, Mantel Haenszel, McNemar, Mixed Models Analysis, Regression (Cox, Linear, Logistic), Sign Test, t-Test (1-Sided, 2-Sided), Wilcoxon (Mann-Whitney), Other (specify).</td>
+        <td>Use the value options in Clinical Trials for pilot and refine the CV afterwards. Some options are more common and some are specific to clinical trials.</td>
+      </tr>
     </tr>
     <tr>
       <td>Contrast for the treatment effect</td>
-      <td>Treatment effect</td>
-      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
-      <td>Description of the control group or comparison.</td>
-      <td>Open text</td>
-      <td>—</td>
-      <td>Clarify contrast in multi-arm trials.</td>
+     <td>Treatment effect</td>
+        <td><strong>Clinical Trials:</strong><br><br>When describing the Statistical Analysis:<br><br>Comparison Group Selection: The arms or comparison groups involved in the statistical analysis (check all to indicate an \"omnibus\" analysis).</td>
+        <td>Description of the treatment and control groups involved in the estimation of the treatment effect.</td>
+        <td>Open-text</td>
+        <td>—</td>
+        <td>Pilot to assess how this is reported in papers.<br><br>Consider building controlled vocabularies using previous fields on treatment arms.</td>
     </tr>
     <tr>
       <td>Estimate of the treatment effect</td>
-      <td>Treatment effect</td>
-      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
-      <td>Numerical value of the effect estimate.</td>
-      <td>Numeric</td>
-      <td>—</td>
-      <td>Report sign, magnitude, and units.</td>
+        <td>Treatment effect</td>
+        <td><strong>Clinical Trials:</strong><br><br>Estimated Value: The calculated value for the estimation parameter.</td>
+        <td>The reported numeric value for the estimation parameter of the treatment effect.</td>
+        <td>Numeric</td>
+        <td>—</td>
+        <td>Specify which “default” specification to include (e.g., no controls except strata indicators, or no controls except strata and baseline value).<br><br>We also need a rule on what to do when coefficient is reported for raw values and then another column converts coefficient to d or \"effect size\".</td>
     </tr>
     <tr>
-      <td>Unit of measure of the treatment effect</td>
-      <td>Treatment effect</td>
-      <td>—</td>
-      <td>Units in which the estimate is expressed.</td>
-      <td>Open text</td>
-      <td>—</td>
-      <td>Example: test score points, percentage, SDs.</td>
-    </tr>
-    <tr>
-      <td>Precision</td>
-      <td>Treatment effect</td>
-      <td><a href="https://www.consort-statement.org/">CONSORT – Consolidated Standards of Reporting Trials</a></td>
-      <td>Type of precision measure reported.</td>
-      <td>Text-CV</td>
-      <td>SE, CI, p-value</td>
-      <td>Use standard labels.</td>
+    <td>Unit of measure of the treatment effect</td>
+        <td>Treatment effect</td>
+        <td><strong>Clinical Trials:</strong><br><br>Unit of Measure: An explanation of what is quantified by the data (for example, participants, mm Hg), for each outcome measure.</td>
+        <td>The unit of measure of the outcome estimated in the treatment effect.</td>
+        <td>Open text</td>
+        <td>—</td>
+        <td>A controlled vocabulary to be developed after the pilot.</td>
+      </tr>
+      <tr>
+        <td>Precision</td>
+        <td>Treatment effect</td>
+        <td><strong>Clinical Trials:</strong><br><br>Measure of Dispersion/Precision. Select one. (Not Applicable (only if Measure Type is \"Number,\" \"Count of Participants,\" or \"Count of Units\"), Standard Deviation, Standard Error, Inter-Quartile Range, Full Range, 80% Confidence Interval, 90% Confidence Interval, 95% Confidence Interval, 97.5% Confidence Interval, 99% Confidence Interval, Other Confidence Interval Level, Geometric Coefficient of Variation (only when Measure Type is \"Geometric Mean\").<br><br>Other Confidence Interval Level: The numerical value for the confidence interval level, if \"Other Confidence Interval Level\" is selected. Provide a rationale for choosing this level in the Outcome Measure Description.</td>
+        <td>The measures of precision reported for the treatment effect.</td>
+        <td>Text-controlled vocabulary</td>
+        <td>Consensus on creating a stopping rule for the minimum set based on all possible values available.<br><br>Specify a preference priority.</td>
+        <td>—</td>
     </tr>
     <tr>
       <td>Precision value</td>
-      <td>Treatment effect</td>
-      <td>—</td>
-      <td>Numerical value of the precision measure.</td>
-      <td>Numeric</td>
-      <td>—</td>
-      <td>Ensure it matches the type above.</td>
+        <td>Treatment effect</td>
+        <td><strong>Clinical Trials:</strong><br><br>Measure of Dispersion/Precision. Select one. (Not Applicable (only if Measure Type is \"Number,\" \"Count of Participants,\" or \"Count of Units\"), Standard Deviation, Standard Error, Inter-Quartile Range, Full Range, 80% Confidence Interval, 90% Confidence Interval, 95% Confidence Interval, 97.5% Confidence Interval, 99% Confidence Interval, Other Confidence Interval Level, Geometric Coefficient of Variation (only when Measure Type is \"Geometric Mean\").<br><br>Other Confidence Interval Level: The numerical value for the confidence interval level, if \"Other Confidence Interval Level\" is selected. Provide a rationale for choosing this level in the Outcome Measure Description.</td>
+        <td>The numeric value of the precision measures.</td>
+        <td>Numeric</td>
+        <td>—</td>
+        <td>—</td>
     </tr>
     <tr>
       <td>Subgroup of heterogeneous analysis</td>
