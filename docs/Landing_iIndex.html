@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IDEAL Metadata Schema</title>
+  <style>
+    body {
+      font-family: "Gill Sans", sans-serif;
+      margin: 2rem;
+      background-color: #f9f9f9;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    details {
+      margin-bottom: 1.5rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    summary {
+      background-color: #5D6D7E;
+      cursor: pointer;
+      padding: 1rem;
+      font-weight: normal;
+      color: #FFFFFF;
+      border-bottom: 1px solid #ccc;
+    }
+    table {
+      border-left: 4px solid #3498db;
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 0.6rem;
+      text-align: left;
+      vertical-align: top;
+      background-color: #fff;
+      word-wrap: break-word;
+      word-break: break-word;
+    }
+    th {
+      background-color: #DCE8EF;
+      color: #5D6D7E;
+      font-weight: normal;
+      text-align: center;
+      vertical-align: middle;
+    }
+    tbody tr:nth-child(odd) {
+      background-color: #f9f9f9;
+    }
+    #toc {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 0.5rem 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      z-index: 1000;
+    }
+    #toc select {
+      padding: 0.5rem;
+      font-size: 1rem;
+      width: 100%;
+    }
+    .grid-container {
+      display: grid;
+      gap: 5px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      background-color: #FFFEFE;
+      padding: 10px;
+      text-align: center;
+      vertical-align: middle;
+      place-items: center;
+    }
+  </style>
+  <script>
+  function filterContent() {
+    var input = document.getElementById("searchBox").value.toLowerCase();
+    var details = document.querySelectorAll("details");
+    details.forEach(function(detail) {
+      const text = detail.textContent.toLowerCase();
+      detail.style.display = text.includes(input) ? "" : "none";
+    });
+  }
+  </script>
+</head>
+<body>
+<section style="margin-bottom: 2rem;">
+  <h2>📘 About the IDEAL Metadata Schema</h2>
+  <p>
+    The IDEAL Metadata Schema was developed to standardize the extraction of effect size data from randomized evaluations in international development.
+    Despite the rapid growth of impact evaluations, the lack of consistent metadata formats has limited our ability to compare results across interventions, geographies, and outcomes.
+    IDEAL fills this gap by providing a comprehensive schema—aligned with global standards like DDI, ClinicalTrials.gov, and the AEA RCT Registry—
+    to systematically document key design features, intervention details, outcome measures, and treatment effects from published studies.
+  </p>
+  <p>
+    This schema is the backbone of the Impact Data and Evidence Aggregation Library (IDEAL). By enabling consistent and structured data extraction,
+    IDEAL supports large-scale meta-analyses, evidence reviews, and policy synthesis efforts.
+    The schema is openly available here for public use, including researchers, evidence aggregators,
+    and developers building tools to advance evidence-informed policymaking in low- and middle-income countries.
+  </p>
+  <h3>🌐 Quick Links</h3>
+  <ul>
+    <li><a href="Schema_Index.html">Schema Index</a></li>
+    <li><a href="Stage_1_Protocol_Index.html">Stage 1 Protocol Index</a></li>
+  </ul>
