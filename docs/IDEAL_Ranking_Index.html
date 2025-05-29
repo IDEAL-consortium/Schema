@@ -105,14 +105,41 @@ a:hover {
   
 <body id="top">
 <div  style="text-align: center">
-<img width="40%" src="ideal_logo.png">
+<img width="300px" src="ideal_logo.png">
 </div>
 
 <h1>Empirical Specifications - Ranking</h1>
 
-<p>
-The IDEAL-preferred specification ranking is as follows, from highest (1) to lowest (11):
-</p>
+<p>The following priority rules determine what empirical specifications are collected in IDEAL:</p>
+    <ul>
+        <li style="text-indent: 0em;">Stratification adjustment > No stratification adjustment</li>
+        <li style="text-indent: 0em;">Baseline outcome included > Baseline outcome not included</li>
+        <li style="text-indent: 0em;">No other controls included > Other controls included </li>
+        <li style="text-indent: 0em;">Pre-treatment, static, exogenous controls > Post-treatment, non-static, endogenous controls </li>
+    </ul>
+    
+<p>Based on this rules, the IDEAL-preferred specification ranking is as follows, from highest (1) to lowest (8) preferred specification:</p>
+
+<table border="1" cellpadding="5" cellspacing="0" style="width: 90%; margin: auto" align="center">
+  <thead>
+    <tr>
+      <th style="width: 5%;">#</th>
+      <th style="width: 20%;">Strata correction</th>
+      <th style="width: 20%;">Baseline outcome</th>
+      <th style="width: 20%;">Other  controls</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td> 1 </td><td>&#10003;</td><td>&#10003;</td><td></td></tr>
+    <tr><td> 2 </td><td>&#10003;</td><td></td><td></td></tr>
+    <tr><td> 3 </td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td></tr>
+    <tr><td> 4 </td><td>&#10003;</td><td></td><td>&#10003;</td></tr>
+    <tr><td> 5 </td><td></td><td>&#10003;</td><td></td></tr>
+    <tr><td> 6 </td><td></td><td>&#10003;</td><td>&#10003;</td></tr>
+    <tr><td> 7 </td><td><td></td></td><td>&#10003; : Pre-treatment or static controls</td></tr>
+    <tr><td> 8 </td><td><td></td></td><td>&#10003; : Post-treatment or non-static controls</td></tr>
+  </tbody>
+</table>
   
 
 <hr  style="color: #F1F1F1">
