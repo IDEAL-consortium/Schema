@@ -494,36 +494,6 @@ a:hover {
 	<br>
 	<br>Eligibility, recruitment, sampling, and deviation fields all to be automatically triaged for verification.</td>
       </tr>
-      <tr>
-        <td>Baseline average female share</td>
-        <td>Study</td>
-        <td><strong><a href="https://clinicaltrials.gov/policy/results-definitions#baselineCharacteristics" target="_blank">Clinical Trials:</a></strong> Baseline Measure Title: The name of the baseline or demographic characteristic measured in the clinical study. Select as many as needed. (Age, Sex/Gender, Race and Ethnicity,Region of Enrollment)
- 	<br>
-	<br>Measure Type: The type of data for the baseline measure. Select one. (Count of Participants, Mean, Median, Least Squares Mean, Geometric Mean, Geometric Least Squares Mean, Number, Count of Units)
-	<br>
-	<br>Baseline Measure Data: The value(s) for each baseline measure, for each arm/group and the entire study population (total).</td>
-        <td>Proportion of females in the study population.</td>
-        <td>Numeric</td>
-        <td>—</td>
-        <td>Report control group average if baseline not available.
-	<br>
-	<br>Not applicable (if unit of observation is not a person)</td>
-      </tr>
-      <tr>
-        <td>Baseline average age</td>
-        <td>Study</td>
-        <td><strong><a href="https://clinicaltrials.gov/policy/results-definitions#baselineCharacteristics" target="_blank">Clinical Trials:</a></strong> Baseline Measure Title: The name of the baseline or demographic characteristic measured in the clinical study. Select as many as needed. (Age, Sex/Gender, Race and Ethnicity,Region of Enrollment)
- 	<br>
-	<br>Measure Type: The type of data for the baseline measure. Select one. (Count of Participants, Mean, Median, Least Squares Mean, Geometric Mean, Geometric Least Squares Mean, Number, Count of Units)
-	<br>
-	<br>Baseline Measure Data: The value(s) for each baseline measure, for each arm/group and the entire study population (total).</td>
-        <td>Average age of the study population.</td>
-        <td>Numeric</td>
-        <td>—</td>
-        <td>>Report control group average if baseline not available.
-	<br>
-	<br>Not applicable (if unit of observation is not a person)</td>
-      </tr>
     </tbody>
   </table>
 </details>
@@ -916,15 +886,6 @@ a:hover {
         <td>—</td>
         <td>Describe the specifications used to estimate heterogeneous effects (such as interaction term or subsample) or any other information as needed.</td>
       </tr>
-      <tr>
-        <td>Estimates of heterogeneous treatment effects</td>
-        <td>Treatment effect</td>
-        <td><strong>No standard.</strong></td>
-        <td>Estimates and precision of related heterogeneous effects.</td>
-        <td>As each field requires</td>
-        <td>—</td>
-        <td>Repeat a set of fields for each treatment effect by subgroup (age, gender, and income) to calculate effect sizes if the answer is yes.<br><br>Need to come to consensus on which effects get recorded for each heterogeneous treatment effect.</td>
- 	</tr>
   </tbody>
 </table>
 </details>
@@ -955,15 +916,6 @@ a:hover {
         <td>This incorporates two different concepts: survey nonresponse and item nonresponse. In the pilot, we should monitor how to address this.<br><br>We should also monitor whether we might need to ask a question "Is attrition reported?" Some papers may not report attrition but still experience it. There are papers where: (1) there is no attrition, (2) there is attrition but it is not reported, and (3) there is attrition and it is reported.</td>
       </tr>
       <tr>
-        <td>Dealing with attrition</td>
-        <td>Treatment effect</td>
-        <td><strong>No standard</strong></td>
-        <td>Steps the authors took in response to attrition.</td>
-        <td>CV</td>
-        <td>Balance test, Multiple imputation, Lee bounds, Attrition not differential, Other (open text)</td>
-        <td>Build CV from "other" category during pilot.<br><br>If we add a question in the data entry mask about whether attrition is/is not differential, we should remove that option from CV.<br><br>In the data entry mask, we may also ask: "Did authors take steps to address attrition?" They may just acknowledge it without action.</td>
-      </tr>
-      <tr>
         <td>Balance test</td>
         <td>Study</td>
         <td><strong>No standard</strong></td>
@@ -989,24 +941,6 @@ a:hover {
         <td>Numeric</td>
         <td>—</td>
         <td>In the pilot, monitor the various ways this can be reported and think about how to standardize.</td>
-      </tr>
-      <tr>
-        <td>Covariates included</td>
-        <td>Treatment effect</td>
-        <td><strong>No standard</strong></td>
-        <td>Indicates the covariates, if any, included in the main specification.</td>
-        <td>Open text</td>
-        <td>Group to build controlled vocabulary from pilot</td>
-        <td>Specify which “default” specification to include — e.g., no controls except strata indicators, or no controls except strata and baseline value.</td>
-      </tr>
-      <tr>
-        <td>Imbalanced covariates included</td>
-        <td>Treatment effect</td>
-        <td><strong>No standard</strong></td>
-        <td>Indicates whether the authors include a specification in which imbalanced variables are included as controls.</td>
-        <td>Select one: Yes/No/Other</td>
-        <td>—</td>
-        <td>In the data entry mask, there may need to be an additional question that asks which are the imbalanced covariates.</td>
       </tr>
     </tbody>
   </table>
