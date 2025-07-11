@@ -1,113 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>IDEAL Metadata Schema</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: "Gill Sans", sans-serif;
-      margin: 2rem;
-      background-color: #f9f9f9;
-    }
-    h1 {
-      color: #2c3e50;
-    }
-    details {
-      margin-bottom: 1.5rem;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      background: #fff;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-    summary {
-      background-color: #5D6D7E;
-      cursor: pointer;
-      padding: 1rem;
-      font-weight: normal;
-      color: #FFFFFF;
-      border-bottom: 1px solid #ccc;
-    }
-    table {
-      border-left: 4px solid #3498db;
-      width: 100%;
-      border-collapse: collapse;
       margin: 0;
-    }
-    th, td {
-      border: 1px solid #ddd;
-      padding: 0.6rem;
-      text-align: left;
-      vertical-align: top;
-      background-color: #fff;
-      word-wrap: break-word;
-      word-break: break-word;
-    }
-    th {
-      background-color: #DCE8EF;
-      color: #5D6D7E;
-      font-weight: normal;
-      text-align: center;
-      vertical-align: middle;
-    }
-    tbody tr:nth-child(odd) {
+      font-family: 'Open Sans', sans-serif;
       background-color: #f9f9f9;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
-    #toc {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      background: #fff;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      padding: 0.5rem 1rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-      z-index: 1000;
+
+    header {
+      padding: 10px 20px;
+      background-color: #ffffff;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
     }
-    #toc select {
-      padding: 0.5rem;
-      font-size: 1rem;
-      width: 100%;
+
+    header img {
+      height: 50px;
     }
+
+    .main {
+      display: flex;
+      flex: 1;
+    }
+
+    .sidebar {
+      width: 220px;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 0 10px 10px 0;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+    }
+
+    .sidebar a {
+      display: block;
+      margin: 10px 0;
+      color: #1f3366;
+      text-decoration: none;
+      font-weight: normal;
+    }
+
+    .sidebar a:hover {
+      color: #7ec5bb;
+    }
+
+    .content {
+      flex: 1;
+      padding: 40px;
+    }
+
+    .content h2 {
+      color: #1f3366;
+    }
+
+    .content p {
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .content a {
+      color: #1f3366;
+      text-decoration: none;
+      font-weight: inherit;
+    }
+
+    .content a:hover {
+      color: #7ec5bb;
+      text-decoration: underline;
+    }
+
+    footer {
+      padding: 20px;
+      background-color: #ffffff;
+      border-top: 1px solid #eee;
+    }
+
     .grid-container {
       display: grid;
-      gap: 5px;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      background-color: #FFFEFE;
-      padding: 10px;
-      text-align: center;
-      vertical-align: middle;
-      place-items: center;
+      gap: 10px;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      align-items: center;
+      justify-items: center;
+      margin-top: 10px;
+    }
+
+    .grid-container img {
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #F1F1F1;
+      margin: 20px 0;
+    }
+
+    .footer-text {
+      color: #63bfb2;
+      margin: 0;
+      font-weight: bold;
+    }
+
+    .logo-placeholder {
+      <head>
+      <body id="top">
+      <div  style="text-align: left">
+      <img width="300px" src="ideal_logo.png">
+      border-radius: 5px;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .main {
+        flex-direction: column;
+      }
+      
+      .sidebar {
+        width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+        border-bottom: 1px solid #ddd;
+      }
+      
+      .content {
+        padding: 20px;
+      }
     }
   </style>
-  <script>
-  function filterContent() {
-    var input = document.getElementById("searchBox").value.toLowerCase();
-    var details = document.querySelectorAll("details");
-    details.forEach(function(detail) {
-      const text = detail.textContent.toLowerCase();
-      detail.style.display = text.includes(input) ? "" : "none";
-    });
-  }
-  </script>
 </head>
 <body>
-<section style="margin-bottom: 2rem;">
-  <h2>📘 About the IDEAL Metadata Schema</h2>
-  <p>
-    The IDEAL Metadata Schema was developed to standardize the extraction of effect size data from randomized evaluations in international development.
-    Despite the rapid growth of impact evaluations, the lack of consistent metadata formats has limited our ability to compare results across interventions, geographies, and outcomes.
-    IDEAL fills this gap by providing a comprehensive schema—aligned with global standards like DDI, ClinicalTrials.gov, and the AEA RCT Registry—
-    to systematically document key design features, intervention details, outcome measures, and treatment effects from published studies.
-  </p>
-  <p>
-    This schema is the backbone of the Impact Data and Evidence Aggregation Library (IDEAL). By enabling consistent and structured data extraction,
-    IDEAL supports large-scale meta-analyses, evidence reviews, and policy synthesis efforts.
-    The schema is openly available here for public use, including researchers, evidence aggregators,
-    and developers building tools to advance evidence-informed policymaking in low- and middle-income countries.
-  </p>
-  <h3>🌐 Quick Links</h3>
-  <ul>
-    <li><a href="Schema_Index.html">IDEAL Metadata Schema</a></li>
-    <li><a href="Stage_1_Protocol_Index.html">IDEAL Coding Protocol</a></li>
-  </ul>
+
+  <header>
+    <div class="logo-placeholder">IDEAL</div>
+  </header>
+
+  <div class="main">
+    <nav class="sidebar">
+      <li><a href="Schema_Index.html">IDEAL Metadata Schema</a></li>
+      <li><a href="Stage_1_Protocol_Index.html">IDEAL Coding Protocol</a></li>
+    </nav>
+
+    <div class="content">
+      <h2>Introducing the Impact Data and Evidence Aggregation Library (IDEAL)</h2>
+      <p>
+        Hello and welcome to IDEAL, a platform designed to extract results data from international development RCTs and make them accessible to researchers and policymakers. The project is currently in a pilot stage. You can view our <strong><a href="Schema_Index.html">metadata schema</a></strong> to see our data extraction fields, and our <strong><a href="Stage_1_Protocol_Index.html">coding protocol</a></strong> with guidance for our coders who are completing the data extraction.
+      </p>
+      <p>
+        <strong>Motivation</strong>
+      </p>
+      <p>
+        The last few decades have seen explosive growth in the number of impact evaluations—randomized evaluations in particular—that seek to guide policy decision-making in low- and middle-income countries. However, there are important gaps in translating this ever-expanding wealth of knowledge into actionable and credible policy insights. When moving from evidence generation to aggregation, translation, and adaptation, a key challenge is the <em>lack of standardization and comparability of the main results produced by each study.</em>
+      </p>
+      <p>
+        <strong>Activities</strong>
+      </p>
+      <p>
+        IDEAL is being constructed by a global consortium of institutions. Hosted by the World Bank, IDEAL will be fully open-access and free for the world to use. Users can easily search, compare, and visualize relative effect sizes on a range of outcomes and of many different policy interventions across countries and contexts. We expect IDEAL to facilitate quantitative meta-analyses as well as more qualitative systematic reviews, whether such efforts are centered around an intervention, policy, population, or outcome.
+      </p>
+      <p>
+        Importantly, IDEAL will help guide the standardization of key information from randomized evaluations, enabling more meaningful comparisons across studies while unlocking the potential to answer a wide range of methodological questions.
+      </p>
+      <p>
+        The IDEAL team will begin with a pilot phase, during which we will extract a minimum set of fields for a curated initial set of studies, and develop protocols for the library's ongoing growth and maintenance. Once established, we will invite others to join, guided by consistent protocols for adding new content and rigorous quality control. Ultimately, we aim to scale across many sectors and programs in global development and develop a set of pedagogical resources for mainstreaming evidence aggregation methods across the research and policy community.
+      </p>
+    </div>
+  </div>
+
+  <footer>
+    <hr  style="color: #F1F1F1">
+    <p style="color: #63bfb2; margin: 0% 0% 0% 0%">IDEAL Consortium Members:</p>
+   
+    <div class="grid-container" style="margin: 0% 0% 0% 0%">
+    
+      <div class="grid-item">
+        <div class="img-container">
+            <div class="fill">
+        		<a target="_blank" rel="noopener noreferrer" href="https://www.worldbank.org/en/research/brief/ideal"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/World_Bank_Group_logo.svg/300px-World_Bank_Group_logo.svg.png" style="object-fit: contain; width: 160px; " /></a>
+	   </div>
+      	</div>
+     </div>
+     
+     <div class="grid-item">
+        <div class="img-container">
+            <div class="fill">
+        		<a target="_blank" rel="noopener noreferrer" href="https://www.worldbank.org/en/programs/sief-trust-fund"><img src="https://poverty-action.org/sites/default/files/atoms/image/2020/08/21/SIEF-Logo.jpg" style="object-fit: contain; width: 200px;" /></a>
+            </div>
+      	</div>
+     </div>
+     
+     <div class="grid-item">
+        <div class="img-container">
+            <div class="fill">
+        		<a target="_blank" rel="noopener noreferrer" href="https://www.worldbank.org/en/about/unit/unit-dec/impactevaluation"><img src="https://worldbank.scene7.com/is/image/worldbankprod/DIME-logo-new?wid=780&hei=439&qlt=85,0&resMode=sharp" style="object-fit: contain; width: 120px;" /></a>
+            </div>
+      	</div>
+     </div>
+      
+      <div class="grid-item">
+        <div class="img-container">
+            <div class="fill">
+        		<a target="_blank" rel="noopener noreferrer" href="https://cega.berkeley.edu/our-work/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/CEGA_Logo.png/800px-CEGA_Logo.png" style="object-fit: contain; width: 160px;" /></a>
+            </div>
+      	</div>
+     </div>
+        
+      <div class="grid-item">
+        <div class="img-container">
+            <div class="fill">
+        		<a target="_blank" rel="noopener noreferrer" href="https://www.kellogg.northwestern.edu/academics-research/global-poverty-research-lab//"><img src="https://bpb-us-e1.wpmucdn.com/sites.northwestern.edu/dist/8/4150/files/2020/02/GPRL_vertical-768x394.png" style="object-fit: contain; width: 150px;" /></a>
+            </div>
+      	</div>
+     </div>
+        
+      <div class="grid-item">
+        <div class="img-container">
+            <div class="fill">
+        		<a target="_blank" rel="noopener noreferrer" href="https://www.aidgrade.org"><img src="https://www.aidgrade.org/wp-content/uploads/2013/03/AidGrade-logo.jpg" style="object-fit: contain; width: 160px;" /></a>
+            </div>
+      	</div>
+     </div>
+     
+    </div> 
+<hr  style="color: #F1F1F1">
+
+</div>
+
+</body>
+</html>
