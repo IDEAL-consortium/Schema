@@ -17,7 +17,7 @@
 
     header {
       height: 180px;
-      background: url('header_bg.png') center center / cover no-repeat;
+      background: url(src="header_bg.png") center center / cover no-repeat;
       display: flex;
       align-items: center;
       padding: 20px;
@@ -130,7 +130,19 @@
         box-shadow: none;
         border-bottom: 1px solid #ddd;
       }
-      
+
+.sidebar-logo img {
+  width: 120px;
+  display: block;
+  margin: 0 auto 20px auto; /* Center the logo with space below */
+}
+
+.sidebar-links {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+	    
       .content {
         padding: 20px;
       }
@@ -143,14 +155,15 @@
     <div class="logo-placeholder">IDEAL</div>
   </header>
 
-  <div class="main">
-      <nav class="sidebar">
-      <img src="ideal_logo.png" alt="IDEAL Logo">
-      <ul style="padding: 0; margin: 0;">
-        <li><a href="Schema_Index.html">IDEAL Metadata Schema</a></li>
-        <li><a href="Stage_1_Protocol_Index.html">IDEAL Coding Protocol</a></li>
-      </ul>
-    </nav>
+  <nav class="sidebar">
+  <div class="sidebar-logo">
+    <img src="ideal_logo.png" alt="IDEAL Logo">
+  </div>
+  <ul class="sidebar-links">
+    <li><a href="Schema_Index.html">IDEAL Metadata Schema</a></li>
+    <li><a href="Stage_1_Protocol_Index.html">IDEAL Coding Protocol</a></li>
+  </ul>
+</nav>
 
     <div class="content">
       <h2>Introducing the Impact Data and Evidence Aggregation Library (IDEAL)</h2>
