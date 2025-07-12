@@ -16,7 +16,7 @@
   }
 
   header {
-    height: 3000px;
+    height: 300px;
     background: url('header_bg.png') center center / cover no-repeat;
     display: flex;
     align-items: center;
@@ -70,6 +70,90 @@
     flex: 1;
     padding: 40px;
   }
+
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 30px;
+            margin: 20px 0;
+            padding: 20px;
+            align-items: center;
+            justify-items: center;
+        }
+        
+        .grid-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 80px; /* Fixed height for equal vertical spacing */
+            width: 100%;
+        }
+        
+        .img-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+        }
+        
+        .fill {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+        }
+        
+        .grid-item img {
+            object-fit: contain;
+            max-height: 60px;
+            transition: transform 0.3s ease;
+        }
+        
+        .grid-item img:hover {
+            transform: scale(1.05);
+        }
+        
+        .grid-item a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            height: 100%;
+            width: 100%;
+        }
+        
+        hr {
+            border: none;
+            height: 1px;
+            background-color: #F1F1F1;
+            margin: 15px 0;
+        }
+        
+        p {
+            color: #63bfb2;
+            margin: 0;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+                grid-gap: 15px;
+            }
+        }
 
   @media (max-width: 768px) {
     .main {
@@ -130,63 +214,65 @@
     </div>
   </div>
 
- <footer>
-<hr  style="color: #F1F1F1">
-    <p style="color: #63bfb2; margin: 0% 0% 0% 0%">IDEAL Consortium Members:</p>
-   
-    <div class="grid-container" style="margin: 0% 0% 0% 0%">
-    
-      <div class="grid-item">
-        <div class="img-container">
-            <div class="fill">
-        		<a target="_blank" rel="noopener noreferrer" href="https://www.worldbank.org/en/research/brief/ideal"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/World_Bank_Group_logo.svg/300px-World_Bank_Group_logo.svg.png" style="object-fit: contain; width: 160px; " /></a>
-	   </div>
-      	</div>
-     </div>
-     
-     <div class="grid-item">
-        <div class="img-container">
-            <div class="fill">
-        		<a target="_blank" rel="noopener noreferrer" href="https://www.worldbank.org/en/programs/sief-trust-fund"><img src="https://poverty-action.org/sites/default/files/atoms/image/2020/08/21/SIEF-Logo.jpg" style="object-fit: contain; width: 200px;" /></a>
-            </div>
-      	</div>
-     </div>
-     
-     <div class="grid-item">
-        <div class="img-container">
-            <div class="fill">
-        		<a target="_blank" rel="noopener noreferrer" href="https://www.worldbank.org/en/about/unit/unit-dec/impactevaluation"><img src="https://worldbank.scene7.com/is/image/worldbankprod/DIME-logo-new?wid=780&hei=439&qlt=85,0&resMode=sharp" style="object-fit: contain; width: 120px;" /></a>
-            </div>
-      	</div>
-     </div>
-      
-      <div class="grid-item">
-        <div class="img-container">
-            <div class="fill">
-        		<a target="_blank" rel="noopener noreferrer" href="https://cega.berkeley.edu/our-work/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/CEGA_Logo.png/800px-CEGA_Logo.png" style="object-fit: contain; width: 160px;" /></a>
-            </div>
-      	</div>
-     </div>
-        
-      <div class="grid-item">
-        <div class="img-container">
-            <div class="fill">
-        		<a target="_blank" rel="noopener noreferrer" href="https://www.kellogg.northwestern.edu/academics-research/global-poverty-research-lab//"><img src="https://bpb-us-e1.wpmucdn.com/sites.northwestern.edu/dist/8/4150/files/2020/02/GPRL_vertical-768x394.png" style="object-fit: contain; width: 150px;" /></a>
-            </div>
-      	</div>
-     </div>
-        
-      <div class="grid-item">
-        <div class="img-container">
-            <div class="fill">
-        		<a target="_blank" rel="noopener noreferrer" href="https://www.aidgrade.org"><img src="https://www.aidgrade.org/wp-content/uploads/2013/03/AidGrade-logo.jpg" style="object-fit: contain; width: 160px;" /></a>
-            </div>
-      	</div>
-     </div>
-     
-    </div> 
-<hr  style="color: #F1F1F1">
+<br>
 
-</div>
+ <footer>
+ <div style="background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <hr style="color: #F1F1F1">
+        <p style="color: #63bfb2; margin: 0% 0% 0% 0%">IDEAL Consortium Members:</p>
+       
+        <div class="grid-container" style="margin: 0% 0% 0% 0%">
+        
+          <div class="grid-item">
+            <div class="img-container">
+                <div class="fill">
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.worldbank.org/en/research/brief/ideal"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/World_Bank_Group_logo.svg/300px-World_Bank_Group_logo.svg.png" style="object-fit: contain; width: 160px; " /></a>
+               </div>
+              </div>
+         </div>
+         
+         <div class="grid-item">
+            <div class="img-container">
+                <div class="fill">
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.worldbank.org/en/programs/sief-trust-fund"><img src="https://poverty-action.org/sites/default/files/atoms/image/2020/08/21/SIEF-Logo.jpg" style="object-fit: contain; width: 200px;" /></a>
+                </div>
+              </div>
+         </div>
+         
+         <div class="grid-item">
+            <div class="img-container">
+                <div class="fill">
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.worldbank.org/en/about/unit/unit-dec/impactevaluation"><img src="https://worldbank.scene7.com/is/image/worldbankprod/DIME-logo-new?wid=780&hei=439&qlt=85,0&resMode=sharp" style="object-fit: contain; width: 120px;" /></a>
+                </div>
+              </div>
+         </div>
+          
+          <div class="grid-item">
+            <div class="img-container">
+                <div class="fill">
+                    <a target="_blank" rel="noopener noreferrer" href="https://cega.berkeley.edu/our-work/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/CEGA_Logo.png/800px-CEGA_Logo.png" style="object-fit: contain; width: 160px;" /></a>
+                </div>
+              </div>
+         </div>
+            
+          <div class="grid-item">
+            <div class="img-container">
+                <div class="fill">
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.kellogg.northwestern.edu/academics-research/global-poverty-research-lab//"><img src="https://bpb-us-e1.wpmucdn.com/sites.northwestern.edu/dist/8/4150/files/2020/02/GPRL_vertical-768x394.png" style="object-fit: contain; width: 150px;" /></a>
+                </div>
+              </div>
+         </div>
+            
+          <div class="grid-item">
+            <div class="img-container">
+                <div class="fill">
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.aidgrade.org"><img src="https://www.aidgrade.org/wp-content/uploads/2013/03/AidGrade-logo.jpg" style="object-fit: contain; width: 160px;" /></a>
+                </div>
+              </div>
+         </div>
+         
+        </div> 
+        <hr style="color: #F1F1F1">
+    </div>
 </body>
 </html>
