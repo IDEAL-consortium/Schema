@@ -58,7 +58,7 @@ div.content h2 {
   color: #1f3667;
 }
 strong {
-  color: #7ec5bb;
+  color: #1f3667;
 }
 	  
   .main {
@@ -104,8 +104,7 @@ strong {
     flex: 1;
     padding: 40px;
   }
-
-	  .grid-container {
+  .grid-container {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             grid-gap: 30px;
@@ -168,20 +167,42 @@ strong {
             width: 100%;
         }
         
-        /* Second row items positioned to center in 4-column grid */
+        /* Second row - create a centered container that spans all columns */
         .grid-item:nth-child(5) {
-            grid-column: 2 / 3;
+            grid-column: 1 / -1; /* Span all columns */
             grid-row: 2;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            width: 100%;
         }
         
         .grid-item:nth-child(6) {
-            grid-column: 3 / 4;
+            grid-column: 1 / -1;
             grid-row: 2;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            width: 100%;
         }
         
         .grid-item:nth-child(7) {
-            grid-column: 4 / 5;
+            grid-column: 1 / -1;
             grid-row: 2;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            width: 100%;
+        }
+        
+        /* Create a wrapper for the second row items */
+        .second-row-container {
+            grid-column: 1 / -1;
+            grid-row: 2;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            width: 100%;
         }
         
         /* Responsive design */
@@ -191,11 +212,9 @@ strong {
                 grid-gap: 20px;
             }
             
-            .grid-item:nth-child(5),
-            .grid-item:nth-child(6),
-            .grid-item:nth-child(7) {
-                grid-column: auto;
-                grid-row: auto;
+            .second-row-container {
+                flex-direction: column;
+                gap: 20px;
             }
         }
         
@@ -205,11 +224,9 @@ strong {
                 grid-gap: 15px;
             }
             
-            .grid-item:nth-child(5),
-            .grid-item:nth-child(6),
-            .grid-item:nth-child(7) {
-                grid-column: auto;
-                grid-row: auto;
+            .second-row-container {
+                flex-direction: column;
+                gap: 15px;
             }
         }
 
@@ -316,35 +333,37 @@ strong {
               </div>
          </div>
           
-          <!-- Second row (3 logos, smaller) -->
-          <div class="grid-item second-row">
-            <div class="img-container">
-                <div class="fill">
-                    <a target="_blank" rel="noopener noreferrer" href="https://www.worldbank.org/en/programs/sief-trust-fund"><img src="https://poverty-action.org/sites/default/files/atoms/image/2020/08/21/SIEF-Logo.jpg" style="object-fit: contain; width: 200px;" /></a>
+          <!-- Second row (3 logos, smaller, centered) -->
+          <div class="second-row-container">
+            <div class="grid-item second-row">
+              <div class="img-container">
+                  <div class="fill">
+                      <a target="_blank" rel="noopener noreferrer" href="https://www.worldbank.org/en/programs/sief-trust-fund"><img src="https://poverty-action.org/sites/default/files/atoms/image/2020/08/21/SIEF-Logo.jpg" style="object-fit: contain; width: 200px;" /></a>
+                  </div>
                 </div>
-              </div>
-         </div>
-            
-          <div class="grid-item second-row">
-            <div class="img-container">
-                <div class="fill">
-                    <a target="_blank" rel="noopener noreferrer" href="https://www.worldbank.org/en/about/unit/unit-dec/impactevaluation"><img src="https://worldbank.scene7.com/is/image/worldbankprod/DIME-logo-new?wid=780&hei=439&qlt=85,0&resMode=sharp" style="object-fit: contain; width: 120px;" /></a>
+           </div>
+              
+            <div class="grid-item second-row">
+              <div class="img-container">
+                  <div class="fill">
+                      <a target="_blank" rel="noopener noreferrer" href="https://www.worldbank.org/en/about/unit/unit-dec/impactevaluation"><img src="https://worldbank.scene7.com/is/image/worldbankprod/DIME-logo-new?wid=780&hei=439&qlt=85,0&resMode=sharp" style="object-fit: contain; width: 120px;" /></a>
+                  </div>
                 </div>
-              </div>
-         </div>
-         
-         <!-- 7th logo (DECRG) -->
-         <div class="grid-item second-row">
-            <div class="img-container">
-                <div class="fill">
-                    <a target="_blank" rel="noopener noreferrer" href="#"><img src="DECRG_logo.png" style="object-fit: contain; width: 130px;" /></a>
+           </div>
+           
+           <!-- 7th logo (DECRG) -->
+           <div class="grid-item second-row">
+              <div class="img-container">
+                  <div class="fill">
+                      <a target="_blank" rel="noopener noreferrer" href="#"><img src="DECRG_logo.png" style="object-fit: contain; width: 130px;" /></a>
+                  </div>
                 </div>
-              </div>
-         </div>
+           </div>
+          </div>
          
         </div> 
         <hr style="color: #F1F1F1">
-    </div>	
+    </div>
 	
 </body>
 </html>
