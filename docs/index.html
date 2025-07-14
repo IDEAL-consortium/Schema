@@ -17,7 +17,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-  }
+}
 
 div.content h2 {
   color: #1f3667;
@@ -25,495 +25,418 @@ div.content h2 {
 strong {
   color: #1f3667;
 }
-	  
-  .main {
+
+/* Header Styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 0;
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.header.scrolled .logo {
+    color: #1f3667;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 0.5rem;
+}
+
+.logo-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.logo-tagline {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.header.scrolled .logo-tagline {
+    color: #1f3667;
+}
+
+.header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Search Form Styles */
+.search-wrapper {
+    position: relative;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    max-width: 300px;
+}
+
+.header.scrolled .search-form {
+    background: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.search-input {
+    background: none;
+    border: none;
+    padding: 0.75rem 1rem;
+    color: white;
+    font-size: 0.9rem;
+    width: 200px;
+    transition: color 0.3s ease;
+}
+
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    transition: color 0.3s ease;
+}
+
+.header.scrolled .search-input {
+    color: #1f3667;
+}
+
+.header.scrolled .search-input::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.search-input:focus {
+    outline: none;
+}
+
+.search-button {
+    background: none;
+    border: none;
+    padding: 0.75rem;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.header.scrolled .search-button {
+    color: #1f3667;
+}
+
+.search-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.search-icon {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+/* Button Styles */
+.mobile-menu-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    padding: 0.5rem;
+}
+
+.header.scrolled .mobile-menu-button {
+    color: #1f3667;
+}
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    min-width: 200px;
+    display: none;
+    z-index: 1001;
+    margin-top: 0.5rem;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #1f3667;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dropdown-menu a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f8f9fa;
+}
+
+.dropdown-container {
+    position: relative;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Main Layout */
+.main {
     display: flex;
     flex: 1;
-  }
+}
 
-position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 1rem 0;
-            background: rgba(255, 255, 255, 0);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .header.scrolled {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .header-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 2rem;
-        }
-
-        .logo-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-
-        .header.scrolled .logo {
-            color: #1f3667;
-        }
-
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            margin-right: 0.5rem;
-        }
-
-        .logo-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .logo-tagline {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 0.9rem;
-            font-weight: 400;
-            transition: color 0.3s ease;
-        }
-
-        .header.scrolled .logo-tagline {
-            color: #1f3667;
-        }
-
-        .header-buttons {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        /* Search Form Styles */
-        .search-wrapper {
-            position: relative;
-        }
-
-        .search-form {
-            display: flex;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 25px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            max-width: 300px;
-        }
-
-        .header.scrolled .search-form {
-            background: rgba(0, 0, 0, 0.05);
-            border-color: rgba(0, 0, 0, 0.1);
-        }
-
-        .search-input {
-            background: none;
-            border: none;
-            padding: 0.75rem 1rem;
-            color: white;
-            font-size: 0.9rem;
-            width: 200px;
-            transition: color 0.3s ease;
-        }
-
-        .search-input::placeholder {
-            color: rgba(255, 255, 255, 0.6);
-            transition: color 0.3s ease;
-        }
-
-        .header.scrolled .search-input {
-            color: #1f3667;
-        }
-
-        .header.scrolled .search-input::placeholder {
-            color: rgba(0, 0, 0, 0.4);
-        }
-
-        .search-input:focus {
-            outline: none;
-        }
-
-        .search-button {
-            background: none;
-            border: none;
-            padding: 0.75rem;
-            color: white;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .header.scrolled .search-button {
-            color: #1f3667;
-        }
-
-        .search-button:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .search-icon {
-            width: 18px;
-            height: 18px;
-            fill: currentColor;
-        }
-
-        /* Button Styles */
-        .mobile-menu-button {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: color 0.3s ease;
-            padding: 0.5rem;
-        }
-
-        .header.scrolled .mobile-menu-button {
-            color: #1f3667;
-        }
-
-        /* Dropdown Menu Styles */
-        .dropdown-menu {
-            position: absolute;
-            top: 100%;
-            right: 0;
-            background: white;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-            min-width: 200px;
-            display: none;
-            z-index: 1001;
-            margin-top: 0.5rem;
-        }
-
-        .dropdown-menu.show {
-            display: block;
-        }
-
-        .dropdown-menu a {
-            display: block;
-            padding: 0.75rem 1rem;
-            color: #1f3667;
-            text-decoration: none;
-            transition: background-color 0.2s ease;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        }
-
-        .dropdown-menu a:last-child {
-            border-bottom: none;
-        }
-
-        .dropdown-menu a:hover {
-            background-color: #f8f9fa;
-        }
-
-        .dropdown-container {
-            position: relative;
-        }
-
-        /* Demo Content */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-        }
-
-        .hero-content h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        .content-section {
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .content-section h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-
-        .content-section p {
-            margin-bottom: 1.5rem;
-            color: #666;
-            line-height: 1.8;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .header-inner {
-                flex-wrap: wrap;
-                gap: 1rem;
-            }
-
-            .logo-tagline {
-                display: none;
-            }
-
-            .search-form {
-                max-width: 200px;
-            }
-
-            .search-input {
-                width: 120px;
-            }
-
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-
-            .header-container {
-                padding: 0 1rem;
-            }
-
-            .dropdown-menu {
-                right: -1rem;
-                left: auto;
-                min-width: 180px;
-            }
-        }
-
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-	  
-  .sidebar {
+.sidebar {
     width: 220px;
     background-color: #ffffff;
     padding: 20px;
     border-radius: 0 10px 10px 0;
     box-shadow: 2px 0 5px rgba(0,0,0,0.05);
-  }
+}
 
-  .sidebar-logo img {
-    width: 120px;
-    display: block;
-    margin: 0 auto 20px auto;
-  }
-
-  .sidebar-links {
+.sidebar-links {
     list-style: none;
     padding-left: 0;
     margin: 0;
-  }
+}
 
-  .sidebar-links li {
+.sidebar-links li {
     margin: 10px 0;
-  }
+}
 
-  .sidebar a {
+.sidebar a {
     color: #1f3366;
     text-decoration: none;
     font-weight: normal;
-  }
+}
 
-  .sidebar a:hover {
+.sidebar a:hover {
     color: #7ec5bb;
-  }
+}
 
-  .content {
+.content {
     flex: 1;
     padding: 40px;
-  }
-  .grid-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-gap: 30px;
-            margin: 20px 0;
-            padding: 20px;
-            align-items: center;
-            justify-items: center;
-        }
-        
-        .grid-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 80px; /* Fixed height for equal vertical spacing */
-            width: 100%;
-        }
-        
-        /* Second row with smaller logos */
-        .grid-item.second-row {
-            height: 60px; /* Smaller height for second row */
-        }
-        
-        .img-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-            width: 100%;
-        }
-        
-        .fill {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-            width: 100%;
-        }
-        
-        .grid-item img {
-            object-fit: contain;
-            max-height: 60px;
-            transition: transform 0.3s ease;
-        }
-        
-        /* Smaller images for second row */
-        .grid-item.second-row img {
-            max-height: 45px;
-        }
-        
-        .grid-item img:hover {
-            transform: scale(1.05);
-        }
-        
-        .grid-item a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            height: 100%;
-            width: 100%;
-        }
-        
-        /* Second row - create a centered container that spans all columns */
-        .grid-item:nth-child(5) {
-            grid-column: 1 / -1; /* Span all columns */
-            grid-row: 2;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            width: 100%;
-        }
-        
-        .grid-item:nth-child(6) {
-            grid-column: 1 / -1;
-            grid-row: 2;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            width: 100%;
-        }
-        
-        .grid-item:nth-child(7) {
-            grid-column: 1 / -1;
-            grid-row: 2;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            width: 100%;
-        }
-        
-        /* Create a wrapper for the second row items */
-        .second-row-container {
-            grid-column: 1 / -1;
-            grid-row: 2;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            width: 100%;
-        }
-        
-        /* Responsive design */
-        @media (max-width: 768px) {
-            .grid-container {
-                grid-template-columns: repeat(2, 1fr);
-                grid-gap: 20px;
-            }
-            
-            .second-row-container {
-                flex-direction: column;
-                gap: 20px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .grid-container {
-                grid-template-columns: 1fr;
-                grid-gap: 15px;
-            }
-            
-            .second-row-container {
-                flex-direction: column;
-                gap: 15px;
-            }
-        }
+}
 
-  @media (max-width: 768px) {
+/* Footer Styles */
+footer {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin: 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin: 20px 0;
+    align-items: center;
+    justify-items: center;
+}
+
+.footer-grid-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    width: 100%;
+}
+
+.footer-grid-item img {
+    object-fit: contain;
+    max-height: 60px;
+    transition: transform 0.3s ease;
+}
+
+.footer-grid-item img:hover {
+    transform: scale(1.05);
+}
+
+.footer-grid-item a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+}
+
+.footer-second-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 20px 0;
+}
+
+.footer-second-row .footer-grid-item {
+    height: 60px;
+    width: auto;
+}
+
+.footer-second-row .footer-grid-item img {
+    max-height: 45px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-inner {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .logo-tagline {
+        display: none;
+    }
+
+    .search-form {
+        max-width: 200px;
+    }
+
+    .search-input {
+        width: 120px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .header-container {
+        padding: 0 1rem;
+    }
+
+    .dropdown-menu {
+        right: -1rem;
+        left: auto;
+        min-width: 180px;
+    }
+
     .main {
-      flex-direction: column;
+        flex-direction: column;
     }
 
     .sidebar {
-      width: 100%;
-      border-radius: 0;
-      box-shadow: none;
-      border-bottom: 1px solid #ddd;
+        width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+        border-bottom: 1px solid #ddd;
     }
 
     .content {
-      padding: 20px;
+        padding: 20px;
     }
-  }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .footer-second-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .footer-second-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
 </style>
+</head>
 
-<header></header>
-
-<div class="main">
-  <nav class="sidebar">
-    <div class="sidebar-logo">
-      <img src="ideal_logo.png" alt="IDEAL Logo">
-    </div>
-	<br>
-    <ul class="sidebar-links">
-      <li><a href="Schema_Index.html">IDEAL Metadata Schema</a></li>
-      <li><a href="Stage_1_Protocol_Index.html">IDEAL Coding Protocol</a></li>
-	<li><a href="About us">Meet the IDEAL Team</a></li>
-    </ul>
-  </nav>
-
-<header class="header" id="header">
+<body>
+    <header class="header" id="header">
         <div class="header-container">
             <div class="header-inner">
                 <div class="logo-wrapper">
@@ -555,7 +478,7 @@ position: fixed;
         </div>
     </header>
 
-    <!-- Demo Content -->
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h1>Introducing IDEAL</h1>
@@ -563,108 +486,120 @@ position: fixed;
         </div>
     </section>
 
-<body>
-    <div class="content">
-      <p>
-	Hello and welcome to IDEAL, a <strong>platform designed to extract results data from international development RCTs and make them accessible to researchers and policymakers</strong>. The project is currently in a pilot phase, during which we extract information from a curated initial set of studies and develop robust protocols to grow and maintain IDEAL in the future.
-	</p>
-	<p>
-	IDEAL is supported by a global consortium of institutions. Hosted by the World Bank, IDEAL will be fully open-access and free for the world to use. Users will be able to easily <strong>search, compare, and visualize</strong> the relative effect sizes of different policy interventions on a range of outcomes, across countries and contexts. IDEAL will facilitate quantitative meta-analyses as well as qualitative reviews, whether centered on a policy, population, or outcome. 
-	</p>
-	<p>    
-	You can view the <strong><a href="Schema_Index.html">IDEAL metadata schema</a></strong> to see what data is collected and the detailed <strong><a href="Stage_1_Protocol_Index.html">coding protocol</a></strong> for the IDEAL survey, with guidance for our coders who are completing the data extraction.
-      </p>
-	<br>
-      <p>
-        <strong>Motivation</strong>
-      </p>
-      <p>
-        The last few decades have seen <strong>explosive growth in randomized impact evaluations</strong> that seek to guide policy decision-making in low- and middle-income countries. IDEAL will contribute to translating the insights from multiple studies into <strong>actionable and credible policy insights</strong> by making the impact of different interventions easily comparable across studies. Beyond this core purpose, IDEAL will help guide the standardization of key information from randomized evaluations and unlock the potential to answer a wide range of methodological questions about RCTs.
-      </p>
-      <p>
-        <strong>Next Steps</strong>
-      </p>
-      <p>
-        Once IDEAL is established, we will invite others to join, guided by consistent protocols for adding new content and rigorous quality control. We will provide <strong>public access to IDEAL data</strong>, aided by a website that can filter studies by a wide range of criteria and display results immediately. We will also develop a set of pedagogical resources to make evidence aggregation methods widely accessible.
-      </p>
+    <div class="main">
+        <nav class="sidebar">
+            <ul class="sidebar-links">
+                <li><a href="Schema_Index.html">IDEAL Metadata Schema</a></li>
+                <li><a href="Stage_1_Protocol_Index.html">IDEAL Coding Protocol</a></li>
+                <li><a href="About us">Meet the IDEAL Team</a></li>
+            </ul>
+        </nav>
+
+        <div class="content">
+            <p>
+                Hello and welcome to IDEAL, a <strong>platform designed to extract results data from international development RCTs and make them accessible to researchers and policymakers</strong>. The project is currently in a pilot phase, during which we extract information from a curated initial set of studies and develop robust protocols to grow and maintain IDEAL in the future.
+            </p>
+            <p>
+                IDEAL is supported by a global consortium of institutions. Hosted by the World Bank, IDEAL will be fully open-access and free for the world to use. Users will be able to easily <strong>search, compare, and visualize</strong> the relative effect sizes of different policy interventions on a range of outcomes, across countries and contexts. IDEAL will facilitate quantitative meta-analyses as well as qualitative reviews, whether centered on a policy, population, or outcome. 
+            </p>
+            <p>    
+                You can view the <strong><a href="Schema_Index.html">IDEAL metadata schema</a></strong> to see what data is collected and the detailed <strong><a href="Stage_1_Protocol_Index.html">coding protocol</a></strong> for the IDEAL survey, with guidance for our coders who are completing the data extraction.
+            </p>
+            <br>
+            <p>
+                <strong>Motivation</strong>
+            </p>
+            <p>
+                The last few decades have seen <strong>explosive growth in randomized impact evaluations</strong> that seek to guide policy decision-making in low- and middle-income countries. IDEAL will contribute to translating the insights from multiple studies into <strong>actionable and credible policy insights</strong> by making the impact of different interventions easily comparable across studies. Beyond this core purpose, IDEAL will help guide the standardization of key information from randomized evaluations and unlock the potential to answer a wide range of methodological questions about RCTs.
+            </p>
+            <p>
+                <strong>Next Steps</strong>
+            </p>
+            <p>
+                Once IDEAL is established, we will invite others to join, guided by consistent protocols for adding new content and rigorous quality control. We will provide <strong>public access to IDEAL data</strong>, aided by a website that can filter studies by a wide range of criteria and display results immediately. We will also develop a set of pedagogical resources to make evidence aggregation methods widely accessible.
+            </p>
+        </div>
     </div>
-  </div>
 
-<br>
-</body>
-	
-<footer>
-
-<div style="background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+    <footer>
         <hr style="color: #F1F1F1">
         <p style="color: #63bfb2; margin: 0% 0% 0% 0%">IDEAL Consortium Members:</p>
        
-        <div class="grid-container" style="margin: 0% 0% 0% 0%">
+        <div class="footer-grid">
+            <div class="footer-grid-item">
+                <a target="_blank" rel="noopener noreferrer" href="https://cega.berkeley.edu/our-work/">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/CEGA_Logo.png/800px-CEGA_Logo.png" style="width: 130px;" alt="CEGA Logo" />
+                </a>
+            </div>
+            
+            <div class="footer-grid-item">
+                <a target="_blank" rel="noopener noreferrer" href="https://www.worldbank.org/en/research/brief/ideal">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/World_Bank_Group_logo.svg/300px-World_Bank_Group_logo.svg.png" style="width: 160px;" alt="World Bank Logo" />
+                </a>
+            </div>
+            
+            <div class="footer-grid-item">
+                <a target="_blank" rel="noopener noreferrer" href="https://www.kellogg.northwestern.edu/academics-research/global-poverty-research-lab//">
+                    <img src="https://bpb-us-e1.wpmucdn.com/sites.northwestern.edu/dist/8/4150/files/2020/02/GPRL_vertical-768x394.png" style="width: 120px;" alt="GPRL Logo" />
+                </a>
+            </div>
+            
+            <div class="footer-grid-item">
+                <a target="_blank" rel="noopener noreferrer" href="https://www.aidgrade.org">
+                    <img src="https://www.aidgrade.org/wp-content/uploads/2013/03/AidGrade-logo.jpg" style="width: 130px;" alt="AidGrade Logo" />
+                </a>
+            </div>
+        </div>
         
-          <!-- First row (4 logos) -->
-          <div class="grid-item">
-            <div class="img-container">
-                <div class="fill">
-                    <a target="_blank" rel="noopener noreferrer" href="https://cega.berkeley.edu/our-work/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/CEGA_Logo.png/800px-CEGA_Logo.png" style="object-fit: contain; width: 130px;" /></a>
-               </div>
-              </div>
-         </div>
-         
-         <div class="grid-item">
-            <div class="img-container">
-                <div class="fill">
-                    <a target="_blank" rel="noopener noreferrer" href="https://www.worldbank.org/en/research/brief/ideal"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/World_Bank_Group_logo.svg/300px-World_Bank_Group_logo.svg.png" style="object-fit: contain; width: 160px;" /></a>
-                </div>
-              </div>
-         </div>
-         
-         <div class="grid-item">
-            <div class="img-container">
-                <div class="fill">
-                    <a target="_blank" rel="noopener noreferrer" href="https://www.kellogg.northwestern.edu/academics-research/global-poverty-research-lab//"><img src="https://bpb-us-e1.wpmucdn.com/sites.northwestern.edu/dist/8/4150/files/2020/02/GPRL_vertical-768x394.png" style="object-fit: contain; width: 120px;" /></a>
-                </div>
-              </div>
-         </div>
-         
-         <div class="grid-item">
-            <div class="img-container">
-                <div class="fill">
-                    <a target="_blank" rel="noopener noreferrer" href="https://www.aidgrade.org"><img src="https://www.aidgrade.org/wp-content/uploads/2013/03/AidGrade-logo.jpg" style="object-fit: contain; width: 130px;" /></a>
-                </div>
-              </div>
-         </div>
-          
-          <!-- Second row (3 logos, smaller, centered) -->
-          <div class="second-row-container">
-            <div class="grid-item second-row">
-              <div class="img-container">
-                  <div class="fill">
-                      <a target="_blank" rel="noopener noreferrer" href="https://www.worldbank.org/en/programs/sief-trust-fund"><img src="https://poverty-action.org/sites/default/files/atoms/image/2020/08/21/SIEF-Logo.jpg" style="object-fit: contain; width: 200px;" /></a>
-                  </div>
-                </div>
-           </div>
-              
-            <div class="grid-item second-row">
-              <div class="img-container">
-                  <div class="fill">
-                      <a target="_blank" rel="noopener noreferrer" href="https://www.worldbank.org/en/about/unit/unit-dec/impactevaluation"><img src="https://worldbank.scene7.com/is/image/worldbankprod/DIME-logo-new?wid=780&hei=439&qlt=85,0&resMode=sharp" style="object-fit: contain; width: 120px;" /></a>
-                  </div>
-                </div>
-           </div>
-           
-           <!-- 7th logo (DECRG) -->
-           <div class="grid-item second-row">
-              <div class="img-container">
-                  <div class="fill">
-                      <a target="_blank" rel="noopener noreferrer" href="#"><img src="DECRG_logo.png" style="object-fit: contain; width: 130px;" /></a>
-                  </div>
-                </div>
-           </div>
-          </div>
-         
-        </div> 
+        <div class="footer-second-row">
+            <div class="footer-grid-item">
+                <a target="_blank" rel="noopener noreferrer" href="https://www.worldbank.org/en/programs/sief-trust-fund">
+                    <img src="https://poverty-action.org/sites/default/files/atoms/image/2020/08/21/SIEF-Logo.jpg" style="width: 200px;" alt="SIEF Logo" />
+                </a>
+            </div>
+            
+            <div class="footer-grid-item">
+                <a target="_blank" rel="noopener noreferrer" href="https://www.worldbank.org/en/about/unit/unit-dec/impactevaluation">
+                    <img src="https://worldbank.scene7.com/is/image/worldbankprod/DIME-logo-new?wid=780&hei=439&qlt=85,0&resMode=sharp" style="width: 120px;" alt="DIME Logo" />
+                </a>
+            </div>
+            
+            <div class="footer-grid-item">
+                <a target="_blank" rel="noopener noreferrer" href="#">
+                    <img src="DECRG_logo.png" style="width: 130px;" alt="DECRG Logo" />
+                </a>
+            </div>
+        </div>
+        
         <hr style="color: #F1F1F1">
-    </div>
-	
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        document.getElementById('menuButton').addEventListener('click', function() {
+            const dropdownMenu = document.getElementById('dropdownMenu');
+            dropdownMenu.classList.toggle('show');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdownContainer = document.querySelector('.dropdown-container');
+            const dropdownMenu = document.getElementById('dropdownMenu');
+            
+            if (!dropdownContainer.contains(event.target)) {
+                dropdownMenu.classList.remove('show');
+            }
+        });
+    </script>
 </body>
 </html>
