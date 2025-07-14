@@ -13,15 +13,46 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+  
   }
-
   header {
-    height: 390px;
-    background: url('header_bg.png') center center / cover no-repeat;
-    display: flex;
-    align-items: center;
-    padding: 20px;
+  aspect-ratio: 24 / 1; /* Very wide banner ratio */
+  background: url('header_bg.png') center center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  min-height: 80px; /* Ensures it's not too short on very wide screens */
+  max-height: 200px; /* Prevents it from getting too tall */
+}
+
+/* Tablet adjustments */
+@media (max-width: 1024px) {
+  header {
+    aspect-ratio: 16 / 1;
+    min-height: 70px;
+    max-height: 150px;
   }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  header {
+    aspect-ratio: 8 / 1; /* Less extreme ratio for mobile */
+    min-height: 60px;
+    max-height: 120px;
+    padding: 15px;
+  }
+}
+
+/* Small mobile adjustments */
+@media (max-width: 480px) {
+  header {
+    aspect-ratio: 6 / 1;
+    min-height: 50px;
+    max-height: 100px;
+    padding: 10px;
+  }
+}
 
 .content h2 {
   color: #454655;
@@ -177,26 +208,24 @@
     <div class="content">
       <h2>Introducing the Impact Data and Evidence Aggregation Library (IDEAL)</h2>
       <p>
-        Hello and welcome to IDEAL, a platform designed to extract results data from international development RCTs and make them accessible to researchers and policymakers. The project is currently in a pilot stage. You can view our <strong><a href="Schema_Index.html">metadata schema</a></strong> to see our data extraction fields, and our <strong><a href="Stage_1_Protocol_Index.html">coding protocol</a></strong> with guidance for our coders who are completing the data extraction.
+	Hello and welcome to IDEAL, a <strong>platform designed to extract results data from international development RCTs and make them accessible to researchers and policymakers</strong>. The project is currently in a pilot phase, during which we extract information from a curated initial set of studies and develop robust protocols to grow and maintain IDEAL in the future.
+	<br>   
+	IDEAL is supported by a global consortium of institutions. Hosted by the World Bank, IDEAL will be fully open-access and free for the world to use. Users will be able to easily <strong>search, compare, and visualize</strong> the relative effect sizes of different policy interventions on a range of outcomes, across countries and contexts. IDEAL will facilitate quantitative meta-analyses as well as qualitative reviews, whether centered on a policy, population, or outcome. 
+	<br>     
+	You can view the <strong><a href="Schema_Index.html">IDEAL metadata schema</a></strong> to see what data is collected and the detailed <strong><a href="Stage_1_Protocol_Index.html">coding protocol</a></strong> for the IDEAL survey, with guidance for our coders who are completing the data extraction.
       </p>
 	<br>
       <p>
         <strong>Motivation</strong>
       </p>
       <p>
-        The last few decades have seen explosive growth in the number of impact evaluations—randomized evaluations in particular—that seek to guide policy decision-making in low- and middle-income countries. However, there are important gaps in translating this ever-expanding wealth of knowledge into actionable and credible policy insights. When moving from evidence generation to aggregation, translation, and adaptation, a key challenge is the <em>lack of standardization and comparability of the main results produced by each study.</em>
+        The last few decades have seen <strong>explosive growth in randomized impact evaluations</strong> that seek to guide policy decision-making in low- and middle-income countries. IDEAL will contribute to translating the insights from multiple studies into <strong>actionable and credible policy insights</strong> by making the impact of different interventions easily comparable across studies. Beyond this core purpose, IDEAL will help guide the standardization of key information from randomized evaluations and unlock the potential to answer a wide range of methodological questions about RCTs.
       </p>
       <p>
-        <strong>Activities</strong>
+        <strong>Next Steps</strong>
       </p>
       <p>
-        IDEAL is being constructed by a global consortium of institutions. Hosted by the World Bank, IDEAL will be fully open-access and free for the world to use. Users can easily search, compare, and visualize relative effect sizes on a range of outcomes and of many different policy interventions across countries and contexts. We expect IDEAL to facilitate quantitative meta-analyses as well as more qualitative systematic reviews, whether such efforts are centered around an intervention, policy, population, or outcome.
-      </p>
-      <p>
-        Importantly, IDEAL will help guide the standardization of key information from randomized evaluations, enabling more meaningful comparisons across studies while unlocking the potential to answer a wide range of methodological questions.
-      </p>
-      <p>
-        The IDEAL team will begin with a pilot phase, during which we will extract a minimum set of fields for a curated initial set of studies, and develop protocols for the library's ongoing growth and maintenance. Once established, we will invite others to join, guided by consistent protocols for adding new content and rigorous quality control. Ultimately, we aim to scale across many sectors and programs in global development and develop a set of pedagogical resources for mainstreaming evidence aggregation methods across the research and policy community.
+        Once IDEAL is established, we will invite others to join, guided by consistent protocols for adding new content and rigorous quality control. We will provide <strong>public access to IDEAL data</strong>, aided by a website that can filter studies by a wide range of criteria and display results immediately. We will also develop a set of pedagogical resources to make evidence aggregation methods widely accessible.
       </p>
     </div>
   </div>
