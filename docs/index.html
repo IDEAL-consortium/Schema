@@ -56,6 +56,7 @@ strong {
 .header-inner {
     display: flex;
     align-items: center;
+    justify-content: space-between; /* NEW: pushes left and right apart */
     gap: 2rem;
 }
 
@@ -80,9 +81,10 @@ strong {
 }
 
 .logo-icon {
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     margin-right: 0.5rem;
+    position: relative;
 }
 
 /* Logo image switching */
@@ -315,6 +317,11 @@ strong {
     box-shadow: 2px 0 5px rgba(0,0,0,0.05);
 }
 
+.sidebar {
+  position: sticky;
+  top: 80px; /* Adjust based on header height */
+}
+    
 .sidebar-links {
     list-style: none;
     padding-left: 0;
@@ -431,6 +438,8 @@ footer {
     }
 
     .header-container {
+        max-width: 1200px;
+        margin: 0 auto;
         padding: 0 1rem;
     }
 
@@ -491,12 +500,14 @@ html {
         <div class="header-container">
             <div class="header-inner">
                 <div class="logo-wrapper">
-                    <a href="#" class="logo">
-                        <div class="logo-icon">
-                            <img src="ideal_logo_reversed.png" alt="IDEAL Logo" class="logo-white">
-                            <img src="ideal_logo.png" alt="IDEAL Logo" class="logo-dark">
+                   <a href="#" class="logo">
+                    <div class="logo-icon">
+                      <img src="ideal_logo_reversed.png" alt="IDEAL Logo" class="logo-white">
+                      <img src="ideal_logo.png" alt="IDEAL Logo" class="logo-dark">
+                    </div>
+                    <span class="logo-tagline">Impact Data and Evidence Aggregation Library</span>
+                  </a>
                 </div>
-                </a>
                 
                 <div class="header-buttons">
                     <div class="search-wrapper">
