@@ -97,6 +97,8 @@
 
 <details open>
 <summary>Stage 1 Set-Up</summary>
+
+<!-- Coder name -->
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
   <div>
     <h3>Variable name in SurveyCTO</h3>
@@ -122,6 +124,8 @@
     <p>see the [section] used in the paper to extract</p>
   </div>
 </div>
+
+<!-- Paper ID -->
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
   <div>
     <h3>Variable name in SurveyCTO</h3>
@@ -147,49 +151,144 @@
     <p>see the [section] used in the paper to extract</p>
   </div>
 </div>
+
+<!-- Paper title -->
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
   <div>
-    <h3>Variable name in surveyCTO</h3>
+    <h3>Variable name in SurveyCTO</h3>
     <p><strong>X_titleConfirm</strong></p>
-    <h3>Field name</h3>
+    <h3>Field name (LABEL on SurveyCTO)</h3>
     <p>Paper title</p>
-    <h3>Definition</h3>
-    <p>Please confirm: The title of the paper on surveyCTO.</p>
+    <h3>Definition (LABEL on SurveyCTO)</h3>
+    <p>Please confirm: The title of the paper on SurveyCTO.</p>
     <h3>Response options</h3>
     <p>text-CV</p>
-    <h3>CV</h3>
-    <p><em>Select one: Yes, No</em></p>
+    <h3>CV (Choices on SurveyCTO)</h3>
+    <ul>
+      <li>Yes</li>
+      <li>No</li>
+    </ul>
+    <h3>SurveyCTO instructions for data entry mask and repeat level</h3>
+    <ul>
+      <li>Title associated with the ID appears</li>
+      <li>End survey if field = no</li>
+    </ul>
   </div>
   <div>
-    <h3>Coding instructions</h3>
+    <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
     <ul>
-      <li>Confirm the name of the paper that appears on surveyCTO matches the name of the paper on the list assigned to you.</li>
+      <li>Confirm the name of the paper that appears on SurveyCTO matches the name of the paper on the list assigned to you.</li>
       <li>If you have selected no, a message will be sent to your supervisor. Please await a new corrected paper assignment.</li>
     </ul>
     <h3>Descriptive example</h3>
     <p>see the [section] used in the paper to extract</p>
   </div>
 </div>
+
+<!-- Paper correction -->
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
   <div>
-    <h3>Variable name in surveyCTO</h3>
+    <h3>Variable name in SurveyCTO</h3>
     <p><strong>X_correction</strong></p>
-    <h3>Field name</h3>
+    <h3>Field name (LABEL on SurveyCTO)</h3>
     <p>Correction</p>
-    <h3>Definition</h3>
+    <h3>Definition (LABEL on SurveyCTO)</h3>
     <p>Check if you are correcting an earlier entry</p>
     <h3>Response options</h3>
-    <p>text-CV</p>
-    <h3>CV</h3>
-    <p><em>Select one: Yes, No</em></p>
+    <p>Check box</p>
+    <h3>CV (Choices on SurveyCTO)</h3>
+    <p>N/A</p>
+    <h3>SurveyCTO instructions for data entry mask and repeat level</h3>
+    <p>If this box is checked, the last entry for this paper should be pre-loaded for all questions.</p>
   </div>
   <div>
-    <h3>Coding instructions</h3>
-    <p></p>
+    <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+    <ul>
+      <li>If you have received a resubmission request for your previous entry and are ready to start your new entry, please check this box.</li>
+    </ul>
     <h3>Descriptive example</h3>
     <p>see the [section] used in the paper to extract</p>
   </div>
 </div>
+
+<!-- Multi-site study entry -->
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Variable name in SurveyCTO</h3>
+    <p><strong>MulExp</strong></p>
+    <h3>Field name (LABEL on SurveyCTO)</h3>
+    <p>Multiple experiments</p>
+    <h3>Definition (LABEL on SurveyCTO)</h3>
+    <p>Check if you are entering responses for an experiment in a previously submitted paper.</p>
+    <h3>Response options</h3>
+    <p>Check box</p>
+    <h3>CV (Choices on SurveyCTO)</h3>
+    <p>N.A.</p>
+    <h3>SurveyCTO instructions for data entry mask and repeat level</h3>
+    <ul>
+      <li>If this box is checked, the last entry for this paper should be pre-loaded for all questions.</li>
+      <li>Additionally, if this box is checked, a new entry ID should be created for this entry, as ""</li>
+    </ul>
+  </div>
+  <div>
+    <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+    <ul>
+      <li>If you are coding a multi-site or multi-experiment paper, please enter each experiment separately. Check this box if you are entering another experiment for a previously submitted paper.</li>
+      <li>Please do not check this box if this is the first response for the paper.</li>
+    </ul>
+    <h3>Descriptive example</h3>
+    <p>
+      see the [section] used in the paper to extract<br>
+      <strong>Barrera-Osorio et al. 2011</strong> report effects from two different experiments in Bogota in different parts of the city (San Cristobal and Suba).<br>
+      We would like you to code the experiments in San Cristobal and Suba separately. Only if you have submitted the entry for San Cristobal and are going to code the Suba experiment, please check this box.
+    </p>
+  </div>
+</div>
+
+<!-- Request for review: fields -->
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Level</h3>
+    <p>Request for review: fields</p>
+    <h3>Definition</h3>
+    <p>Would you like to request review for any of your responses?</p>
+    <h3>Response options</h3>
+    <p>Text CV select all</p>
+    <h3>Controlled Vocabulary</h3>
+    <p>List of fields in order of appearance</p>
+    <h3>Instruction for data entry mask</h3>
+    <p>After each logical group of 4-10 questions, create a multiple choice select-all question with the list of fields prior to this question.</p>
+  </div>
+  <div>
+    <h3>Instruction for coders (Hint on SurveyCTO)</h3>
+    <p>Please select all questions you were unsure about.</p>
+    <h3>Descriptive examples for coding</h3>
+  </div>
+</div>
+
+<!-- Request for review: detail -->
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Level</h3>
+    <p>Request for review: detail</p>
+    <h3>Definition</h3>
+    <p>Please provide details.</p>
+    <h3>Response options</h3>
+    <p>Open text</p>
+    <h3>Instruction for data entry mask</h3>
+    <p>If any of the CHECK questions selected in the previous question</p>
+  </div>
+  <div>
+    <h3>Instruction for coders (Hint on SurveyCTO)</h3>
+    <p>For each field, explain what you were uncertain about and (if applicable) which options you were considering.</p>
+    <h3>Descriptive examples for coding</h3>
+    <p>
+      For example, if a coder selects the “Estimand is full sample ITT and LATE/TOT” field in the request-for-review section, they could add an explanation about their uncertainty in this field.<br><br>
+      “Unsure regarding the empirical specification of the estimand. The author mentions that 'we view the evaluation design as quasi-experimental and use difference-in-differences to estimate program impact.' Are the estimates indirectly ITT/LATE/TOT or are they only quasi-experimental estimates?”
+    </p>
+  </div>
+</div>
+
 </details>
 
 <details>
