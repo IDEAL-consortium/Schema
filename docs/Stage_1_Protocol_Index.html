@@ -293,113 +293,46 @@
 
 <details>
 <summary>Stage 1 Fields</summary>
+
+<!-- Number of experiments in the study -->
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
   <div>
-    <h3>Variable name in surveyCTO</h3>
+    <h3>Variable name in SurveyCTO</h3>
     <p><strong>expNum</strong></p>
-    <h3>Field name</h3>
+    <h3>Field name (LABEL on SurveyCTO)</h3>
     <p>Number of experiments in the study</p>
-    <h3>Definition</h3>
+    <h3>Definition (LABEL on SurveyCTO)</h3>
     <p>Number of experiments under evaluation in the paper</p>
     <h3>Response options</h3>
     <p>Numeric</p>
-    <h3>CV</h3>
+    <h3>CV (Choices on SurveyCTO)</h3>
     <p><em>None</em></p>
   </div>
   <div>
-    <h3>Coding instructions</h3>
+    <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
     <ul>
       <li>Please indicate the number of experiments being evaluated in the paper.</li>
       <li>An experiment is principally defined by the study population and unit of randomization, the intervention, and the randomization used to create comparable treatment arms.</li>
       <li>If results are reported from multiple countries, these are likely coming from different experiments.</li>
       <li>Normally, there is only one experiment being evaluated in a paper, but there are exceptions. Please see the example column. The experimental design section often provides information on how many experiments are being tested in the paper.</li>
-      <li>Note that in the pilot, we are not coding studies that are lab-in-the-field experiments. If a study includes a field experiment and a lab-in-the-field experiment, we will only code the field experiment.</li>
+      <li>Note that in the pilot, we are not coding studies that are lab-in-the-field experiments. If a study includes a field experiment and a lab-in-the-field experiment, we will only code the field experiment. In that case, please enter 1 for this field.</li>
       <li>We are also not coding studies in which there is a design intervention rather than a policy intervention. A design intervention includes studies that randomize the order or wording of survey questions.</li>
     </ul>
     <h3>Descriptive example</h3>
-    <p>
-      <a href="https://www.aeaweb.org/articles?id=10.1257/app.3.2.167">Barrera-Osorio et al. 2011</a> report effects from two different experiments in Bogota in different parts of the city (San Cristobal and Suba). The paper declares "As required by the SED, the assessment of the treatments was divided into two separate experiments..." The response to this field would be 2.<br><br>
-      Jeong et al. 2023 evaluate the effects of survey fatigue by randomizing question modules. The coder would notify their supervisors that the paper is a design intervention.<br><br>
-      De Martino et al. 2015 conduct a lab-in-the-field experiment. As it was hypothetical, the coder would notify their supervisors that this is a lab-in-the-field experiment.
-    </p>
-  </div>
-</div>
-<details>
-<summary>Intervention assignment strategy</summary>
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
-  <div>
-    <h3>Variable name in surveyCTO</h3>
-    <p><strong>intAssign</strong></p>
-    <h3>Field name</h3>
-    <p>Intervention assignment strategy</p>
-    <h3>Definition</h3>
-    <p>The strategy used for assigning interventions to study arms</p>
-    <h3>Response options</h3>
-    <p>text-CV</p>
-    <h3>CV</h3>
-    <p><em>Select one</em></p>
     <ul>
-      <li>Parallel</li>
-      <li>Factorial</li>
-      <li>Crossover</li>
-      <li>Adaptive</li>
-      <li>Other</li>
+      <li>
+        <strong>Barrera-Osorio et al. 2011:</strong> Report effects from two different experiments in Bogota in different parts of the city (San Cristobal and Suba). We know that there are two different experiments because the paper declares "As required by the SED, the assessment of the treatments was divided into two separate experiments located in two very similar localities in Bogota, San Cristobal, and Suba." The paper also reports that eligible populations for the tested interventions are different across the two sites: "Eligible registrants in San Cristobal, ranging from grade 6–11..."; and "The tertiary treatment was evaluated separately in an experiment in Suba, where students ranging from grade nine through eleven..." The response to this field would be <strong>2</strong>.
+      </li>
+      <li>
+        <strong>Jeong et al. 2023:</strong> Evaluate the differences in how question modules in a survey are ordered in order to examine the effects of survey fatigue. In this case, the coder should enter <strong>0</strong>.
+      </li>
+      <li>
+        <strong>De Martino et al. 2015:</strong> Conduct a lab-in-the-field experiment on landholders and annual payment offers for environmental services. As the experiment conducted was hypothetical, the coder should enter <strong>0</strong>.
+      </li>
     </ul>
   </div>
-  <div>
-    <h3>Coding instructions</h3>
-    <ul>
-      <li>Parallel: This is the most common strategy used in randomized control trials. Each intervention is assigned to only one arm.</li>
-      <li>Factorial: This design is used when evaluating the impact of two or more interventions alone and in combination with each other. At least one intervention is assigned to more than one study arm.</li>
-      <li>Crossover: This is used when each study arm receives different interventions (including no intervention) in different phases of the study. Also select this option for phase-in or stepped-wedge designs, where the roll-out of the intervention is randomized and every unit ultimately receives the program. If the study endline occurs prior to units receiving interventions beyond what they were initially assigned to, do not select this option.</li>
-      <li>Adaptive: In adaptive designs, the rule by which interventions are randomly assigned can change in the course of the trial, based on the experimental data. For example, in a trial conducted in multiple waves, the number of units assigned to each treatment arm may change across waves based on results in prior waves. Alternatively, in a longitudinal cross-over design, the next intervention to which an experimental unit is "switched" (or the time of switching) may depend on the outcome under the current intervention.</li>
-      <li>Other: If the assignment strategy does not fit in any of the above categories, select this option</li>
-    </ul>
-    <p>- Note: for the pilot, we will only record parallel and factorial assignment designs. Any other design will be flagged for an expert review.</p>
-    <p>- Information on the assignment strategy is found in the experimental/study design or methods sections of a paper. When available, the coder may also consult how an intervention is described in study participant flow diagram.</p>
-    <p>- Note that authors may use the word phased-in while describing rollout of a program, even if the intervention assignment strategy is parallel or factorial.</p>
-    <p>- Note also that some studies may feature a phase-in design or analyze a pilot program, in which a broader population ultimately receives the intervention(s). However, if the study endline is conducted prior to the phase-in of the rest of the units or before the program is expanded, the study will still be included if it has a parallel or factorial intervention assignment strategy.</p>
-    <h3>Descriptive example</h3>
-    <p>see the [section] used in the paper to extract</p>
-    <p><strong>Parallel:</strong> In Barrera-Osorio et al, 2022 , authors evaluate the performance-based reward program by randomizing primary schools into three distinct groups -- recognition, in-kind performance reward, and control [see: Sample and experimental design]. The response to this field is parallel</p>
-    <p><strong>Factorial:</strong> In Andrew et al, 2018 researchers randomized towns into four groups. The first received the psychosocial stimulation only (PS), the second received multiple micronutrient supplementation only (MN), the third received both interventions (PS and MN), and the fourth received neither (Control). The response to this field is factorial design because one arm receives the combination intervention PS + MN.</p>
-    <p><strong>Crossover:</strong> In Lopez et al, 2022 authors vary in which days doctors received a doctor-specific intervention, and in which days patients received a patient-specific intervention. As doctors (and patients) can cross between the control and treatment groups, the response to this field is crossover design [see: Data collection, figure 2].</p>
-    <p>In Miguel and Kremer, 2004 authors vary the timing in which three groups of randomly selected schools receive school-based deworming. As the control group crosses over into the treatment group by the end of the study, the response to this field is crossover.</p>
-  </div>
 </div>
-</details>
 
-<details>
-<summary>Number of interventions</summary>
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
-  <div>
-    <h3>Variable name in surveyCTO</h3>
-    <p><strong>intNum</strong></p>
-    <h3>Field name</h3>
-    <p>Number of interventions</p>
-    <h3>Definition</h3>
-    <p>Number of distinct interventions in the study</p>
-    <h3>Response options</h3>
-    <p>Numeric entry</p>
-    <h3>CV</h3>
-    <p><em>None</em></p>
-  </div>
-  <div>
-    <h3>Coding instructions</h3>
-    <ul>
-      <li>Count the distinct interventions in the paper under evaluation.</li>
-      <li>In factorial designs, some arms receive a package of interventions. In these types of designs, and only in these types of designs, do not split the package of interventions into separate interventions.</li>
-      <li>If a common type of intervention is assigned in varying intensity to different study arms, count each intensity level as a unique intervention.</li>
-      <li>Include any intervention beyond the status quo administered to a group designated as a main control or comparison group.</li>
-      <li>This information is mostly found in the experimental/study design or methods sections of a paper. If there are study participant flow diagrams, these may illuminate the distinct interventions administered to treatment groups.</li>
-    </ul>
-    <h3>Descriptive example</h3>
-    <p>see the [section] used in the paper to extract</p>
-    <p><strong>Barrera-Osorio et al., 2022:</strong> "Out of this sample, 140 schools were randomly assigned to each of the two treatment arms – recognition or in-kind performance rewards – and 140 schools were randomly assigned to the control." The response is 2 interventions. [see: Intervention, sample and experimental design]</p>
-    <p><strong>Ozler et al, 2018:</strong> Four arms and four unique interventions: 1. Learning materials and supplies, 2. Teacher training and mentoring, 3. Teacher incentives, and 4. Parenting training. One intervention common to all arms but not part of the status quo. Response: 4 interventions. [see: Interventions]</p>
-    <p><strong>Egger et al., 2022:</strong> Two interventions: "cash transfer, high saturation" and "cash transfer, low saturation". The cash amount is the same, but saturation differs at the village level. Response: 2 interventions. [see: Figure A1]</p>
-  </div>
-</div>
 </details>
 
 
