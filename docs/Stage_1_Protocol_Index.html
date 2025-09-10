@@ -283,8 +283,8 @@
     <p>For each field, explain what you were uncertain about and (if applicable) which options you were considering.</p>
     <h3>Descriptive examples for coding</h3>
     <p>
-      For example, if a coder selects the “Estimand is full sample ITT and LATE/TOT” field in the request-for-review section, they could add an explanation about their uncertainty in this field.<br><br>
-      “Unsure regarding the empirical specification of the estimand. The author mentions that 'we view the evaluation design as quasi-experimental and use difference-in-differences to estimate program impact.' Are the estimates indirectly ITT/LATE/TOT or are they only quasi-experimental estimates?”
+      For example, if a coder selects the "Estimand is full sample ITT and LATE/TOT" field in the request-for-review section, they could add an explanation about their uncertainty in this field.<br><br>
+      "Unsure regarding the empirical specification of the estimand. The author mentions that 'we view the evaluation design as quasi-experimental and use difference-in-differences to estimate program impact.' Are the estimates indirectly ITT/LATE/TOT or are they only quasi-experimental estimates?"
     </p>
   </div>
 </div>
@@ -333,6 +333,1149 @@
   </div>
 </div>
 
+<!-- Number of experiments check -->
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Variable name in SurveyCTO</h3>
+    <p><strong>expNumcheck</strong></p>
+    <h3>Field name (LABEL on SurveyCTO)</h3>
+    <p>Number of experiments check</p>
+    <h3>Definition (LABEL on SurveyCTO)</h3>
+    <p>You entered the number of experiments other than 1, please double check the number of experiments entered.</p>
+    <h3>Response options</h3>
+    <p>Text-CV, select one</p>
+    <h3>CV (Choices on SurveyCTO)</h3>
+    <ul>
+      <li>Confirm that there is no eligible experiment reported in the paper.</li>
+      <li>Confirm that there is more than one experiment reported in the paper.</li>
+    </ul>
+    <h3>SurveyCTO instructions for data entry mask and repeat level</h3>
+    <ul>
+      <li>Display this field if "Number of experiments in the study" is not 1.</li>
+      <li>The survey should stop if "Confirm that there is no eligible experiment reported in the paper" is selected.</li>
+      <li>Display the below warning message if "Confirm that there is more than one experiment reported in the paper".</li>
+      <li>You are entering responses for a multi-experiment paper. Please only focus on and code one experiment in this response. Start a new survey entry for any additional experiment.</li>
+    </ul>
+  </div>
+  <div>
+    <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+    <ul>
+      <li>You are seeing this question because you indicated that the number of experiments reported in the current papers was not 1. Please double check your answer.</li>
+      <li>Go to the previous question to revise your answer if you think the number of experiments should be 1.</li>
+      <li>Select "Confirm that there is no eligible experiment reported in the paper" if you believe the experiment reported in the paper is not an RCT or not a field RCT. This could include cases where a study only reports lab-in-the field experiments or a design intervention that randomizes the order or wording of survey questions. Note that this will be a rare case since all assigned papers have been pre-screened. The survey will stop after you select this option. Please notify your supervisor that the paper is not eligible for coding.</li>
+      <li>Select "Confirm that there is more than one experiment reported in the paper" when the paper evaluates more than one experiment. In that case, please enter the information for each experiment separately into different survey entries.</li>
+      <li>Please reach out to your supervisors if you are not sure about your answer to this question.</li>
+    </ul>
+    <h3>Descriptive example</h3>
+    <ul>
+      <li><strong>Barrera-Osorio et al. 2011:</strong> The response to this field would be "Confirm that there is more than one experiment reported in the paper".</li>
+      <li><strong>Jeong et al. 2023:</strong> Select "Confirm that there is no eligible experiment reported in the paper" and notify the supervisor that this is a design experiment.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Country -->
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Variable name in SurveyCTO</h3>
+    <p><strong>country</strong></p>
+    <h3>Level</h3>
+    <p>Study</p>
+    <h3>Field name (LABEL on SurveyCTO)</h3>
+    <p>Country</p>
+    <h3>Definition (LABEL on SurveyCTO)</h3>
+    <p>The country in which the experiment was implemented.</p>
+    <h3>Response options</h3>
+    <p>Text-CV select one</p>
+    <h3>CV (Choices on SurveyCTO)</h3>
+    <ul>
+      <li>ISO country codes</li>
+      <li>other</li>
+      <li>not stated</li>
+    </ul>
+    <h3>Cardinality (extraction)</h3>
+    <p>1..n Mandatory and repeatable</p>
+    <h3>Instruction for data entry mask</h3>
+    <ul>
+      <li>In the choices tab of SurveyCTO, make a list of all the country codes with labels containing the country name. Add an open-text field if "other" is selected.</li>
+      <li>In the pilot, we only allow papers with one experiment and one country.</li>
+    </ul>
+  </div>
+  <div>
+    <h3>Instruction for coders (Hint on SurveyCTO)</h3>
+    <ul>
+      <li>Select the country in which the intervention took place, even if the study did not cover the entire country or only mentions a region or city in the country.</li>
+      <li>If the country is not found in the CV, select "other" and then write the name of the country.</li>
+      <li>If you cannot find the name of the country in the main text of the paper or its supplementary materials/appendices, enter "not reported" and specify that you are "unsure" about this field in the request-for-review section of the survey.</li>
+      <li>This information is usually found in the abstract, introduction, context, or research design sections of the main text of the paper.</li>
+    </ul>
+    <h3>Descriptive examples for coding</h3>
+    <ul>
+      <li>The intervention in <strong>Chong et al. 2015</strong> takes place in Mexico, so the coder would select the ISO code and country name for Mexico. [see: Abstract, Introduction, Experimental Design and Implementation sections]</li>
+      <li>The intervention in <strong>Lyall et al. 2020</strong> takes place in Afghanistan, so the coder would choose the ISO code and country name for Afghanistan. [see: Abstract, Introduction]</li>
+      <li>The intervention in <strong>Muralidharan et al. 2021</strong> takes place in Telangana, which is a state in India, so the coder would select the ISO code for India. [see: Abstract, Introduction, Setting and Intervention, and Research Methods sections]</li>
+      <li>The intervention in <strong>Adida et al. 2020</strong> takes place in Benin, so the coder would select the ISO code for Benin. [See: Abstract]</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Sub-national location -->
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Variable name in SurveyCTO</h3>
+    <p><strong>subnationalLocation</strong></p>
+    <h3>Level</h3>
+    <p>Study</p>
+    <h3>Field name (LABEL on SurveyCTO)</h3>
+    <p>Sub-national location</p>
+    <h3>Definition (LABEL on SurveyCTO)</h3>
+    <p>The subnational location where the experiment took place.</p>
+    <h3>Response options</h3>
+    <p>Open-text</p>
+    <h3>CV (Choices on SurveyCTO)</h3>
+    <p><em>None</em></p>
+    <h3>Cardinality (extraction)</h3>
+    <p>1..1 Mandatory and non-repeatable</p>
+    <h3>Instruction for data entry mask</h3>
+    <p></p>
+  </div>
+  <div>
+    <h3>Instruction for coders (Hint on SurveyCTO)</h3>
+    <ul>
+      <li>Enter the largest geographic location within a country where the experiment took place.</li>
+      <li>The location is often not randomly drawn from the country, for example, six states in Mexico were included in the study for some criteria or unspecified reasons.</li>
+      <li>For multi-site studies, the location(s) should differentiate the current experimental site from other experiments reported in the same paper. Please only enter the location for the experiment you are entering information for in this entry.</li>
+    </ul>
+    <h3>Descriptive examples for coding</h3>
+    <ul>
+      <li><strong>Barrera-Osorio et al. 2011</strong> report effects from two different experiments in Bogota in different parts of the city (San Cristobal and Suba). If a coder is entering the information for the experiment in San Cristobal, they should only enter "San Cristobal".</li>
+      <li><strong>Gaikwad and Nellis (2021)</strong> report effects from the same experiment in two cities in India, Delhi and Lucknow. In this case, the coder should enter "Delhi and Lucknow."</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Intervention assignment strategy -->
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+    <div>
+      <h3>Variable name in SurveyCTO</h3>
+      <p><strong>intAssign</strong></p>
+      <h3>Field name (LABEL on SurveyCTO)</h3>
+      <p>Intervention assignment strategy</p>
+      <h3>Definition (LABEL on SurveyCTO)</h3>
+      <p>The strategy used for assigning interventions to study arms</p>
+      <h3>Response options</h3>
+      <p>text-CV</p>
+      <h3>CV (Choices on SurveyCTO)</h3>
+      <p>Select one<br>
+      Parallel<br>
+      Factorial<br>
+      Crossover<br>
+      Adaptive<br>
+      Other, specify</p>
+    </div>
+    <div>
+      <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+      <ul>
+        <li>Parallel: This is the most common strategy used in randomized control trials. Each intervention is assigned to only one arm.</li>
+        <li>Factorial: This design is used when evaluating the impact of two or more interventions alone and in combination with each other. At least one intervention is assigned to more than one study arm.</li>
+        <li>Crossover: This is used when each study arm receives different interventions (including no intervention) in different phases of the study. Also select this option for phase-in or stepped-wedge designs, where the roll-out of the intervention is randomized and every unit ultimately receives the program. If the study endline occurs prior to units receiving interventions beyond what they were initially assigned to, do not select this option.</li>
+        <li>Adaptive: In adaptive designs, the rule by which interventions are randomly assigned can change in the course of the trial, based on the experimental data. For example, in a trial conducted in multiple waves, the number of units assigned to each treatment arm may change across waves based on results in prior waves. Alternatively, in a longitudinal cross-over design, the next intervention to which an experimental unit is "switched" (or the time of switching) may depend on the outcome under the current intervention.</li>
+        <li>Other: If the assignment strategy does not fit in any of the above categories, select this option</li>
+        <li>Information on the assignment strategy is found in the experimental/study design or methods sections of a paper. When available, the coder may also consult how an intervention is described in a study participant flow diagram.</li>
+        <li>Note that authors may use the word phased-in while describing rollout of a program, even if the intervention assignment strategy is parallel or factorial.</li>
+        <li>Note also that some studies may feature a phase-in design or analyze a pilot program, in which a broader population ultimately receives the intervention(s). However, if the study endline is conducted prior to the phase-in of the rest of the units or before the program is expanded, the study will still be included if it has a parallel or factorial intervention assignment strategy.</li>
+      </ul>
+      <h3>Descriptive example</h3>
+      <ul>
+        <li><strong>Parallel:</strong> In Barrera-Osorio et al, 2022, authors evaluate the performance-based reward program by randomizing primary schools into three distinct groups -- recognition, in-kind performance reward, and control [see: Sample and experimental design]. The response to this field is parallel</li>
+        <li><strong>Factorial:</strong> In Andrew et al, 2018 researchers randomized towns into four groups. The first received the psychosocial stimulation only (PS), the second received multiple micronutrient supplementation only (MN), the third received both interventions (PS and MN), and the fourth received neither (Control). The response to this field is factorial design because one arm receives the combination intervention PS + MN.</li>
+        <li><strong>Crossover:</strong> In Lopez et al, 2022 authors vary in which days doctors received a doctor-specific intervention, and in which days patients received a patient-specific intervention. As doctors (and patients) can cross between the control and treatment groups, the response to this field is crossover design [see: Data collection, figure 2]. In Miguel and Kremer, 2004 authors vary the timing in which three groups of randomly selected schools receive school-based deworming. As the control group crosses over into the treatment group by the end of the study, the response to this field is crossover.</li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Number of interventions -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+    <div>
+      <h3>Variable name in SurveyCTO</h3>
+      <p><strong>intNum</strong></p>
+      <h3>Field name (LABEL on SurveyCTO)</h3>
+      <p>Number of interventions</p>
+      <h3>Definition (LABEL on SurveyCTO)</h3>
+      <p>Number of distinct interventions in the study</p>
+      <h3>Response options</h3>
+      <p>Numeric entry</p>
+      <h3>CV (Choices on SurveyCTO)</h3>
+      <p><em>None</em></p>
+    </div>
+    <div>
+      <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+      <ul>
+        <li>Count the distinct interventions in the paper under evaluation.</li>
+        <li>Some arms receive a package of interventions, unless any intervention in the package is evaluated separately, do not split the package of interventions into separate interventions.</li>
+        <li>If a common type of intervention is assigned in varying intensity to different study arms, count each intensity level as a unique intervention.</li>
+        <li>In crossover design, count each roll-out timing as a different intervention.</li>
+        <li>Include any intervention beyond the status quo administered to a group designated as a main control or comparison group.</li>
+        <li>This information is mostly found in the experimental/study design or methods sections of a paper. If there are study participant flow diagrams, these may illuminate the distinct interventions administered to treatment groups.</li>
+      </ul>
+      <h3>Descriptive example</h3>
+      <ul>
+        <li><strong>Barrera-Osorio et al., 2022</strong> have two distinct interventions. "Out of this sample, 140 schools were randomly assigned to each of the two treatment arms – recognition or in-kind performance rewards – and 140 schools were randomly assigned to the control." For this field, the response would be <strong>2 interventions</strong>. [see: Intervention, sample and experimental design]</li>
+        <li><strong>Ozler et al, 2018</strong> have four separate arms and four unique intervention components. Out of the four interventions, one was common to all arms though not part of the status quo in child care centers outside the study sample. The response for this field would be <strong>4 interventions</strong>: 1. Learning materials and supplies, 2. teacher training and mentoring, 3. teacher incentives, and 4. parenting training. [see: Interventions]</li>
+        <li><strong>Egger et al., 2022</strong> The two interventions are "cash transfer, high saturation" and "cash transfer, low saturation". The cash transfer provided to the household is the same in both interventions, but in one arm a larger share of households receive the transfer, so the intensity of treatment at the village level is different. This means there are two different (village level) interventions. [see: Figure A1]</li>
+        <li><strong>Miguel and Kremer (2004)</strong> have a crossover design, in which the deworming treatment is phased in to different schools in different years: "Group 1 schools received free deworming treatment in both 1998 and 1999, Group 2 schools in 1999, while Group 3 schools began receiving treatment in 2001" (page 165). There are three "interventions" in this study, one is the program intervention: "free deworming treatment". The other two are "timing interventions" specific to the crossover design: treatment in 1998 and treatment in 1999. Note that "treatment in 2001" happened after the study period, so should not be included in the interventions.</li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Intervention label -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+    <div>
+      <h3>Variable name in SurveyCTO</h3>
+      <p><strong>intLabel</strong></p>
+      <h3>Field name (LABEL on SurveyCTO)</h3>
+      <p>Intervention label</p>
+      <h3>Definition (LABEL on SurveyCTO)</h3>
+      <p>A short, author used label for the intervention</p>
+      <h3>Response options</h3>
+      <p>Open-text</p>
+      <h3>CV (Choices on SurveyCTO)</h3>
+      <p><em>None</em></p>
+    </div>
+    <div>
+      <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+      <ul>
+        <li>Use the short name of the intervention verbatim as described in the paper and used by the author in tables and figures.</li>
+        <li>The intervention label will be used later to form the names of the study arms and map the unit of randomization and stratification variables to each intervention.</li>
+        <li>Information to derive the name is mostly found in the experimental/study design or methods sections of a paper. The coder may also consult how an intervention is described in tables (for example, if a single intervention has been assigned to a treatment group, then authors may use a brief name to describe this intervention in tables presenting treatment effects). Labels for treatment groups in participant flow diagrams may also provide starting points for brief names for interventions.</li>
+      </ul>
+      <h3>Descriptive example</h3>
+      <ul>
+        <li><strong>Barrera-Osorio et al., 2022</strong> have two interventions. Section 2.1 (Performance-based reward program, p2) states "Rewards took the form of either goods (in-kind) or recognition, depending on the treatment arm to which the teacher's school was assigned. The value of the reward was determined on an absolute scale, without relative performance comparisons to other teachers." One intervention is "Public recognition of high-performing teachers", and the other one is "In-kind reward for high-performing teachers".</li>
+        <li><strong>Ozler et al, 2018</strong> In this study, section 2.3 (Interventions, p451) describes the interventions. The 4 distinct interventions are – (1) "Provision of play and learning materials (intervention common to all arms)", (2) "Training and mentoring of teachers", (3) "Teacher incentives", and (4) "Parenting training".</li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- The total number of study arms including control -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+    <div>
+      <h3>Variable name in SurveyCTO</h3>
+      <p><strong>armNum</strong></p>
+      <h3>Field name (LABEL on SurveyCTO)</h3>
+      <p>The total number of study arms including control</p>
+      <h3>Definition (LABEL on SurveyCTO)</h3>
+      <p>The number of study arms, i.e., subgroups of participants that receive none, one, or several specific interventions</p>
+      <h3>Response options</h3>
+      <p>Numeric</p>
+      <h3>CV (Choices on SurveyCTO)</h3>
+      <p><em>None</em></p>
+    </div>
+    <div>
+      <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+      <ul>
+        <li>Enter the total number of study arms created by the randomized assignment of interventions. A study arm is a subgroup of experimental units that receive the same (set of) interventions. Include the control group(s) in the total number of study arms.</li>
+        <li>In a factorial design, include groups of experimental units that received more than one intervention as separate arms. That is, if there are two interventions (A & B) and participants are assigned to either A alone, B alone, the combination of A & B, or a control group, then this would count as 4 study arms.</li>
+        <li>In a crossover design, each arm should include at least one intervention and a timing indicated in the intervention field. For example, intervention A implemented at timing X should be counted as one arm while intervention A implemented at timing Y is another arm.</li>
+        <li>This information is mostly found in the intervention details, randomization or methods section of the paper. If participant flow diagrams are available, please consult them to see how many arms are in the study. Tables that present the treatment effects can illuminate the different arms as well.</li>
+      </ul>
+      <h3>Descriptive example</h3>
+      <ul>
+        <li><strong>Barrera-Osorio et al., 2022</strong> "Out of this sample, 140 schools were randomly assigned to each of the two treatment arms – recognition or in-kind performance rewards – and 140 schools were randomly assigned to the control." There are 3 treatment arms in this study: 2 treatment arms and 1 control arm.</li>
+        <li><strong>Ozler et al, 2018</strong> has four separate arms and different subsets of 3 interventions are assigned to treatment arms. In this study, there are four arms -T1. Comparison Group: Provision of play and learning materials, T2. T1 + Training and mentoring of teacher, T3. T2 + Teacher incentives, T4. T2 + Parenting training [see: Interventions]. The response for this field is 4.</li>
+        <li><strong>Miguel and Kremer (2004)</strong> has three different arms: one arm that receives the deworming treatment in 1998 and 1999, one arm that receives the deworming treatment in 1999, and one comparison arm that receives the treatment after the data is collected. The response for this field is 3.</li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Mapping interventions to arms -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+    <div>
+      <h3>Variable name in SurveyCTO</h3>
+      <p><strong>armMap</strong></p>
+      <h3>Field name (LABEL on SurveyCTO)</h3>
+      <p>Mapping interventions to arms</p>
+      <h3>Definition (LABEL on SurveyCTO)</h3>
+      <p>Interventions received by each study arms</p>
+      <h3>Response options</h3>
+      <p>text-CV, select all</p>
+      <h3>CV (Choices on SurveyCTO)</h3>
+      <p>List of interventions in field: [Descriptive name of intervention]<br>
+      Add an option "None" at the beginning of the list</p>
+    </div>
+    <div>
+      <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+      <ul>
+        <li>For each arm, select the name of the intervention that is assigned from the drop-down list, starting with the control arm(s).</li>
+        <li>If the control arm received no intervention (status quo), choose "None".</li>
+        <li>For arms that receive a combination of 2 interventions (including timing), select both interventions.</li>
+        <li>This information is mostly found in the intervention details, randomization or methods section of the paper. If participant flow diagrams are available, please consult them to see all the arms in the study.</li>
+      </ul>
+      <h3>Descriptive example</h3>
+      <ul>
+        <li><strong>Barrera-Osorio et al., 2022</strong> "Out of this sample, 140 schools were randomly assigned to each of the two treatment arms – recognition or in-kind performance rewards – and 140 schools were randomly assigned to the control." So for this field: First, select "None" Next, select "Public recognition of teacher high performance" Finally, select "In-kind rewards for teacher high performance"</li>
+        <li><strong>Knauer et al. (2020)</strong> feature a factorial design in which each successive arm receives an additional intervention or two than the other arms. So, for this field: First, for arm 1, the coder would select "None." For arm 2, the coder would select "Storybooks." For arm 3, the coder would select "Storybooks + DRT + SMS" For arm 4, the coder would select "Storybooks + DRT + SMS + Booster Training" And finally for arm 5 the coder would select "Storybooks + DRT + SMS + Booster Training + Home Visits."</li>
+        <li><strong>Miguel and Kremer (2004)</strong> have a crossover design, in which the deworming treatment is phased in to different schools in different years. For this field: For arm 1, the coder would select "Free deworming treatment" + "treatment in 1998" + "treatment in 1999" For arm 2, the coder would select "Free deworming treatment" + "treatment in 1999" For arm 3, the coder would select "None"</li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Unit of randomization -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+    <div>
+      <h3>Variable name in SurveyCTO</h3>
+      <p><strong>unitRand</strong></p>
+      <h3>Field name (LABEL on SurveyCTO)</h3>
+      <p>Unit of randomization</p>
+      <h3>Definition (LABEL on SurveyCTO)</h3>
+      <p>The unit of treatment assignment, also referred to as the level of clustering.</p>
+      <h3>Response options</h3>
+      <p>text-CV</p>
+      <h3>CV (Choices on SurveyCTO)</h3>
+      <p>Select all that apply<br>
+      See CV A in tab Long CV</p>
+    </div>
+    <div>
+      <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+      <ul>
+        <li>Select the unit(s) of randomization for the study. If the unit of randomization differs across interventions, select all units of randomization used.</li>
+        <li>Unit of randomization indicates the level at which the assignment of the intervention to study arms was done and at which the intervention is delivered.</li>
+        <li>If the selected units are "individual", "organization", "family" or "geographic unit", please also choose the subtype of unit in the follow-up field.</li>
+        <li>Geographic units include all spatial units or physical locations.</li>
+        <li>Select 'other' and fill out the textbox if the unit of randomization does not exactly match the pre-specified units in the CV.</li>
+        <li>This information is mostly found in the randomization or methods sections of a paper. The text should indicate that the unit was used to assign the treatment. If there are study participant flow diagrams, these may illuminate the units to which treatment was allocated.</li>
+      </ul>
+      <h3>Descriptive example</h3>
+      <ul>
+        <li><strong>Ozler et al, 2018</strong> is a cluster randomized trial, in which Community-Based Childcare Centers (CBCCs) were randomized into control, where the children received a learning kit, or the three treatment arms in which children also received learning kits and a combination of different interventions. The unit of randomization is the CBCC since that is the level at which any of the treatments were allocated [see: Study design and sample selection]. There is only one unit of randomization in this experiment. The response for this field would be "Other". In the follow-up field prompting the specific answer, the response would be "Childcare Center".</li>
+        <li><strong>Guiteras et al, 2014</strong> is a cluster randomized trial, in which communities were first randomized to receive a community motivation and health information campaign, or an information campaign combined with subsidies for the purchase of hygienic latrines, or a supply-side market access intervention linking villagers with suppliers and providing information on latrine quality and availability, or no interventions. Second, within the subsidy communities, eligible households were randomized to receive subsidy vouchers through household-level lotteries. There are two units of randomization in this experiment: community and household. The response to this field would be (selecting both) "Geographic unit" and "Household", then select "Community" for the follow-up field containing the sub-type for "Geographic unit". There is no follow-up field for the choice of "Household".</li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Mapping units of randomization to interventions -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+    <div>
+      <h3>Variable name in SurveyCTO</h3>
+      <p><strong>unitRandMap</strong></p>
+      <h3>Field name (LABEL on SurveyCTO)</h3>
+      <p>Mapping units of randomization to interventions</p>
+      <h3>Definition (LABEL on SurveyCTO)</h3>
+      <p>The unit of randomization for each intervention</p>
+      <h3>Response options</h3>
+      <p>Text-CV, select one</p>
+      <h3>CV (Choices on SurveyCTO)</h3>
+      <p>List of units selected in [Unit of randomization]</p>
+    </div>
+    <div>
+      <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+      <ul>
+        <li>If there is only one unit of randomization used for treatment assignment, this question will be skipped. When there is more than one unit of randomization (e.g. schools are assigned to a teacher training program and then families within schools are assigned to a parental support program), each unit will have to be mapped to an intervention.</li>
+        <li>This information is mostly found in the randomization or methods sections of a paper or in a study participant flow diagram.</li>
+      </ul>
+      <h3>Descriptive example</h3>
+      <ul>
+        <li><strong>In Leaver et al, 2021,</strong> there are 5 interventions. The units of randomization in the study are -- district-subject-family and schools. Here, since there is more than one unit of randomization, we need to map each intervention to its unit of randomization: Advertisement of fixed-wage contract - unit of randomization: District-by-subject-family pairs; Advertisement of pay for performance contract - unit of randomization: District-by-subject-family pairs; Advertisement of both fixed-wage and pay for performance contracts - unit of randomization: District-by-subject-family pairs; Implementation of pay for performance contract - unit of randomization: School; Implementation of fixed-wage contract - unit of randomization: School</li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Randomization method -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+    <div>
+      <h3>Variable name in SurveyCTO</h3>
+      <p><strong>randmethod</strong></p>
+      <h3>Field name (LABEL on SurveyCTO)</h3>
+      <p>Method used for randomization at the experiment level.</p>
+      <h3>Definition (LABEL on SurveyCTO)</h3>
+      <p>Indicates the method used in the experiment to randomly assign randomization units to study arms.</p>
+      <h3>Response options</h3>
+      <p>Text CV, select one</p>
+      <h3>CV (Choices on SurveyCTO)</h3>
+      <p>Simple random assignment or fixed-share random assignment (without blocking)<br>
+      Block randomization/permutation blocking (without strata)<br>
+      Stratification (blocked or other)<br>
+      Matched pair design<br>
+      Re-randomization<br>
+      Covariate adaptive randomization<br>
+      Other method or not specified</p>
+    </div>
+    <div>
+      <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+      <ul>
+        <li>Indicate the randomization technique used to assign any interventions to experimental units in the study. Instead of simple randomization, most researchers use methods to balance the number of randomization units across study arms (blocking or other methods of fixed-share assignment); stratification (including matched-pair designs), re-randomization, and covariate adaptive sampling additionally balance subgroups of the sample (strata) across arms.</li>
+        <li>Simple randomization or fixed-share random assignment. Simple randomization refers to assigning each randomization unit to one of the treatment arms with a fixed probability, e.g. choosing the treatment arm for each unit with a coin flip or by drawing a ball (with replacement) from a 50:50 urn. With simple randomization, the size of the treatment arms can randomly vary. Fixed-share random assignment refers to randomly assigning a fixed share of the sample to each treatment arm, e.g. by randomly selecting one half of the sample for treatment or by drawing each unit's assignment "without replacement" from a 50:50 urn. Use this option for any fixed-share assignment method other than blocking. Sometimes, the paper may not be clear about which of the two methods was used exactly, e.g. we randomly assigned 48 units to treatment and 49 units to control. In that case, you should select this option unless other randomization methods listed below were used.</li>
+        <li>Block randomization or permutation blocking is a method of fixed-share random assignment in which the sample is divided into "blocks", and each block is (randomly) assigned a treatment arm permutation. For example, with blocks of two units, the randomly assigned permutations are either C/T or T/C (but not C/C or T/T). This method is particularly suitable if units arrive sequentially. The description of the randomization procedure will use phrases such as "blocked assignment" or "randomization within blocks." Use this option if blocking is used for fixed-share assignment, but there is no stratification on covariates. When block randomization is used, please do not select "Simple randomization or fixed-share random assignment (without blocking)".</li>
+        <li>Stratification (blocked or other) covers all stratification methods other than pure matched pair designs. If stratification is used in any part of randomization, select this option regardless of other methods used. Stratification serves to balance specific characteristics of the sample (covariates) across treatment arms. The sample is divided into subgroups ("strata") and fixed-share assignment are used within each stratum (the exact method may not be explicitly mentioned). In most papers, stratification will appear in the description of the randomization procedure and will use phrases such as "stratified by.." or "balanced the assignment by.." (e.g. "by gender") or "randomly assigned within" (e.g. "half of the households within each village were randomly chosen to receive…"). When blocked stratified randomization is used, the strata may themselves be the blocks (e.g. "block-randomized 5 sites per region..."). Note that stratification is sometimes also used in sampling, to ensure that each stratum is represented in the study Mark stratification here ONLY if the paper uses stratified randomization. Also note that, when randomization is done in stages, the second stage randomization may be stratified by the randomization results of the first stage. Please select this option if this is the case.</li>
+        <li>Matched pair design is a specific type of stratified randomization. Here, randomization units are grouped into pairs ("matched") based on baseline characteristics, and within each pair, one unit is randomly assigned to the treatment and the other to the control. The term is typically explicitly used, but if the researchers describe the design as stratification where all strata are of size 2, please choose this option. If pair matching is used in addition to other stratification methods, please use "Stratification (blocked or other)".</li>
+        <li>Covariate adaptive randomization is a method for balancing the sample across arms that applies if units of randomization arrive sequentially, such as patients at a clinic. It varies the assignment probability of each unit based on the covariate distribution among units that arrived previously. It typically attempts to minimize any covariate imbalance in random assignments.</li>
+        <li>Re-randomization is another method to achieve balance. It consists of repeating a specific randomization procedure (e.g. simple or fixed-share random assignment) and selecting the "most balanced" assignment. The authors may conduct a pre-specified number of randomizations or re-randomize until a pre-specified balance criterion is met. Re-randomization is sometimes combined with stratification. In this case, select "Stratification (blocked or other)".</li>
+        <li>Other or not specified Please use this category if the exact method of assignment is not specified, or if another assignment method is used, for example, adaptive sampling with objectives other than covariate balancing.</li>
+      </ul>
+      <h3>Descriptive example</h3>
+      <ul>
+        <li><strong>In Andrew et al, 2018</strong> "Randomization was done at the level of a town and after a stratification by region" [Randomization and masking]. This indicates that towns were randomized in equal proportion to be assigned treatment or control arms Therefore, the response for this field would be "Stratification (blocked or other)".</li>
+        <li><strong>In Stewart et al. (2020),</strong> the authors report that they "block-randomized 5 sites per treatment arm per region" into the five study arms. The correct answer is "Stratification (blocked or other)". Note that here the strata (the regions) are used as blocks.</li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Number of stratification variables -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+    <div>
+      <h3>Variable name in SurveyCTO</h3>
+      <p><strong>strataNum</strong></p>
+      <h3>Field name (LABEL on SurveyCTO)</h3>
+      <p>Number of stratification variables</p>
+      <h3>Definition (LABEL on SurveyCTO)</h3>
+      <p>Number of variables used to create strata</p>
+      <h3>Response options</h3>
+      <p>Numeric entry</p>
+      <h3>CV (Choices on SurveyCTO)</h3>
+      <p><em>None</em></p>
+    </div>
+    <div>
+      <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+      <ul>
+        <li>Please indicate the number of variables used to create the strata</li>
+      </ul>
+      <h3>Descriptive example</h3>
+      <ul>
+        <li><strong>In Berman et al. (2019),</strong> the authors note that they stratify by province, share of respondents in the baseline survey that report at least occasional access to electricity, and the share of respondents reporting that the district governor carries the most responsibility for keeping elections fair. The correct answer here would be <strong>3</strong>.</li>
+        <li><strong>In Dupas (2011),</strong> the author notes that the randomization procedure is stratified by teacher training status. The correct answer here would be <strong>1</strong>.</li>
+      </ul>
+    </div>
+  </div>
+
+<!-- Number of stratification variables -->
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+    <div>
+      <h3>Variable name in SurveyCTO</h3>
+      <p><strong>strataNum</strong></p>
+      <h3>Field name (LABEL on SurveyCTO)</h3>
+      <p>Number of stratification variables</p>
+      <h3>Definition (LABEL on SurveyCTO)</h3>
+      <p>Number of variables used to create strata</p>
+      <h3>Response options</h3>
+      <p>Numeric entry</p>
+      <h3>CV (Choices on SurveyCTO)</h3>
+      <p><em>None</em></p>
+    </div>
+    <div>
+      <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+      <ul>
+        <li>Please indicate the number of variables used to create the strata</li>
+      </ul>
+      <h3>Descriptive example</h3>
+      <ul>
+        <li><strong>In Berman et al. (2019),</strong> the authors note that they stratify by province, share of respondents in the baseline survey that report at least occasional access to electricity, and the share of respondents reporting that the district governor carries the most responsibility for keeping elections fair. The correct answer here would be <strong>3</strong>.</li>
+        <li><strong>In Dupas (2011),</strong> the author notes that the randomization procedure is stratified by teacher training status. The correct answer here would be <strong>1</strong>.</li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Stratification variables -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+    <div>
+      <h3>Variable name in SurveyCTO</h3>
+      <p><strong>strataLabel</strong></p>
+      <h3>Field name (LABEL on SurveyCTO)</h3>
+      <p>Stratification variables</p>
+      <h3>Definition (LABEL on SurveyCTO)</h3>
+      <p>The variables used to create the strata</p>
+      <h3>Response options</h3>
+      <p>Open-text</p>
+      <h3>CV (Choices on SurveyCTO)</h3>
+      <p><em>None</em></p>
+    </div>
+    <div>
+      <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+      <ul>
+        <li>List each of the stratification variables out in the order in which they appear in the paper.</li>
+        <li>Use indicators for being assigned to an intervention (e.g. indicator for being assigned to provider incentive) if randomization at a lower level is stratified by groups generated by higher-level randomization of one or more other interventions.</li>
+        <li>If local terms are used to define the strata - for example, woreda, oblast, union, or taluka - please retain the local term rather than using the author's translation of them into English.</li>
+        <li>This information is mostly found in the randomization or methods section of the paper. Phrases such as "stratified by...", "randomly assigned within..." are common when describing stratification variables.</li>
+      </ul>
+      <h3>Descriptive example</h3>
+      <ul>
+        <li><strong>Since the response to 10 for Andrew et al, 2018 is Strata.</strong> Using text from the paper "Randomisation was done at the level of the cluster (town), after stratification by region. Within each of the 3 regions, 8 towns were randomly allocated to each of the 3 treatment groups and the control group using computer-generated random numbers" [Randomization and masking]. The response to this field would be "region" since that is the variable that makes up the strata as indicated in the paper.</li>
+        <li><strong>In Freeman et al. (2022),</strong> authors use a stratified randomization design so the response to the previous question asking if the intervention was stratified is "Strata". The authors note "a stratified random design at the woreda-level was used to assign an equal number of study kebeles to either the Andilaye intervention or the control group receiving no intervention". The response to this question is "Woreda", as it is the local term used consistently throughout the paper.</li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Stratification for study arms -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+    <div>
+      <h3>Variable name in SurveyCTO</h3>
+      <p><strong>strataSame</strong></p>
+      <h3>Field name (LABEL on SurveyCTO)</h3>
+      <p>Stratification for study arms</p>
+      <h3>Definition (LABEL on SurveyCTO)</h3>
+      <p>Are the same stratification variables used for all interventions</p>
+      <h3>Response options</h3>
+      <p>text-CV</p>
+      <h3>CV (Choices on SurveyCTO)</h3>
+      <p>Select one<br>
+      Yes<br>
+      No</p>
+    </div>
+    <div>
+      <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+      <ul>
+        <li>Indicate whether the same (set of) stratification variable is used for assigning all interventions to study arms.</li>
+        <li>Note for two stage randomizations, the treatment arm assignment for first stage can be the basis for stratification for the second stage.</li>
+        <li>This is found in sections describing randomization or methods section. A flow diagram depicting the experiment may also contain helpful information for this field.</li>
+      </ul>
+      <h3>Descriptive example</h3>
+      <ul>
+        <li><strong>In Ozler et al, 2018,</strong> a "block randomization" was used to assign childcare centers in each district to the four study arms. "Centers were grouped based on mean height-for-age (HAZ) and Peabody Picture Vocabulary Test (PPVT - a measure of receptive vocabulary) z-scores, both of which were collected at baseline. The Ministry held a public lottery at each district capital where a representative from each center was asked to draw a colored dot from an envelope to determine that center's treatment status." The response to this question would be "Yes", as the same set of variables were used for stratification.</li>
+        <li><strong>In Wolf et al. 2019,</strong> there are two stages of randomization. In the first stage, the intervention assignment was stratified by district and public/private status of the school. In the second stage, the interventions were assigned within groups created by treatment assignment in the first stage. The stratification variable is indicator for teacher training/parental awareness assignment. The response to this question would be "No", since the stratification variables are different across interventions.</li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Mapping stratification variables to interventions -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+    <div>
+      <h3>Variable name in SurveyCTO</h3>
+      <p><strong>strataMap</strong></p>
+      <h3>Field name (LABEL on SurveyCTO)</h3>
+      <p>Mapping stratification variables to interventions</p>
+      <h3>Definition (LABEL on SurveyCTO)</h3>
+      <p>The list of variables used to create the randomization strata for each intervention</p>
+      <h3>Response options</h3>
+      <p>Text-CV, select all</p>
+      <h3>CV (Choices on SurveyCTO)</h3>
+      <p>Stratification variables listed in [Stratification variables]</p>
+    </div>
+    <div>
+      <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+      <ul>
+        <li>If the same (set of) stratification variable is used for all treatment assignments, then this question will be skipped.</li>
+        <li>This information is mostly found in the randomization and methods sections of the paper. For most papers, this information will appear in the same paragraph as the one describing the stratification procedure.</li>
+      </ul>
+      <h3>Descriptive example</h3>
+      <ul>
+        <li><strong>Wolf et al, 2018</strong> has 4 interventions and 5 study arms: Teacher training and coaching program; Parental awareness meetings; Text messages for teachers; Picture-based paper flyers or texts for parents. Based on the information in the section "Randomization", in a first stage of randomization, three of the interventions (teacher training and coaching program; and parental awareness meetings) were stratified by district and public/private status of the school. The text messages for teachers and the texts/flyers for parents were assigned in a second stage of randomization. These interventions were stratified by treatment assignment in the previous stage so that stratification variables for this assignment of interventions to arms would be indicators for being assigned to the two of the arms. So for this field, the stratification mapping for 5 study arms would be: Control - district and public/private status of the school; Teacher training and coaching program - district and public/private status of the school; Parental awareness meetings - district and public/private status of the school; Text messages for teachers - indicator for school being part of teacher training and coaching program; Picture-based paper flyers for parents - indicator for school being part of program with teacher training & coaching and parental awareness meetings</li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Description of randomization method -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+    <div>
+      <h3>Variable name in SurveyCTO</h3>
+      <p><strong>randDescrip</strong></p>
+      <h3>Field name (LABEL on SurveyCTO)</h3>
+      <p>Description of randomization method.</p>
+      <h3>Definition (LABEL on SurveyCTO)</h3>
+      <p>Description of the randomization method used in the experiment.</p>
+      <h3>Response options</h3>
+      <p>Open-text</p>
+      <h3>CV (Choices on SurveyCTO)</h3>
+      <p><em>None</em></p>
+    </div>
+    <div>
+      <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+      <ul>
+        <li>Please provide a description of the randomization method and process used in the experiment. Please extract the information verbatim from the paper.</li>
+      </ul>
+      <h3>Descriptive example</h3>
+      <ul>
+        <li><em>None provided</em></li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Number of units of analysis in the experiment -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+    <div>
+      <h3>Variable name in SurveyCTO</h3>
+      <p><strong>unitAnaNum</strong></p>
+      <h3>Field name (LABEL on SurveyCTO)</h3>
+      <p>Number of units of analysis in the experiment</p>
+      <h3>Definition (LABEL on SurveyCTO)</h3>
+      <p>Number of units of analysis at which the treatment effects are estimated.</p>
+      <h3>Response options</h3>
+      <p>Numeric entry</p>
+      <h3>CV (Choices on SurveyCTO)</h3>
+      <p>Integer greater than 0</p>
+    </div>
+    <div>
+      <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+      <ul>
+        <li>Count the number of unique units of analysis at which treatment effects are estimated in the experiment.</li>
+        <li>Multiple outcomes and treatment effects can be estimated at the same unit of analysis. The same unit of analysis should only be counted once.</li>
+        <li>If treatment effects for the unit of analysis are only reported in an appendix or supplementary materials, please do not count them for the purposes of this field.</li>
+        <li>For heterogeneous treatment effects (which meet the criteria to be included in IDEAL), please include the corresponding units of analysis in the count.</li>
+      </ul>
+      <h3>Descriptive example</h3>
+      <ul>
+        <li><strong>Ashraf et al., 2010</strong> include treatment effects for the full sample in Tables 2, 3, 4 and 5. The unit of analysis in Table 2 is "Household" for the outcome "Household purchased Clorin (dummy)". The unit of analysis in Table 3 is also "Household" for the two outcomes: "Water currently treated with Clorin" and "Drinking water contains free Clorin". The two outcomes from Table 3 are also in Table 4. The unit of analysis in Table 5 is "Household" for two outcomes: "Bottle exhausted?" and "Use Clorin for non-drinking water purposes". Therefore, there is only ONE (1) unit of analysis in this experiment.</li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Unit of analysis variable -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+    <div>
+      <h3>Variable name in SurveyCTO</h3>
+      <p><strong>unitAnaLabel</strong></p>
+      <h3>Field name (LABEL on SurveyCTO)</h3>
+      <p>Unit of analysis variable</p>
+      <h3>Definition (LABEL on SurveyCTO)</h3>
+      <p>Unit of analysis at which the treatment effects are estimated.</p>
+      <h3>Response options</h3>
+      <p>Open-text</p>
+      <h3>CV (Choices on SurveyCTO)</h3>
+      <p><em>None</em></p>
+    </div>
+    <div>
+      <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+      <ul>
+        <li>Enter the unit of analysis variable as it is in the paper. For example, for pregnant women visiting health facilities, the unit of analysis might be referred as woman or patient in different papers, please write down the exact unit used in the paper.</li>
+        <li>This information can be found in the results, data, and table notes in the paper, or in the supplementary materials.</li>
+      </ul>
+      <h3>Descriptive example</h3>
+      <ul>
+        <li><strong>For example, Ozler et al. 2018</strong> include treatment effects estimated using various units of analysis. The treatment effects on child assessments and behavioral problems (Tables 3&4) were estimated at the child level, so the unit of analysis of those outcomes is child. Table 5 includes impacts on parenting quality, for which the unit of analysis is "primary caregiver" (see section 2.4.2, page 453). For impacts on CBCC outcomes in Table 6, the unit of analysis is Community-Based Childcare Center (CBCC).</li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Unit of analysis category -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+    <div>
+      <h3>Variable name in SurveyCTO</h3>
+      <p><strong>unitAnaCV</strong></p>
+      <h3>Field name (LABEL on SurveyCTO)</h3>
+      <p>Outcome unit of analysis category</p>
+      <h3>Definition (LABEL on SurveyCTO)</h3>
+      <p>Category of unit of analysis at which treatment effects are estimated.</p>
+      <h3>Response options</h3>
+      <p>Text-CV, select one</p>
+      <h3>CV (Choices on SurveyCTO)</h3>
+      <p>See CV A in appendix B of Cavanagh et al (2023) at link</p>
+    </div>
+    <div>
+      <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+      <ul>
+        <li>Select the unit of analysis for the treatment effect using the controlled vocabulary (CV).</li>
+        <li>This information can be found in the results, data, and table notes in the paper, or in the supplementary materials.</li>
+      </ul>
+      <h3>Descriptive example</h3>
+      <ul>
+        <li><strong>For example, Ozler et al. 2018</strong> include treatment effects estimated using various units of analysis. The treatment effects on child assessments and behavioral problems (Tables 3&4) were estimated at the individual child level, so the unit of analysis of those outcomes is child. From the pre-specified list of options, a coder would first choose "1. Individual" as the broad category and then choose "Child" as the category. Table 5 includes impacts on parenting quality, for which the unit of analysis is primary caregiver. Similarly, a coder would first choose "1. Individual" as the broad category and then choose "1.11 Parent" as the unit of analysis category. For impacts on CBCC outcomes in Table 6, the unit of analysis is Community-Based Childcare Center (CBCC). A coder would first choose "2. Organization or legal entity" and then "2.9 Other organization or legal entity" to type "Childcare center".</li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Number of outcome variables in the study -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+    <div>
+      <h3>Variable name in SurveyCTO</h3>
+      <p><strong>outNum</strong></p>
+      <h3>Field name (LABEL on SurveyCTO)</h3>
+      <p>Number of outcome variables in the study</p>
+      <h3>Definition (LABEL on SurveyCTO)</h3>
+      <p>Number of outcomes variables reported in the study for which treatment effects are estimated</p>
+      <h3>Response options</h3>
+      <p>Numeric entry</p>
+      <h3>CV (Choices on SurveyCTO)</h3>
+      <p><em>None</em></p>
+    </div>
+    <div>
+      <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+      <ul>
+        <li>Enter all the outcome variables reported in the study for which treatment effects are estimated.</li>
+        <li>If the outcome variable is an index and the treatment effects of the components are reported in the same exhibit, include both the index and all the components as separate outcomes. If treatment effects for the index components are only reported in an appendix or supplementary materials, do not count these as outcomes for the purposes of this field.</li>
+        <li>Include outcome variables that are reported in an exhibit, even if the exact point estimates can only be found in supplementary materials.</li>
+        <li>For a table with heterogeneous treatment effects (which meets the criteria to be included), if the same outcome is reported for multiple subgroups, please count them as different outcomes. For example, outcome A – female and outcome A – male should be counted as two outcomes.</li>
+        <li>Do not include auxiliary outcomes that do not appear in the exhibit (but note that this does not include primary outcomes that were only moved to an appendix because they do not show an effect).</li>
+        <li>Outcomes that are only measured as marginal effects should also be included.</li>
+      </ul>
+      <h3>Descriptive example</h3>
+      <ul>
+        <li><strong>In Guiteras et al, 2015,</strong> the published manuscript does not show any table in the main paper. Figures 1 & 2 report the treatment effects, however, we can not obtain the precise statistics such as point estimates and standard errors directly from the figures. From the notes of Figure 1, "Figure displays the sum of the estimated coefficients and the control group means found in columns (2) and (6) of table S2 and column (2) of table S3. (A) Any latrine access; (B) hygienic latrine access; (C) open defecation among adults", we learn that the estimated coefficients can be found in tables S2 and S3 in the supplementary materials. Figure 1 includes three outcomes: "(A) Any latrine access; (B) hygienic latrine access; (C) open defecation among adults". Figure 2 includes three outcomes: "(A) Any latrine ownership; (B) hygienic latrine ownership; (C) open defecation among adults."</li>
+        <li><strong>Ashraf et al., 2010</strong> include treatment effects for the full sample in Tables 2, 3, 4 and 5. The outcome in Table 2 is "Household purchased Clorin (dummy)". There is only one outcome. There are two outcomes in Table 3. They are "Water currently treated with Clorin" and "Drinking water contains free Clorin". The two outcomes from Table 3 are also in Table 4. The title of Table 5 includes Heterogeneity, however, the table reports the full sample estimates for two outcomes: "Bottle exhausted?" and "Use Clorin for non-drinking water purposes". Note that only full-sample treatment effects and their outcomes should be included.</li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Outcome name -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+    <div>
+      <h3>Variable name in SurveyCTO</h3>
+      <p><strong>outLabel</strong></p>
+      <h3>Field name (LABEL on SurveyCTO)</h3>
+      <p>Outcome name</p>
+      <h3>Definition (LABEL on SurveyCTO)</h3>
+      <p>The name used in the exhibit to refer to the outcome measure.</p>
+      <h3>Response options</h3>
+      <p>Select one</p>
+      <h3>CV (Choices on SurveyCTO)</h3>
+      <p><em>None</em></p>
+    </div>
+    <div>
+      <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+      <ul>
+        <li>Enter the complete name of every outcome as it appears in the table.</li>
+      </ul>
+      <h3>Descriptive example</h3>
+      <ul>
+        <li><strong>In Guiteras et al, 2015,</strong> figures 1 & 2 report the treatment effects of five unique outcomes. The outcome names can be found in the notes below Figure 1 and Figure 2: -Any latrine access, -hygienic latrine access, -open defecation among adults, -any latrine ownership, and -hygienic latrine ownership.</li>
+        <li><strong>In the Ashraf et al. (2010) example,</strong> the outcome names can be found in Tables 2, 3, 4 and 5, which are: -Household purchased Clorin (dummy) -Water currently treated with Clorin -Drinking water contains free Clorin -Bottle exhausted? -Use Clorin for non-drinking water purposes.</li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Outcome unit of analysis -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+    <div>
+      <h3>Variable name in SurveyCTO</h3>
+      <p><strong>outUnitSum</strong></p>
+      <h3>Field name (LABEL on SurveyCTO)</h3>
+      <p>Outcome unit of analysis</p>
+      <h3>Definition (LABEL on SurveyCTO)</h3>
+      <p>Unit of analysis for the outcome at which the treatment effect is estimated.</p>
+      <h3>Response options</h3>
+      <p>Text-CV, select one</p>
+      <h3>CV (Choices on SurveyCTO)</h3>
+      <p>The list of answers from "Unit of analysis variable" (fields: unitAnaLabel and unitAnaCV)</p>
+    </div>
+    <div>
+      <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+      <ul>
+        <li>Select the corresponding unit of analysis for the outcome at which the treatment effect is estimated from the list of units of analysis entered earlier.</li>
+      </ul>
+      <h3>Descriptive example</h3>
+      <ul>
+        <li><strong>For example, Ozler et al. 2018</strong> include treatment effects estimated using various units of analysis. The treatment effects on child assessments and behavioral problems (Tables 3&4) were estimated at the individual child level, so the unit of analysis of those outcomes is child. A coder would choose "Child" for outcomes in Tables (3&4) as their unit of analysis. Table 5 includes impacts on parenting quality, for which the unit of analysis is primary caregiver. For each outcome in Table 5, select "Primary caregiver" as the unit of analysis.</li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Number of rounds of data collection in the study -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+    <div>
+      <h3>Variable name in SurveyCTO</h3>
+      <p><strong>roundNum</strong></p>
+      <h3>Field name (LABEL on SurveyCTO)</h3>
+      <p>Number of rounds of data collection in the study</p>
+      <h3>Definition (LABEL on SurveyCTO)</h3>
+      <p>Number of rounds of data collection including baseline in the study</p>
+      <h3>Response options</h3>
+      <p>Numeric entry</p>
+      <h3>CV (Choices on SurveyCTO)</h3>
+      <p><em>None</em></p>
+    </div>
+    <div>
+      <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+      <ul>
+        <li>Enter the total number of rounds of data collection reported in the paper, including baseline. A round collects data from the same data source at a given time. In other words, a round signals when different outcomes are measured.</li>
+        <li>For studies in which data is only collected by surveys of subjects in the sample, the number of rounds typically aligns with the number of surveys (e.g., baseline, midline, endline = 3 rounds).</li>
+        <li>If more than one survey sample collected by the authors is used to measure outcomes but they are collected around the same time (e.g. a survey of mothers and a survey of teachers), this should count as the same round.</li>
+        <li>However, any administrative data (election results, census data, etc.) that authors use should be considered a separate data source and thus necessitate a separate round. For example, administrative data collected at the endline should be separate from survey data collected at the endline. If a paper includes a baseline survey, midline survey, endline survey, administrative data collected at midline, and administrative data collected at endline, the number of rounds would be 5 rounds.</li>
+        <li>For administrative data, sometimes authors do not indicate when they collected the data. In this case, the number of rounds should go by data source (e.g., census data and election data = 2 rounds).</li>
+        <li>Do not include the rounds collected for the same study but not used or reported in the paper.</li>
+        <li>Do not include any focus group discussions or qualitative surveys here.</li>
+        <li>This can be found in the "data collection" or "data sources" section for papers. Sometimes, papers have explanatory diagrams on timeline and implementation which coders can consult to get the different points of time in which data was collected.</li>
+      </ul>
+      <h3>Descriptive example</h3>
+      <ul>
+        <li><strong>The Freeman et al, 2022</strong> study collects household surveys and observation-based data at baseline, midline, and endline. In each round, both survey and observation data were collected at the same time [see: Data collection]. Additionally, Figure 2 illuminates the points in time when each of the data collection rounds was conducted. The response for this field would be <strong>3</strong>.</li>
+        <li><strong>Pande & Field, 2008</strong> only use online endline data on loans and repayment in the current paper. The response for this field would be <strong>1</strong>.</li>
+        <li><strong>Muralidharan et al. 2021</strong> use administrative data from three sources: 1. Register of landlords, 2. a record of check distribution maintained by the MAOs, and 3. bank records of check encashment [see B. data]. Table 1 suggests that the register data was collected between September and December 2017. Appendix C indicates that the authors received "the up-to-date MAO and bank-based datasets at three points in time: once in July, once in August and once in September 2018. Therefore, there are seven rounds of data collection in the study. The response for this field is <strong>7</strong>.</li>
+        <li><strong>De Hoyos et al. 2021</strong> include the following data: i. Student assessments: 2013, 2014, 2015; ii. Student survey: 2013, 2015; iii. Teacher survey: 2013, 2014, 2015; iv. Principal survey: 2014, 2015; v. National assessments: 2016; vi. Internal efficiency: 2013, 2014, 2015, 2016, 2017. Based on data source and time, there are 3 rounds of survey data, as they are conducted at the same time of year, 4 rounds of assessment data (school and national), and 5 rounds of administrative data on internal efficiency. The total would be <strong>12</strong> rounds of data.</li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Round name -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+    <div>
+      <h3>Variable name in SurveyCTO</h3>
+      <p><strong>roundLabel</strong></p>
+      <h3>Field name (LABEL on SurveyCTO)</h3>
+      <p>Round name</p>
+      <h3>Definition (LABEL on SurveyCTO)</h3>
+      <p>Name for each round of data collection</p>
+      <h3>Response options</h3>
+      <p>Open-text</p>
+      <h3>CV (Choices on SurveyCTO)</h3>
+      <p><em>None</em></p>
+    </div>
+    <div>
+      <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+      <ul>
+        <li>Label the round of data collection with descriptive names, such as "baseline", "midline", "midline phone survey", "endline", "one-year follow-up", "three-year follow up" etc.</li>
+        <li>Retain any descriptive labels used by the study authors, such as "18-month follow up" or "23-month follow up."</li>
+        <li>Use the data source to differentiate datasets collected at the same time, for example, phone survey at follow-up and census data at follow-up.</li>
+        <li>This can be found in the "data collection" or "data sources" section for papers. Sometimes, papers have explanatory diagrams on timeline and implementation which coders can consult to get the different points of time in which data was collected. Tables with treatment effects can also illuminate the different rounds of data collection.</li>
+      </ul>
+      <h3>Descriptive example</h3>
+      <ul>
+        <li><strong>Freeman et al, 2022</strong> study collect household surveys and observations-based data at baseline, midline, and end line. [see: Data collection] Additionally, Figure 2 illuminates the points in time when each of the data collection rounds was conducted. The response for this field would be: Baseline, Midline, Endline</li>
+        <li><strong>Ozler et al, 2018</strong> use three rounds of data collection [see: Data sources] The response for this field would be: Baseline, 18-month follow-up, 36-month follow-up</li>
+        <li><strong>For Muralidharan et al. 2021,</strong> which draw on three administrative data sources and have seven total rounds, the round names would be: Register of landlords September – December 2017, Bank-based dataset July 2018, MAO record dataset July 2018, Bank-based dataset August 2018, MAO record dataset August 2018, Bank-based dataset September 2018, Mao record dataset September 2018</li>
+        <li><strong>Pande & Field, 2008</strong> only use online endline data on loans and repayment in the current paper. The round name would be: Endline.</li>
+        <li><strong>De Hoyos et al. 2021</strong> include multiple data sources over time. Example round names:
+          <ul>
+            <li>Student assessments 2013</li>
+            <li>Student assessments 2014</li>
+            <li>Student assessments 2015</li>
+            <li>Student survey 2013</li>
+            <li>Student survey 2015</li>
+            <li>Teacher survey 2013</li>
+            <li>Teacher survey 2014</li>
+            <li>Teacher survey 2015</li>
+            <li>Principal survey 2014</li>
+            <li>Principal survey 2015</li>
+            <li>National assessments 2016</li>
+            <li>Internal efficiency 2013</li>
+            <li>Internal efficiency 2014</li>
+            <li>Internal efficiency 2015</li>
+            <li>Internal efficiency 2016</li>
+            <li>Internal efficiency 2017</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Number of exhibits with treatment effects -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+    <div>
+      <h3>Variable name in SurveyCTO</h3>
+      <p><strong>tableNum</strong></p>
+      <h3>Field name (LABEL on SurveyCTO)</h3>
+      <p>Number of exhibits</p>
+      <h3>Definition (LABEL on SurveyCTO)</h3>
+      <p>The number of tables or figures in the paper that report treatment effects estimated using ITT or authors' preferred estimand.</p>
+      <h3>Response options</h3>
+      <p>Numeric</p>
+      <h3>CV (Choices on SurveyCTO)</h3>
+      <p><em>None</em></p>
+    </div>
+    <div>
+      <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+      <ul>
+        <li>Count tables/figures in the main text with full-sample treatment effects using ITT or authors' preferred estimand.</li>
+        <li>Count figures even if precise estimates are only in an appendix, but exclude exhibits with no estimates/precision.</li>
+        <li>Include tables with group means/SDs if there is a treatment effect test.</li>
+        <li>Count text-only treatment effects as a single pseudo table labeled "Text only".</li>
+        <li>Exclude quasi-experimental tables unless they are authors' preferred specification.</li>
+        <li>Exclude exhibits with only heterogeneous effects unless the paper only reports heterogeneity or it is the primary question.</li>
+        <li>Still count as full-sample if outcomes are only measured for a population subset (e.g., only children or only providers).</li>
+        <li>Do not include robustness-only tables.</li>
+      </ul>
+      <h3>Descriptive example</h3>
+      <ul>
+        <li><strong>Ozler et al., 2018:</strong> 13 tables, 2 figures; 9 full-sample treatment-effects tables after excluding robustness and IV-only tables.</li>
+        <li><strong>Leaver et al., 2011:</strong> 6 full-sample exhibits (Figures 2–4; Tables 3–5).</li>
+        <li><strong>Riley 2024:</strong> 5 full-sample exhibits; Table 2 only reports heterogeneous effects.</li>
+        <li><strong>Ara et al., 2019:</strong> Include outcomes in Table 2 because p-values are reported in text.</li>
+        <li><strong>Kondylis et al., 2016:</strong> Include Tables 6–10 even though they show heterogeneity by gender.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Exhibit label -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+    <div>
+      <h3>Variable name in SurveyCTO</h3>
+      <p><strong>tableLabel</strong></p>
+      <h3>Field name (LABEL on SurveyCTO)</h3>
+      <p>Exhibit label</p>
+      <h3>Definition (LABEL on SurveyCTO)</h3>
+      <p>The label of each table with full sample treatment effects reported in the study</p>
+      <h3>Response options</h3>
+      <p>Open-text</p>
+      <h3>CV (Choices on SurveyCTO)</h3>
+      <p><em>None</em></p>
+    </div>
+    <div>
+      <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+      <ul>
+        <li>Use the "number of exhibits" to generate this repeated group.</li>
+        <li>List exact labels as in the paper (e.g., TABLE 1, TABLE 1A).</li>
+        <li>For text-only treatment effects, use a single exhibit labeled "Text only".</li>
+        <li>Do not include captions (e.g., "18-month follow up impact").</li>
+      </ul>
+      <h3>Descriptive example</h3>
+      <ul>
+        <li><strong>Ozler et al., 2018:</strong> Table 3, Table 4, Table 5, Table 6, Table 7, Table 9, Table 10, Table 11, Table 12, Table 13.</li>
+        <li><strong>Leaver et al., 2021:</strong> Figure 2, Figure 3, Table 3, Figure 4, Table 4, Table 5.</li>
+      </ul>
+    </div>
+  </div>
+
 </details>
 
+<details>
+<summary> [Stage 1] Table-by-table: For the set of fields below, coder goes through each table identified</summary>
 
+  <!-- Number of comparisons -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+    <div>
+      <h3>Variable name in SurveyCTO</h3>
+      <p><strong>tableCompNum</strong></p>
+      <h3>Field name (LABEL on SurveyCTO)</h3>
+      <p>Number of comparisons</p>
+      <h3>Definition (LABEL on SurveyCTO)</h3>
+      <p>Number of comparisons or contrasts reported in table/figure for which eligible treatment effects are estimated.</p>
+      <h3>Response options</h3>
+      <p>Numeric</p>
+      <h3>CV (Choices on SurveyCTO)</h3>
+      <p></p>
+      <h3>SurveyCTO instructions for data entry mask and repeat level</h3>
+      <p></p>
+    </div>
+    <div>
+      <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+      <ul>
+        <li>List the number of unique comparisons presented in the table. Any reported treatment effect is the result of a comparison of one group against another on an outcome, where a group can be a single study arm or a group of arms.</li>
+        <li>In a case where there are 4 experimental groups (Treatment A, Treatment B, Treatment A+B, and a Control), many comparisons may be reported. We may see treatment effect for Treatment A relative to the Control, or we may see an estimate for the difference between Treatment A and the combination Treatment A+B. Understanding which comparison is being reported in a table or figure will be important if the row and column labels and table/figure notes do not contain this information.</li>
+        <li>This information can be present either in the top row or column of a table or it may be reported in the rows as the variables for which treatment effects are being reported. The base arm for comparison is often the omitted category in a regression and/or mentioned in the footnotes of a table. Descriptions of each treatment effect in the results section can also illuminate the contrast under study for each estimate.</li>
+      </ul>
+      <h3>Descriptive example</h3>
+      <p>In table 3 from Ozler et al, 2018:<br>
+      - We see 3 comparisons in the first panel of rows:<br>
+      1. T2 (teacher training) vs. Control<br>
+      2. T3 (T2 + teacher incentives) vs. Control<br>
+      3. T4 (T2 + parenting training) vs. Control<br>
+      - We see 1 additional comparison in the second panel of rows that pools all treatment groups into 1 group.<br>
+      4. Any Treatment (T2, T3, or T4) vs. Control<br>
+      - The fourth panel of rows contains the precision but not treatment effects for additional comparisons:<br>
+      (i) T2 vs. T3<br>
+      (ii) T2 vs. T4<br>
+      (iii) T2 vs. T3<br><br>
+      The response for this field would be 4.<br><br>
+      In Table III from Mbiti et al. 2019, we see five comparisons in Panels A, B, and C:<br>
+      1. Grants (α1) vs. None<br>
+      2. Incentives (α2) vs. None<br>
+      3. Combination (α3) vs. None<br>
+      4. Combination (α3) vs. Grants+Incentives (α2+α1)<br>
+      5. Combination (α3) vs. Grants (α1)<br><br>
+      The response for this field would be 5.</p>
+    </div>
+  </div>
+
+  <!-- Evaluation arm -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+    <div>
+      <h3>Variable name in SurveyCTO</h3>
+      <p><strong>armEval</strong></p>
+      <h3>Field name (LABEL on SurveyCTO)</h3>
+      <p>Evaluation arm</p>
+      <h3>Definition (LABEL on SurveyCTO)</h3>
+      <p>Arm(s) for which the treatment effect is estimated.</p>
+      <h3>Response options</h3>
+      <p>Select all</p>
+      <h3>CV (Choices on SurveyCTO)</h3>
+      <p>List of study arms</p>
+      <h3>SurveyCTO instructions for data entry mask and repeat level</h3>
+      <ul>
+        <li>Display alongside Reference arm.</li>
+        <li>Repeat using the answer to "Number of comparisons".</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+      <ul>
+        <li>Select arm(s) being evaluated for each comparison.</li>
+        <li>Select multiple arms if authors pool arms; include all relevant arms for factorial interactions.</li>
+      </ul>
+      <h3>Descriptive example</h3>
+      <ul>
+        <li><strong>Ozler et al., 2018 Table 3:</strong> T2; T3; T4; pooled T2+T3+T4.</li>
+        <li><strong>Mbiti et al., 2019 Table III:</strong> Grants; Incentives; Combination; Combination; Combination.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Reference arm -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+    <div>
+      <h3>Variable name in SurveyCTO</h3>
+      <p><strong>armNonEval</strong></p>
+      <h3>Field name (LABEL on SurveyCTO)</h3>
+      <p>Reference arm</p>
+      <h3>Definition (LABEL on SurveyCTO)</h3>
+      <p>Reference arm in comparison, or the arm against which the treatment effect is estimated.</p>
+      <h3>Response options</h3>
+      <p>Select all</p>
+      <h3>CV (Choices on SurveyCTO)</h3>
+      <p>List of study arms</p>
+      <h3>SurveyCTO instructions for data entry mask and repeat level</h3>
+      <p>-Display evaluation arm and reference arm options on the same page.</p>
+      <p>-Use the answer to "Number of comparisons" to repeat this field.  
+      <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+      <ul>
+        <li>For each comparison, select the reference arm for the comparison.</li>
+        <li>In most cases for a parallel design, the comparison is the control arm. </li>
+        <li>This information can be present in the footnotes of the table such as "Control is the base arm"</li>
+      </ul>
+      <h3>Descriptive example</h3>
+      <p>see the [section] used in the paper to extract	The reference arm for Ozler et al, 2018 table 3 is the control group.
+
+      Here, coders should select the arm "Learning kits" that was created when they mapped intervention to arms.
+
+      The five reference arms for Table III from Mbiti et al. 2019 are:
+      1. None
+      2. None
+      3. None
+      4. Grants + Incentives [select two interventions]
+      5. Grants
+    </div>
+    <div>
+      <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+      <ul>
+        <li>For each comparison, select the reference arm for the comparison.</li>
+        <li>In most cases for a parallel design, the comparison is the control arm. </li>
+        <li>This information can be present in the footnotes of the table such as "Control is the base arm"</li>
+      </ul>
+      <h3>Descriptive example</h3>
+      <p>see the [section] used in the paper to extract	The reference arm for Ozler et al, 2018 table 3 is the control group.
+
+      Here, coders should select the arm "Learning kits" that was created when they mapped intervention to arms.
+
+      The five reference arms for Table III from Mbiti et al. 2019 are:
+      1. None
+      2. None
+      3. None
+      4. Grants + Incentives [select two interventions]
+      5. Grants
+    </div>
+  </div>
+  
+  <!-- Outcomes in table -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+    <div>
+      <h3>Variable name in SurveyCTO</h3>
+      <p><strong>tableOut</strong></p>
+      <h3>Field name (LABEL on SurveyCTO)</h3>
+      <p>Outcome name</p>
+      <h3>Definition (LABEL on SurveyCTO)</h3>
+      <p>The outcomes reported in the exhibit that contain full sample treatment effect(s)</p>
+      <h3>Response options</h3>
+      <p>List of outcomes</p>
+      <h3>CV (Choices on SurveyCTO)</h3>
+      <p>List of outcomes pre-specified from list of outcomes in the study [outLabel]</p>
+    </div>
+    <div>
+      <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+      <ul>
+        <li>Display all the outcomes for which full sample treatment effects are reported in the table</li>
+        <li>These may appear on the heading row or the first column of the table.</li>
+      </ul>
+      <h3>Descriptive example</h3>
+      <p>For Ozler et al, 2018, table 3 presents 5 outcomes. These are present in the top row of table 3 under the title "Dependent variable". Since these outcome names were collected previously in the survey, here coders should select:<br><br>
+      -Attending CBCC: 2012-13<br>
+      -Enrolled in Primary: 2012-13<br>
+      -Malawi Developmental Assessment Tool: Total Score<br>
+      -Malawi Developmental Assessment Tool: Language Skills<br>
+      -Malawi Developmental Assessment Tool: Fine Motor/Perception Skills<br><br>
+      For Freeman et al. 2022, Table 2 reports treatment effects on 10 outcomes. Each outcome is listed as a row in the Indicator column. The full list of outcomes collected for the study would appear as options, and coders should select:<br><br>
+      -Anxiety score<br>
+      -Depression score<br>
+      -Emotional distress score<br>
+      -Well-being score<br>
+      -High Anxiety<br>
+      -High Depression<br>
+      -High Emotional distress<br>
+      -Poor well-being</p>
+    </div>
+  </div>
+
+  <!-- Number of periods in the table -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+    <div>
+      <h3>Variable name in SurveyCTO</h3>
+      <p><strong>tableRoundNum</strong></p>
+      <h3>Field name (LABEL on SurveyCTO)</h3>
+      <p>Number of periods in the table</p>
+      <h3>Definition (LABEL on SurveyCTO)</h3>
+      <p>Number of periods over which treatment effects were estimated in the exhibit.</p>
+      <h3>Response options</h3>
+      <p>Numeric</p>
+      <h3>CV (Choices on SurveyCTO)</h3>
+      <p>Numeric</p>
+    </div>
+    <div>
+      <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+      <ul>
+        <li>List the number of distinct periods over which the treatments effects in the table were estimated. Periods refer to the units of time for which the paper reports treatment effects.</li>
+        <li>Most times each period only involves one round of data collection. But authors may pool several rounds of data collection into one extended period for some analysis. [See examples in the Descriptive example column]</li>
+        <li>When authors combine rounds of data collections, the number of periods in any given table may exceed the total number of rounds of data collection.</li>
+        <li>In general, the baseline is not a period. This is because studies do not estimate the treatment effect at the time of the baseline survey/ However, if the authors use a difference-in-differences design to estimate the treatment effect, then the baseline is included in the period.</li>
+      </ul>
+      <h3>Descriptive example</h3>
+      <p>In Hanna et al., 2016, table 3 presents 5 periods used to calculate treatment effects. The first row reports a period that includes all four rounds of midline and endline surveys in estimating the treatment effects. The following rows report the treatment effects in each individual period of midline and endline surveys (one per year since the treatment was administered). Coders should report "5" for this field, 1 each for the 4 separate yearly mid- and end-line surveys and 1 for the pooled endline.<br><br>
+      In contrast, in Ozler et al, 2018, table 3,the title of the table specifies the results are for the 18-month follow up. Coders should report "1" for this field, as only one round of data collection was used in this table.</p>
+    </div>
+  </div>
+
+  <!-- Rounds of data collection in the table -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+    <div>
+      <h3>Variable name in SurveyCTO</h3>
+      <p><strong>tableRound</strong></p>
+      <h3>Field name (LABEL on SurveyCTO)</h3>
+      <p>Rounds of data collection in exhibit.</p>
+      <h3>Definition (LABEL on SurveyCTO)</h3>
+      <p>The rounds of data collection in each exhibit.</p>
+      <h3>Response options</h3>
+      <p>Select all</p>
+      <h3>CV (Choices on SurveyCTO)</h3>
+      <p>List of round names from "Round name"</p>
+    </div>
+    <div>
+      <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+      <ul>
+        <li>Select the rounds of data collection for each period reported in the table.</li>
+        <li>For treatment effects estimated within a period with only one round of data collection, select solely that round. For treatment effects estimated in a period with multiple rounds of data collection, select all rounds that were pooled in that estimation during the period.</li>
+      </ul>
+      <h3>Descriptive example</h3>
+      <p>In Ozler et al, 2018, table 3, the title of the table specifies the results are for the 18-month follow up.<br><br>
+      So for this field, coders should select "18-month follow up"<br><br>
+      In Hanna et al., 2016, table 3 presents treatment effects for individual rounds of data collection. For the individual rounds, coders should select the corresponding round names (e.g., 0-12 month survey, 13-24 month survey, etc.). For the pooled round, coders should select all four of the individual rounds.</p>
+    </div>
+  </div>
+
+  <!-- Number of empirical specifications in the table -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+    <div>
+      <h3>Variable name in SurveyCTO</h3>
+      <p><strong>tableSpecNum</strong></p>
+      <h3>Field name (LABEL on SurveyCTO)</h3>
+      <p>Number of empirical specifications in each exhibit</p>
+      <h3>Definition (LABEL on SurveyCTO)</h3>
+      <p>Number of empirical specifications used to estimate treatment effects in the table.</p>
+      <h3>Response options</h3>
+      <p>Numeric</p>
+      <h3>CV (Choices on SurveyCTO)</h3>
+      <p>Integer greater than zero</p>
+    </div>
+    <div>
+      <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+      <ul>
+        <li>Please identify and indicate the number of unique empirical specifications used to estimate treatment effects in the exhibit.</li>
+        <li>A unique empirical specification is defined by the inclusion (or not) of strata correction, baseline outcome and other controls. This table illustrates all 8 types of specifications, and a coder should count how many of them were used to estimate treatment effect in the exhibit.</li>
+        <li>Baseline value of outcome refers to the baseline value of the outcome for which the treatment effect is being estimated. Controls for baseline values of other variables are not included in baseline value of outcome.</li>
+        <li>Controls include those are observed before treatment assignment refer to variables measured at baseline, as well as the ones that are measured after baseline but are considered to be static over the study period - for example, parental education in the context of a program targeting children, gender in the context of a program that is not assumed to affect gender identity, or residence in a flood-prone zone in a context of a program that is not assumed to affect choice of residence.</li>
+        <li>A simple difference in means with no additional information on the specification used or the presence of any adjustment should be considered as "No other controls". Likewise, a regression with just the outcome of interest as the dependent variable and just an indicator for treatment status as the sole independent variable should be coded as "No other controls."</li>
+        <li>Information on specifications can be found in both data and statistical analysis sections and table notes. In some papers, authors report the regression specification or empirical model used to estimate treatment effects and/or indicate their specification in column labels in tables. Sometimes, authors add additional details about specifications to table notes only. In other studies, this information must be inferred from the text and/or notes that accompany tables or figures.</li>
+      </ul>
+      <h3>Descriptive example</h3>
+      <p>In Riley, 2024, E. The empirical Strategy describes the specifications in equation (1) that strata dummies and the baseline value of the outcome (if measured at baseline, otherwise excluded) are included in the estimation of treatment effects. In Table 1, where full sample results are reported, the notes indicate "All regressions include strata dummies and include the baseline value of the outcomes."<br><br>
+      The response to this question is: 1<br><br>
+      In Ashraf et al., 2010, according to tables notes, in Table 2, two specifications are used for each outcome: with and without baseline controls (including baseline Clorin usage and water cholorination, general health behaviors and attitudes, household demographics, and locality fixed effects).<br><br>
+      The response to this question is: 2<br><br>
+      Grossman and Baldassarri, 2012 report treatment effects using four set of specifications in Table 2 including no controls, individual controls, monitor profile (post-treatment control), and both individual controls and monitor profile. There are in total 4 specifications.<br><br>
+      The response to this question is: 4</p>
+    </div>
+  </div>
+
+</details>
