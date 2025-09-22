@@ -95,7 +95,7 @@
 <h1>IDEAL All Stages Coding Protocol</h1>
 <input type="text" id="searchBox" onkeyup="filterContent()" placeholder="Search the protocol...">
 
-<details open>
+<details>
 <summary>Stage 1 Set-Up</summary>
 
 <details>
@@ -1648,26 +1648,32 @@
   </div>
   <div>
     <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
-    <pre>Count the number of IDEAL treatment effect estimates you plan to report for this exhibit.
-
-What estimates to count:
-•	For each possible outcome-contrast pair, the total number of IDEAL-eligible treatment effects depends on the specification and the rounds of data collection.
-•	It is possible that no treatment effect is reported in the table for a given contrast-outcome pair. However, each outcome and contrast in the exhibit should be related to at least one treatment effect.
-•	Only count full sample results.
-•	Do not count estimates from interaction terms.
-•	Count ITT estimates. Only count LATE / TOT estimates if they are preferred by the author or they are the only estimates reported.
-How to count data collection rounds:
-•	If treatment effects are estimated for multiple rounds of data collection, count each round as a separate treatment effect.
-•	For example, if the same treatment effect is estimated separately for the "first follow-up survey" and the "second follow-up survey," each estimate should be counted as a distinct treatment effect, regardless of the specification used.
-How to count specifications:
-•	When multiple treatment effects are reported for a contrast-outcome pair, only two of them will be eligible for IDEAL:
-•	IDEAL-preferred specification: Count the treatment effects estimated using the highest-ranked IDEAL-preferred specification.
-•	Author-preferred specification: Only count the author-preferred specification as separate treatment effect if it differs from the IDEAL-preferred specification.
-•	The ranking of IDEAL-preferred specifications can be found here (click to open new page): https://ideal-consortium.github.io/Schema/IDEAL_Ranking_Index.html</pre>
+    <p>Count the number of IDEAL treatment effect estimates you plan to report for this exhibit.</p>
+    <h3>What estimates to count</h3>
+    <ul>
+      <li>For each possible outcome-contrast pair, the total number of IDEAL-eligible treatment effects depends on the specification and the rounds of data collection.</li>
+      <li>It is possible that no treatment effect is reported in the table for a given contrast-outcome pair. However, each outcome and contrast in the exhibit should be related to at least one treatment effect.</li>
+      <li>Only count full sample results.</li>
+      <li>Do not count estimates from interaction terms.</li>
+      <li>Count ITT estimates. Only count LATE / TOT estimates if they are preferred by the author or they are the only estimates reported.</li>
+    </ul>
+    <h3>How to count data collection rounds</h3>
+    <ul>
+      <li>If treatment effects are estimated for multiple rounds of data collection, count each round as a separate treatment effect.</li>
+      <li>For example, if the same treatment effect is estimated separately for the "first follow-up survey" and the "second follow-up survey," each estimate should be counted as a distinct treatment effect, regardless of the specification used.</li>
+    </ul>
+    <h3>How to count specifications</h3>
+    <ul>
+      <li>When multiple treatment effects are reported for a contrast-outcome pair, only two of them will be eligible for IDEAL:</li>
+      <li>IDEAL-preferred specification: Count the treatment effects estimated using the highest-ranked IDEAL-preferred specification.</li>
+      <li>Author-preferred specification: Only count the author-preferred specification as separate treatment effect if it differs from the IDEAL-preferred specification.</li>
+      <li>The ranking of IDEAL-preferred specifications can be found here (click to open new page): <a href="https://ideal-consortium.github.io/Schema/IDEAL_Ranking_Index.html" target="_blank" rel="noopener noreferrer">https://ideal-consortium.github.io/Schema/IDEAL_Ranking_Index.html</a></li>
+    </ul>
     <h3>Descriptive example</h3>
     <p>see the [section] used in the paper to extract</p>
   </div>
 </div>
+</details>
 
 <details>
 <summary>Outcome – contrast pairs (contrast_col)</summary>
@@ -1688,7 +1694,9 @@ How to count specifications:
   </div>
   <div>
     <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
-    <pre>-For each outcome, please select all the contrasts for which treatment effects were estimated and reported in the specified table. </pre>
+    <ul>
+      <li>For each outcome, please select all the contrasts for which treatment effects were estimated and reported in the specified table.</li>
+    </ul>
     <h3>Descriptive example</h3>
     <p>see the [section] used in the paper to extract	</p>
   </div>
@@ -1717,9 +1725,11 @@ How to count specifications:
   </div>
   <div>
     <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
-    <pre>-For each outcome-contrast pair, please select the estimand for which treatment effects were reported in the specified table.
--This question only applies to cases where an exhibit includes both, ITT and TOT/LATE estimates. 
--If only one estimand is reported for this table in Stage 1, this question will be replaced by a note displaying the corresponding estimand, either “ITT” or “TOT/LATE”.</pre>
+    <ul>
+      <li>For each outcome-contrast pair, please select the estimand for which treatment effects were reported in the specified table.</li>
+      <li>This question only applies to cases where an exhibit includes both, ITT and TOT/LATE estimates.</li>
+      <li>If only one estimand is reported for this table in Stage 1, this question will be replaced by a note displaying the corresponding estimand, either "ITT" or "TOT/LATE".</li>
+    </ul>
     <h3>Descriptive example</h3>
     <p>see the [section] used in the paper to extract	</p>
   </div>
@@ -1747,14 +1757,14 @@ How to count specifications:
       <li>Controls observed after treatment or not considered static</li>
     </ul>
     <h3>SurveyCTO instructions for data entry mask and repeat level</h3>
-    <p>Repeat for each outcome–contrast pair (conditional). Display Stage 1 strata variables after “Strata fixed effects” as a hint.</p>
+    <p>Repeat for each outcome–contrast pair (conditional). Display Stage 1 strata variables after "Strata fixed effects" as a hint.</p>
   </div>
   <div>
     <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
     <ul>
       <li>Select the single IDEAL-preferred specification per pair (use ranking).</li>
       <li>If preferences differ by estimand, report ITT.</li>
-      <li>“No controls” cannot be combined with other options.</li>
+      <li>"No controls" cannot be combined with other options.</li>
       <li>If only one specification exists in Stage 1, skip; a single follow-up describes the one spec for all effects.</li>
     </ul>
     <h3>Descriptive example</h3>
@@ -1783,7 +1793,7 @@ How to count specifications:
   <div>
     <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
     <ul>
-      <li>Mark “Yes” if IDEAL-preferred equals Author-preferred; leave unchecked for No.</li>
+      <li>Mark "Yes" if IDEAL-preferred equals Author-preferred; leave unchecked for No.</li>
       <li>Skipped if only one specification reported in Stage 1 (implied same).</li>
     </ul>
     <h3>Descriptive example</h3>
@@ -1856,9 +1866,9 @@ How to count specifications:
     <h3>Variable name in SurveyCTO</h3>
     <p><strong>author_spec</strong></p>
     <h3>Field name (LABEL on SurveyCTO)</h3>
-    <p>Authors’ preferred empirical specifications</p>
+    <p>Authors' preferred empirical specifications</p>
     <h3>Definition (LABEL on SurveyCTO)</h3>
-    <p>Select authors’ preferred empirical specifications for the outcome–contrast pairs.</p>
+    <p>Select authors' preferred empirical specifications for the outcome–contrast pairs.</p>
     <h3>Response options</h3>
     <p>Text-CV</p>
     <h3>CV (Choices on SurveyCTO)</h3>
@@ -1870,12 +1880,12 @@ How to count specifications:
       <li>Controls observed after treatment or not considered static</li>
     </ul>
     <h3>SurveyCTO instructions for data entry mask and repeat level</h3>
-    <p>Display only if “authors prefer the same empirical specifications” is unchecked. Repeat for each Outcome–Contrast that applies based on <code>preferred_col</code>.</p>
+    <p>Display only if "authors prefer the same empirical specifications" is unchecked. Repeat for each Outcome–Contrast that applies based on <code>preferred_col</code>.</p>
   </div>
   <div>
     <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
     <ul>
-      <li>Select alternatives describing the authors’ preferred specification for each effect.</li>
+      <li>Select alternatives describing the authors' preferred specification for each effect.</li>
       <li>Appears only when Author-preferred differs from IDEAL-preferred.</li>
     </ul>
     <h3>Descriptive example</h3>
@@ -1971,11 +1981,157 @@ How to count specifications:
   <div>
     <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
     <ul>
-      <li>Select “Yes” to confirm the displayed round is used for all treatment effects in the exhibit.</li>
-      <li>It is unlikely you will need to select “No”. The survey continues regardless.</li>
+      <li>Select "Yes" to confirm the displayed round is used for all treatment effects in the exhibit.</li>
+      <li>It is unlikely you will need to select "No". The survey continues regardless.</li>
     </ul>
     <h3>Descriptive example</h3>
     <p>see the [section] used in the paper to extract</p>
   </div>
 </div>
+</details>
+
+
+<details>
+<summary>Stage 3 Set-Up</summary>
+
+<details>
+<summary>Coder name</summary>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Level</h3>
+    <p></p>
+    <h3>Definition</h3>
+    <p>Coder name</p>
+    <h3>Response options</h3>
+    <p>Text-CV</p>
+    <h3>Controlled Vocabulary</h3>
+    <p>List of coders in the order of coder ID</p>
+    <h3>Cardinality (extraction)</h3>
+    <p></p>
+    <h3>Instruction for data entry mask</h3>
+    <p>Pre-load coder names and create a drop-down</p>
+  </div>
+  <div>
+    <h3>Instruction for coders (This will go to the "Hints" for surveyCTO)</h3>
+    <p>Please select your name from the drop-down. If your name does not appear, reach out to your supervisor.</p>
+    <h3>Descriptive examples for coding</h3>
+    <p></p>
+  </div>
+</div>
+</details>
+
+<details>
+<summary>Paper ID</summary>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Level</h3>
+    <p></p>
+    <h3>Definition</h3>
+    <p>IDEAL ID of the paper</p>
+    <h3>Response options</h3>
+    <p>Text-CV</p>
+    <h3>Controlled Vocabulary</h3>
+    <p>Integer covering the range of IDs or dropdown list of IDs</p>
+    <h3>Cardinality (extraction)</h3>
+    <p></p>
+    <h3>Instruction for data entry mask</h3>
+    <p>Use the paper list.</p>
+  </div>
+  <div>
+    <h3>Instruction for coders (This will go to the "Hints" for surveyCTO)</h3>
+    <p>Select the IDEAL paper ID for which you are starting data extraction.</p>
+    <h3>Descriptive examples for coding</h3>
+    <p></p>
+  </div>
+</div>
+</details>
+
+<details>
+<summary>Paper title</summary>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Level</h3>
+    <p></p>
+    <h3>Definition</h3>
+    <p>Confirmation title of the paper is: "[Title]".</p>
+    <h3>Response options</h3>
+    <p>Text-CV select one</p>
+    <h3>Controlled Vocabulary</h3>
+    <ul>
+      <li>Yes</li>
+      <li>No</li>
+    </ul>
+    <h3>Cardinality (extraction)</h3>
+    <p></p>
+    <h3>Instruction for data entry mask</h3>
+    <ul>
+      <li>Title associated with the ID appears</li>
+      <li>End survey if field = no</li>
+    </ul>
+  </div>
+  <div>
+    <h3>Instruction for coders (This will go to the "Hints" for surveyCTO)</h3>
+    <ul>
+      <li>Please confirm that this title matches the paper you are currently coding.</li>
+      <li>If the title does not match your assignment but the ID is correct, please alert your supervisor.</li>
+    </ul>
+    <h3>Descriptive examples for coding</h3>
+    <p></p>
+  </div>
+</div>
+</details>
+
+<details>
+<summary>Request for review: fields</summary>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Level</h3>
+    <p></p>
+    <h3>Definition</h3>
+    <p>Would you like to request review for any of your responses?</p>
+    <h3>Response options</h3>
+    <p>Text CV select all</p>
+    <h3>Controlled Vocabulary</h3>
+    <p>List of fields in order of appearance</p>
+    <h3>Cardinality (extraction)</h3>
+    <p></p>
+    <h3>Instruction for data entry mask</h3>
+    <p>After each logical group of 4-10 questions, create a multiple choice select-all question with the list of fields prior to this question.</p>
+  </div>
+  <div>
+    <h3>Instruction for coders (This will go to the "Hints" for surveyCTO)</h3>
+    <p>Please select all questions you were unsure about.</p>
+    <h3>Descriptive examples for coding</h3>
+    <p></p>
+  </div>
+</div>
+</details>
+
+<details>
+<summary>Request for review: detail</summary>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Level</h3>
+    <p></p>
+    <h3>Definition</h3>
+    <p>Please provide details.</p>
+    <h3>Response options</h3>
+    <p>Open text</p>
+    <h3>Controlled Vocabulary</h3>
+    <p></p>
+    <h3>Cardinality (extraction)</h3>
+    <p></p>
+    <h3>Instruction for data entry mask</h3>
+    <p>If any of the CHECK questions selected in the previous question</p>
+  </div>
+  <div>
+    <h3>Instruction for coders (This will go to the "Hints" for surveyCTO)</h3>
+    <p>For each field, explain what you were uncertain about and (if applicable) which options you were considering.</p>
+    <h3>Descriptive examples for coding</h3>
+    <p>For example, if a coder selects the "Estimand is full sample ITT and LATE/TOT" field in the request-for-review section, they could add an explanation about their uncertainty in this field.</p>
+    <p>"Unsure regarding the empirical specification of the estimand. The author mentions that "we view the evaluation design as quasi-experimental and use difference-in-differences to estimate program impact." Are the estimates indirectly ITT/LATE/TOT or are they only quasi-experimental estimates?"</p>
+  </div>
+</div>
+</details>
+
 </details>
