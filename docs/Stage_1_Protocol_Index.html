@@ -1518,3 +1518,486 @@
   </details>
 
 </details>
+
+<details>
+<summary>Stage 2 Set-Up</summary>
+
+<details>
+<summary>Coder name</summary>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Variable name in SurveyCTO</h3>
+    <p><strong>coder</strong></p>
+    <h3>Field name (LABEL on SurveyCTO)</h3>
+    <p>Coder name</p>
+    <h3>Definition (LABEL on SurveyCTO)</h3>
+    <p>Name of the coder</p>
+    <h3>Response options</h3>
+    <p>text-CV</p>
+    <h3>CV (Choices on SurveyCTO)</h3>
+    <p><em>list of coders</em></p>
+    <h3>SurveyCTO instructions for data entry mask and repeat level</h3>
+    <p>Drop down list</p>
+  </div>
+  <div>
+    <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+    <ul>
+      <li>Please select your name from the list below</li>
+      <li>If your name does not appear, reach out to your supervisor</li>
+    </ul>
+    <h3>Descriptive example</h3>
+    <p>see the [section] used in the paper to extract</p>
+  </div>
+</div>
+</details>
+
+<details>
+<summary>Paper ID</summary>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Variable name in SurveyCTO</h3>
+    <p><strong>paperID</strong></p>
+    <h3>Field name (LABEL on SurveyCTO)</h3>
+    <p>Paper ID</p>
+    <h3>Definition (LABEL on SurveyCTO)</h3>
+    <p>The IDEAL ID of the paper</p>
+    <h3>Response options</h3>
+    <p>text-CV</p>
+    <h3>CV (Choices on SurveyCTO)</h3>
+    <p><em>List of papers IDs assigned to the coder.</em></p>
+    <h3>SurveyCTO instructions for data entry mask and repeat level</h3>
+    <p>Drop down</p>
+  </div>
+  <div>
+    <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+    <ul>
+      <li>Select the IDEAL paper ID for which you will start extraction.</li>
+      <li>If the paper ID does not appear on the list, reach out to your supervisor.</li>
+    </ul>
+    <h3>Descriptive example</h3>
+    <p>see the [section] used in the paper to extract</p>
+  </div>
+</div>
+</details>
+
+<details>
+<summary>Paper title</summary>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Variable name in SurveyCTO</h3>
+    <p><strong>X_titleConfirm</strong></p>
+    <h3>Field name (LABEL on SurveyCTO)</h3>
+    <p>Paper title</p>
+    <h3>Definition (LABEL on SurveyCTO)</h3>
+    <p>Please confirm: The title of the paper on SurveyCTO.</p>
+    <h3>Response options</h3>
+    <p>text-CV</p>
+    <h3>CV (Choices on SurveyCTO)</h3>
+    <ul>
+      <li>Yes</li>
+      <li>No</li>
+    </ul>
+    <h3>SurveyCTO instructions for data entry mask and repeat level</h3>
+    <ul>
+      <li>Title associated with the ID appears</li>
+      <li>End survey if field = no</li>
+    </ul>
+  </div>
+  <div>
+    <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+    <ul>
+      <li>Confirm the name of the paper that appears on SurveyCTO matches the name of the paper on the list assigned to you.</li>
+      <li>If you have selected no, a message will be sent to your supervisor. Please await a new corrected paper assignment.</li>
+    </ul>
+    <h3>Descriptive example</h3>
+    <p>see the [section] used in the paper to extract</p>
+  </div>
+</div>
+</details>
+
+<details>
+<summary>Stage 2 Fields</summary>
+
+<div style="padding: 1rem;">
+  <p>This survey is going to go through each of the exhibits you specified in Stage 1 (and also verified by a supervisor) that reported treatment effects. The questions will allow us to match and specify the treatment effects that are eligible for data extraction for IDEAL.</p>
+  <p>Section notes: Exhibit information</p>
+  <p>In Stage 1, you reported that {Exhibit label} includes {Number of comparisons} contrast(s) and {Number of outcome variables in the table} outcome(s). In the next questions you will be asked to:</p>
+  <ol>
+    <li>Identify the IDEAL eligible treatment effect for each outcome-contrast pair.</li>
+    <li>Describe the empirical specification and rounds of data collection used to estimate those treatment effects.</li>
+  </ol>
+  </div>
+<details>
+<summary>Number of eligible treatment effects (tfx_num)</summary>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Variable name in SurveyCTO</h3>
+    <p><strong>tfx_num</strong></p>
+    <h3>Field name (LABEL on SurveyCTO)</h3>
+    <p>How many IDEAL eligible treatment effects in the exhibit are you going to report?</p>
+    <h3>Definition (LABEL on SurveyCTO)</h3>
+    <p>The number of IDEAL eligible treatment effects in the table to report.</p>
+    <h3>Response options</h3>
+    <p>Numeric</p>
+    <h3>CV (Choices on SurveyCTO)</h3>
+    <p>Integer greater than zero</p>
+    <h3>SurveyCTO instructions for data entry mask and repeat level</h3>
+    <p>Repeat for each table identified in Stage 1.</p>
+  </div>
+  <div>
+    <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+    <pre>Count the number of IDEAL treatment effect estimates you plan to report for this exhibit.
+
+What estimates to count:
+•	For each possible outcome-contrast pair, the total number of IDEAL-eligible treatment effects depends on the specification and the rounds of data collection.
+•	It is possible that no treatment effect is reported in the table for a given contrast-outcome pair. However, each outcome and contrast in the exhibit should be related to at least one treatment effect.
+•	Only count full sample results.
+•	Do not count estimates from interaction terms.
+•	Count ITT estimates. Only count LATE / TOT estimates if they are preferred by the author or they are the only estimates reported.
+How to count data collection rounds:
+•	If treatment effects are estimated for multiple rounds of data collection, count each round as a separate treatment effect.
+•	For example, if the same treatment effect is estimated separately for the "first follow-up survey" and the "second follow-up survey," each estimate should be counted as a distinct treatment effect, regardless of the specification used.
+How to count specifications:
+•	When multiple treatment effects are reported for a contrast-outcome pair, only two of them will be eligible for IDEAL:
+•	IDEAL-preferred specification: Count the treatment effects estimated using the highest-ranked IDEAL-preferred specification.
+•	Author-preferred specification: Only count the author-preferred specification as separate treatment effect if it differs from the IDEAL-preferred specification.
+•	The ranking of IDEAL-preferred specifications can be found here (click to open new page): https://ideal-consortium.github.io/Schema/IDEAL_Ranking_Index.html
+
+Descriptive example
+see the [section] used in the paper to extract	</pre>
+  </div>
+</div>
+
+<div style="padding: 0 1rem 1rem 1rem;">
+  <h3>What estimates to count</h3>
+  <ul>
+    <li>For each outcome–contrast pair, eligible effects depend on specification and rounds.</li>
+    <li>Each outcome and contrast should map to at least one treatment effect.</li>
+    <li>Only count full sample results.</li>
+    <li>Do not count interaction-term estimates.</li>
+    <li>Count ITT; count LATE/TOT only if author-preferred or only estimates reported.</li>
+  </ul>
+  <h3>How to count data collection rounds</h3>
+  <ul>
+    <li>If multiple rounds, count each round as a separate effect.</li>
+    <li>Separate follow-ups (e.g., first vs second) are distinct effects.</li>
+  </ul>
+  <h3>How to count specifications</h3>
+  <ul>
+    <li>At most two per pair: IDEAL-preferred and (if different) Author-preferred.</li>
+    <li>Ranking: <a href="https://ideal-consortium.github.io/Schema/IDEAL_Ranking_Index.html" target="_blank" rel="noopener noreferrer">IDEAL Ranking Index</a></li>
+  </ul>
+  <h3>Descriptive example</h3>
+  <p>see the [section] used in the paper to extract</p>
+</div>
+
+<details>
+<summary>Outcome – contrast pairs (contrast_col)</summary>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Variable name in SurveyCTO</h3>
+    <p><strong>contrast_col</strong></p>
+    <h3>Field name (LABEL on SurveyCTO)</h3>
+    <p>Outcome-contrast pairs reported for treatment effects.</p>
+    <h3>Definition (LABEL on SurveyCTO)</h3>
+    <p>The contrasts for which treatment effects are reported in the table for each outcome.</p>
+    <h3>Response options</h3>
+    <p>Text-CV</p>
+    <h3>CV (Choices on SurveyCTO)</h3>
+    <p>Select (check mark - multiple). Mark as checked if the specific Outcome–Contrast pair is present for the Stage 1 table.</p>
+    <h3>SurveyCTO instructions for data entry mask and repeat level</h3>
+    <p>Display all outcomes and contrasts identified for the specified table in Stage 1 for mapping.</p>
+  </div>
+  <div>
+    <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+    <pre>-For each outcome, please select all the contrasts for which treatment effects were estimated and reported in the specified table. 
+Descriptive example
+see the [section] used in the paper to extract	</pre>
+  </div>
+</div>
+</details>
+
+<details>
+<summary>Estimand for outcome – contrast pairs (estimand_col)</summary>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Variable name in SurveyCTO</h3>
+    <p><strong>estimand_col</strong></p>
+    <h3>Field name (LABEL on SurveyCTO)</h3>
+    <p>Estimand</p>
+    <h3>Definition (LABEL on SurveyCTO)</h3>
+    <p>Estimand for the outcome–contrast pairs reported for treatment effects in the table.</p>
+    <h3>Response options</h3>
+    <p>Text-CV</p>
+    <h3>CV (Choices on SurveyCTO)</h3>
+    <ul>
+      <li>ITT</li>
+      <li>TOT or LATE</li>
+    </ul>
+    <h3>SurveyCTO instructions for data entry mask and repeat level</h3>
+    <p>Display all estimands identified for the specified table in Stage 1 for mapping.</p>
+  </div>
+  <div>
+    <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+    <pre>-For each outcome-contrast pair, please select the estimand for which treatment effects were reported in the specified table.
+-This question only applies to cases where an exhibit includes both, ITT and TOT/LATE estimates. 
+-If only one estimand is reported for this table in Stage 1, this question will be replaced by a note displaying the corresponding estimand, either “ITT” or “TOT/LATE”.
+Descriptive example
+see the [section] used in the paper to extract	</pre>
+  </div>
+</div>
+</details>
+
+<details>
+<summary>IDEAL preferred empirical specifications for outcome-contrast pairs (specification_col)</summary>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Variable name in SurveyCTO</h3>
+    <p><strong>specification_col</strong></p>
+    <h3>Field name (LABEL on SurveyCTO)</h3>
+    <p>Outcome-Contrast Pairs</p>
+    <h3>Definition (LABEL on SurveyCTO)</h3>
+    <p>IDEAL preferred empirical specifications for the outcome–contrast pairs reported for treatment effects in the table.</p>
+    <h3>Response options</h3>
+    <p>Text-CV</p>
+    <h3>CV (Choices on SurveyCTO)</h3>
+    <ul>
+      <li>No controls or any other variables</li>
+      <li>Strata fixed effects</li>
+      <li>Baseline value of outcome</li>
+      <li>Controls observed before treatment or considered static</li>
+      <li>Controls observed after treatment or not considered static</li>
+    </ul>
+    <h3>SurveyCTO instructions for data entry mask and repeat level</h3>
+    <p>Repeat for each outcome–contrast pair (conditional). Display Stage 1 strata variables after “Strata fixed effects” as a hint.</p>
+  </div>
+  <div>
+    <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+    <ul>
+      <li>Select the single IDEAL-preferred specification per pair (use ranking).</li>
+      <li>If preferences differ by estimand, report ITT.</li>
+      <li>“No controls” cannot be combined with other options.</li>
+      <li>If only one specification exists in Stage 1, skip; a single follow-up describes the one spec for all effects.</li>
+    </ul>
+    <h3>Descriptive example</h3>
+    <p>Summaries from Riley (2024), Barrera-Osorio (2011), Grossman & Baldassarri (2012), Li (2022).</p>
+  </div>
+</div>
+</details>
+
+<details>
+<summary>Authors prefer the same empirical specifications as IDEAL (preferred_col)</summary>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Variable name in SurveyCTO</h3>
+    <p><strong>preferred_col</strong></p>
+    <h3>Field name (LABEL on SurveyCTO)</h3>
+    <p>Is the specification above also preferred by the author(s)?</p>
+    <h3>Definition (LABEL on SurveyCTO)</h3>
+    <p>Indicates whether authors preferred the same empirical specifications as IDEAL for the outcome–contrast pairs.</p>
+    <h3>Response options</h3>
+    <p>Text-CV</p>
+    <h3>CV (Choices on SurveyCTO)</h3>
+    <p>Select (check mark - one): Yes</p>
+    <h3>SurveyCTO instructions for data entry mask and repeat level</h3>
+    <p>Repeat for each outcome–contrast pair (conditional)</p>
+  </div>
+  <div>
+    <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+    <ul>
+      <li>Mark “Yes” if IDEAL-preferred equals Author-preferred; leave unchecked for No.</li>
+      <li>Skipped if only one specification reported in Stage 1 (implied same).</li>
+    </ul>
+    <h3>Descriptive example</h3>
+    <p>see the [section] used in the paper to extract</p>
+  </div>
+</div>
+</details>
+
+<details>
+<summary>Rounds of data collection (period_col)</summary>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Variable name in SurveyCTO</h3>
+    <p><strong>period_col</strong></p>
+    <h3>Field name (LABEL on SurveyCTO)</h3>
+    <p>Rounds of data collection</p>
+    <h3>Definition (LABEL on SurveyCTO)</h3>
+    <p>Rounds of data collection used to estimate the specific treatment effect</p>
+    <h3>Response options</h3>
+    <p>Text-CV</p>
+    <h3>CV (Choices on SurveyCTO)</h3>
+    <p>Select (check mark - multiple): pre-populated list of rounds of data collection</p>
+    <h3>SurveyCTO instructions for data entry mask and repeat level</h3>
+    <p>Repeat for each outcome–contrast pair (conditional)</p>
+  </div>
+  <div>
+    <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+    <ul>
+      <li>Mark all rounds used for estimating the treatment effects.</li>
+      <li>Each round should map to a distinct treatment effect estimate.</li>
+      <li>If only one round appears in Stage 1, this is skipped; a confirmation follows next page.</li>
+    </ul>
+    <h3>Descriptive example</h3>
+    <p>see the [section] used in the paper to extract</p>
+  </div>
+</div>
+</details>
+
+<details>
+<summary>IDEAL specification for round of data collection (same_period_col)</summary>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Variable name in SurveyCTO</h3>
+    <p><strong>same_period_col</strong></p>
+    <h3>Field name (LABEL on SurveyCTO)</h3>
+    <p>Does the IDEAL-preferred specification apply to all data collection rounds selected above?</p>
+    <h3>Definition (LABEL on SurveyCTO)</h3>
+    <p>Specifies whether the IDEAL-preferred specification is used to estimate the treatment effect in each selected round.</p>
+    <h3>Response options</h3>
+    <p>Text-CV</p>
+    <h3>CV (Choices on SurveyCTO)</h3>
+    <p>Select (check mark - one): Yes</p>
+  </div>
+  <div>
+    <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+    <ul>
+      <li>If unchecked, a follow-up will ask for the specification used in each selected round.</li>
+      <li>If only one specification is reported in Stage 1, skip; IDEAL-preferred assumed for all rounds.</li>
+    </ul>
+    <h3>Descriptive example</h3>
+    <p>see the [section] used in the paper to extract</p>
+  </div>
+</div>
+</details>
+
+<details>
+<summary>Author preferred empirical specifications (author_spec)</summary>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Variable name in SurveyCTO</h3>
+    <p><strong>author_spec</strong></p>
+    <h3>Field name (LABEL on SurveyCTO)</h3>
+    <p>Authors’ preferred empirical specifications</p>
+    <h3>Definition (LABEL on SurveyCTO)</h3>
+    <p>Select authors’ preferred empirical specifications for the outcome–contrast pairs.</p>
+    <h3>Response options</h3>
+    <p>Text-CV</p>
+    <h3>CV (Choices on SurveyCTO)</h3>
+    <ul>
+      <li>No controls or any other variables</li>
+      <li>Strata fixed effects</li>
+      <li>Baseline value of outcome</li>
+      <li>Controls observed before treatment or considered static</li>
+      <li>Controls observed after treatment or not considered static</li>
+    </ul>
+    <h3>SurveyCTO instructions for data entry mask and repeat level</h3>
+    <p>Display only if “authors prefer the same empirical specifications” is unchecked. Repeat for each Outcome–Contrast that applies based on <code>preferred_col</code>.</p>
+  </div>
+  <div>
+    <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+    <ul>
+      <li>Select alternatives describing the authors’ preferred specification for each effect.</li>
+      <li>Appears only when Author-preferred differs from IDEAL-preferred.</li>
+    </ul>
+    <h3>Descriptive example</h3>
+    <p>see the [section] used in the paper to extract</p>
+  </div>
+</div>
+</details>
+
+<details>
+<summary>Alternative specification for each period (diff_per_spec)</summary>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Variable name in SurveyCTO</h3>
+    <p><strong>diff_per_spec</strong></p>
+    <h3>Field name (LABEL on SurveyCTO)</h3>
+    <p>Specification used in round of data collection</p>
+    <h3>Definition (LABEL on SurveyCTO)</h3>
+    <p>Description of the specification used for each round of data collection</p>
+    <h3>Response options</h3>
+    <p>Text-CV</p>
+    <h3>CV (Choices on SurveyCTO)</h3>
+    <ul>
+      <li>No controls or any other variables</li>
+      <li>Strata fixed effects</li>
+      <li>Baseline value of outcome</li>
+      <li>Controls observed before treatment or considered static</li>
+      <li>Controls observed after treatment or not considered static</li>
+    </ul>
+    <h3>SurveyCTO instructions for data entry mask and repeat level</h3>
+    <p>Only display if IDEAL-preferred does not apply to all rounds. Repeat per Outcome–Contrast based on <code>same_period_col</code>.</p>
+  </div>
+  <div>
+    <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+    <p></p>
+    <h3>Descriptive example</h3>
+    <p>see the [section] used in the paper to extract</p>
+  </div>
+</div>
+</details>
+
+<details>
+<summary>Specification for all treatment effects (spec_single)</summary>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Variable name in SurveyCTO</h3>
+    <p><strong>spec_single</strong></p>
+    <h3>Field name (LABEL on SurveyCTO)</h3>
+    <p>Specification used to estimate all treatment effects in the exhibit</p>
+    <h3>Definition (LABEL on SurveyCTO)</h3>
+    <p>Description of the empirical specification used to estimate treatment effects for all outcome–contrast pairs</p>
+    <h3>Response options</h3>
+    <p>Text-CV</p>
+    <h3>CV (Choices on SurveyCTO)</h3>
+    <ul>
+      <li>No controls or any other variables</li>
+      <li>Strata fixed effects</li>
+      <li>Baseline value of outcome</li>
+      <li>Controls observed before treatment or considered static</li>
+      <li>Controls observed after treatment or not considered static</li>
+    </ul>
+    <h3>SurveyCTO instructions for data entry mask and repeat level</h3>
+    <p>Only display if only one specification is reported in Stage 1 for the corresponding table.</p>
+  </div>
+  <div>
+    <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+    <p></p>
+    <h3>Descriptive example</h3>
+    <p>see the [section] used in the paper to extract</p>
+  </div>
+</div>
+</details>
+
+<details>
+<summary>Round of data collection used for all treatment effects (spec_single)</summary>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Variable name in SurveyCTO</h3>
+    <p><strong>spec_single</strong></p>
+    <h3>Field name (LABEL on SurveyCTO)</h3>
+    <p>Round of data collection used to estimate all treatment effects in the exhibit</p>
+    <h3>Definition (LABEL on SurveyCTO)</h3>
+    <p>Confirm that the round of data collection reported in Stage 1 is used to estimate all treatment effects</p>
+    <h3>Response options</h3>
+    <p>Text-CV</p>
+    <h3>CV (Choices on SurveyCTO)</h3>
+    <ul>
+      <li>Yes</li>
+      <li>No</li>
+    </ul>
+    <h3>SurveyCTO instructions for data entry mask and repeat level</h3>
+    <p>Only display if only one round of data collection is reported in Stage 1 for the corresponding table.</p>
+  </div>
+  <div>
+    <h3>Coding instructions for coders (Hint on SurveyCTO)</h3>
+    <ul>
+      <li>Select “Yes” to confirm the displayed round is used for all treatment effects in the exhibit.</li>
+      <li>It is unlikely you will need to select “No”. The survey continues regardless.</li>
+    </ul>
+    <h3>Descriptive example</h3>
+    <p>see the [section] used in the paper to extract</p>
+  </div>
+</div>
+</details>
