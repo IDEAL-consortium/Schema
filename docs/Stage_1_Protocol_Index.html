@@ -5517,3 +5517,774 @@ Step 2: revise the short description for conciseness, grammar, and clarity.
 
 </details> 
 </details>
+
+<details>
+<summary>Stage 3 Module 2: Estimates</summary>
+
+<div style="padding: 1rem;">
+  <p><strong>Section notes:</strong> This section will go through each of the treatment effects confirmed in Stage 2 to collect the estimates of treatment effects. A treatment effect is defined by the outcome variable (that enters estimation), the comparison between the evaluation arm and the reference arm, the estimand, the empirical specification, and the periods (the data rounds used for the estimation and, if relevant, how they are pooled). Please review the pre-loaded information on the treatment effect carefully before answering the estimate questions.</p>
+  
+  <p><strong>Instructions for data entry mask:</strong> This set of questions on estimates should loop through each treatment effect confirmed in Stage 2. The preloaded prompts for coders include: [Exhibit number], [Outcome name], [Unit of analysis], [Eval arm], [Reference arm], [Estimand], [Empirical specifications], [Period (including rounds)]. This information needs to be presented for every treatment effect at the beginning of the estimate questions.</p>
+</div>
+
+<details>
+<summary>Estimation parameter</summary>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Level</h3>
+    <p>Treatment effect</p>
+    <h3>Definition</h3>
+    <p>The estimation parameter of the treatment effect.</p>
+    <h3>Response options</h3>
+    <p>Text-CV select one</p>
+    <h3>Controlled Vocabulary</h3>
+    <ul>
+      <li>Mean Difference (Final Values)</li>
+      <li>Mean Difference (Net)</li>
+      <li>Median Difference (Final Values)</li>
+      <li>Median Difference (Net)</li>
+      <li>Hazard Ratio (HR)</li>
+      <li>Hazard Ratio, Log</li>
+      <li>Odds Ratio (OR)</li>
+      <li>Odds Ratio, Log</li>
+      <li>Risk Difference (RD)</li>
+      <li>Risk Ratio (RR)</li>
+      <li>Risk Ratio, Log</li>
+      <li>Slope</li>
+      <li>Other, specify</li>
+    </ul>
+    <h3>Cardinality (extraction)</h3>
+    <p>1..n Mandatory and repeatable</p>
+    <h3>Instruction for data entry mask</h3>
+    <p>Repeat for each treatment effect</p>
+  </div>
+  <div>
+    <h3>Instruction for coders (This will go to the "Hints" for surveyCTO)</h3>
+    <ul>
+      <li>Please select the estimation parameter of the treatment effect.</li>
+    </ul>
+    <h3>Descriptive examples for coding</h3>
+    <p>See descriptive examples in paper.</p>
+  </div>
+</div>
+</details>
+
+<details>
+<summary>Estimation model</summary>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Level</h3>
+    <p>Treatment effect</p>
+    <h3>Definition</h3>
+    <p>The statistical model used to estimate the treatment effect.</p>
+    <h3>Response options</h3>
+    <p>Text-CV select one</p>
+    <h3>Controlled Vocabulary</h3>
+    <ul>
+      <li>Ordinary Least Squares (OLS) regression</li>
+      <li>Multi-level or hierarchical model/regression</li>
+      <li>Logistic regression</li>
+      <li>Probit regression</li>
+      <li>Log-linear binomial regression</li>
+      <li>Structural equation model (SEM) /regression</li>
+      <li>Analysis of Variance (ANOVA)</li>
+      <li>Analysis of Covariance (ANCOVA)</li>
+      <li>T-test (mean-comparison test)</li>
+      <li>Other, specify</li>
+    </ul>
+    <h3>Cardinality (extraction)</h3>
+    <p>1..n Mandatory and repeatable</p>
+    <h3>Instruction for data entry mask</h3>
+    <p>Repeat for each treatment effect</p>
+  </div>
+  <div>
+    <h3>Instruction for coders (This will go to the "Hints" for surveyCTO)</h3>
+    <ul>
+      <li>Please select the statistical model used to estimate the treatment effect.</li>
+      <li>The information is usually found in sections that focus on methods, analytical strategy, or results or in the table notes.</li>
+      <li>In most cases in Economics, a regression with no further description refers to an OLS regression model. However, that is not always the case. If you are not sure about which model was used, please select "Other, specify" and enter the information you found in the paper. Flag this question in the "Request for review" section as well.</li>
+    </ul>
+    <h3>Descriptive examples for coding</h3>
+    <p>In Wolf et al., 2019, the "Impact analysis" section (page 23) suggests that "multi-level modeling" was used to estimate the treatment effects on child, teacher and classroom outcomes. So, we can assume "multi-level or hierarchical model/regression" is the estimation model for all treatment effects in the paper, unless it is specified otherwise for a particular case.</p>
+    <p>Table 4 reports treatment effects for teach-level and classroom-level outcomes. Footnote "a" suggests that "teacher turnover" treatment effects were estimated with multinomial logistic regressions. Thus, for those treatment effects, the estimation model should be "Logistic regression", while for the rest in the same table, the answer should be "multi-level or hierarchical model/regression".</p>
+    <p>In Ara et al., 2019, Table 3 presents group means by study arm and the p-value associated with the group mean difference without directly reporting the mean difference. In this case, a coder should select "T-test (mean-comparison test)" for treatment effects in the table.</p>
+  </div>
+</div>
+</details>
+
+<details>
+<summary>Null hypothesis</summary>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Level</h3>
+    <p>Treatment effect</p>
+    <h3>Definition</h3>
+    <p>The mathematical expression of the null hypothesis being tested for the treatment effect.</p>
+    <h3>Response options</h3>
+    <p>Text-CV select one</p>
+    <h3>Controlled Vocabulary</h3>
+    <ul>
+      <li>Null = 0</li>
+      <li>Null = 1</li>
+      <li>Null = constant (other than 0 or 1), specify constant</li>
+      <li>Null: (sharp null hypothesis)</li>
+      <li>Null: (sharp null hypothesis)</li>
+      <li>Null: (sharp null hypothesis), specify constant</li>
+      <li>Null ≥ 0</li>
+      <li>Null ≤ 0</li>
+      <li>Null ≥ 1</li>
+      <li>Null ≤ 1</li>
+      <li>Null ≥ constant (other than 0 or 1), specify constant</li>
+      <li>Null ≤ constant (other than 0 or 1), specify constant</li>
+      <li>Other, specify</li>
+    </ul>
+    <h3>Cardinality (extraction)</h3>
+    <p>1..n Mandatory and repeatable</p>
+    <h3>Instruction for data entry mask</h3>
+    <p>Repeat for each treatment effect. Add an error check for odds ratio outcome variable. For treatment effect with an outcome variable in odds ratio, if a coder selects an option other than "Null=1", display a warning message "The null hypothesis for odds ratio outcome variable is usually set as 'Null=1', are you sure about your answer?"</p>
+  </div>
+  <div>
+    <h3>Instruction for coders (This will go to the "Hints" for surveyCTO)</h3>
+    <ul>
+      <li>For each estimate, select the null hypothesis that was tested.</li>
+      <li>Look in the sections on theory, empirical strategy, and results to check if the author(s) have different theoretical priors around the null hypothesis.</li>
+      <li>Also note that oftentimes authors report alternative hypotheses the most prominently; it is important here that we are referring to the null hypothesis.</li>
+      <li>In most cases where the authors often do not explicitly state the null hypothesis, the null is equal to either 0 for non-binary dependent variables, or 1 for binary dependent variables. In other cases, the paper should have an explicit discussion about the hypotheses being tested. If you are not sure about your answer, please flag it in the request-for-review section.</li>
+      <li>Null=0: The null hypothesis is that the difference between the two groups in the outcome variable is 0. For non-binary dependent variables, this suggests there is no treatment effect.</li>
+      <li>Null= 1: The null hypothesis is that the difference between the two groups in the outcome variable is 1. For odds ratio, that means the odds of the outcome are the same in both the treatment group and the control group, indicating no difference. Therefore, if an outcome is measured in odds ratio, risk ratio or hazard ratio, the null hypothesis is often equal to 1.</li>
+      <li>Null=constant: If the authors report that the null hypothesis is that the treatment effect is equal to a constant other than 0 or 1.</li>
+    </ul>
+    <h3>Descriptive examples for coding</h3>
+    <p>See descriptive examples in paper.</p>
+  </div>
+</div>
+</details>
+
+<details>
+<summary>Linear combination of coefficients for treatment effect</summary>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Level</h3>
+    <p>Treatment effect</p>
+    <h3>Definition</h3>
+    <p>Please indicate the number of coefficients used to calculate the estimate of the treatment effect.</p>
+    <h3>Response options</h3>
+    <p>Text-CV select one</p>
+    <h3>Controlled Vocabulary</h3>
+    <ul>
+      <li>One (1)</li>
+      <li>More than one (1), specify</li>
+    </ul>
+    <h3>Cardinality (extraction)</h3>
+    <p>1..n Mandatory and repeatable</p>
+    <h3>Instruction for data entry mask</h3>
+    <p>Repeat for each treatment effect that is estimated using a regression.</p>
+  </div>
+  <div>
+    <h3>Instruction for coders (This will go to the "Hints" for surveyCTO)</h3>
+    <ul>
+      <li>In most cases, the point estimate of the treatment effect is presented in one parameter/coefficient in a statistical model, and please enter 1 for those.</li>
+      <li>However, sometimes, a treatment effect is calculated using a linear combination of more than coefficients in the same regression model. This is often seen in an RCT with a factorial design. If that's the case, please select the number of coefficients needed to calculate the treatment effect and enter the details of each of them in the following questions.</li>
+      <li>Read the regression tables and the results section closely to understand which coefficients correspond to the specified treatment effect.</li>
+      <li>Select "More than one" if you cannot find the relevant coefficients and specify that in the open-text field. Please also flag this in the request-for-review section.</li>
+    </ul>
+    <h3>Descriptive examples for coding</h3>
+    <p>In Table 3 of Leaver et al, 2021, there are treatment effects on student learning reported for four comparisons over three periods: Pooled, Year 1, and Year 2. Taking the Pooled period as an example, the treatment effects for different comparisons were reported in various coefficients.</p>
+    <p>The first comparison was between the group that was recruited through an advertisement for the pay-for-performance contract (P4P) but placed in a fixed-wage (FW) contract and the group that was recruited through the FW advertisement and placed in the same contract (i.e the comparison between a & b in Figure 1). [Note that this information has been confirmed in Stage 2 and presented as part of the prompt for the treatment effect.]</p>
+    <p>The treatment effect of that comparison on learning over the pooled period is presented in row 1, column 1 under Model A, as explained in the paper (p 2234). There is only one coefficient corresponding to this treatment effect, so the answer would be 1 to this field.</p>
+    <p>Another comparison was between the two groups that both applied under the P4P advertisement, but one got the P4P contract but the other received an FW contract (i.e. the comparison between b & d in Figure 1).</p>
+    <p>The treatment effect for that comparison should be a linear combination of row 2 and row 3 under Model B in Table 3 (see p 2235). Thus, the answer to this field would be 2.</p>
+  </div>
+</div>
+</details>
+
+<details>
+<summary>Estimate of the treatment effect</summary>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Level</h3>
+    <p>Treatment effect</p>
+    <h3>Definition</h3>
+    <p>The reported numeric value for the point estimate of the treatment effect.</p>
+    <h3>Response options</h3>
+    <p>Numeric</p>
+    <h3>Controlled Vocabulary</h3>
+    <p></p>
+    <h3>Cardinality (extraction)</h3>
+    <p>1..n Mandatory and repeatable</p>
+    <h3>Instruction for data entry mask</h3>
+    <p>Repeat for the number of coefficients indicated in "Linear combination of coefficients for treatment effect". The estimate field and the following fields on precision stat, type and value fields should be displayed on the page.</p>
+  </div>
+  <div>
+    <h3>Instruction for coders (This will go to the "Hints" for surveyCTO)</h3>
+    <ul>
+      <li>Enter the numerical value, with the same number of decimal places, exactly as reported in the exhibit or text, for the estimation parameter of the treatment effect. Please make sure to include a negative sign if the number is negative.</li>
+      <li>If there are multiple parameters used to estimate the same treatment effect, e.g. using an interaction term, please enter the estimate for one parameter each at a time.</li>
+      <li>Enter "-99" if you cannot find it in the main text of the paper or its supplementary materials. This is unlikely to occur because the specified treatment effect has been confirmed in Stage 2. If so, please flag this field in the request-for-review section.</li>
+      <li>The information is often available in the tables (specified for the treatment effect) and the results section.</li>
+    </ul>
+    <h3>Descriptive examples for coding</h3>
+    <p>In Table 3 of Leaver et al, 2021, there are treatment effects on student learning reported for four comparisons over three periods: Pooled, Year 1, and Year 2. Taking the Pooled period as an example, the treatment effects for different comparisons were reported in various coefficients.</p>
+    <p>The first comparison was between the group that was recruited through an advertisement for the pay-for-performance contract (P4P) but placed in a fixed-wage (FW) contract and the group that was recruited through the FW advertisement and placed in the same contract (i.e the comparison between a & b in Figure 1). [Note that this information has been confirmed in Stage 2 and presented as part of the prompt for the treatment effect.]</p>
+    <p>The treatment effect of that comparison on learning over the pooled period is presented in row 1, column 1 under Model A, as explained in the paper (p 2234). The point estimate is "0.01".</p>
+    <p>Another comparison was between the two groups that both applied under the P4P advertisement, but one got the P4P contract but the other received an FW contract (i.e. the comparison between b & d in Figure 1).</p>
+    <p>The treatment effect for that comparison should be a linear combination of row 2 and row 3 under Model B in Table 3 (see p 2235). Please enter the coefficients in two separate fields, and do not add them up by yourself.</p>
+    <p>The first coefficient is "0.12", and the second coefficient is "-0.03".</p>
+  </div>
+</div>
+</details>
+
+<div style="padding: 1rem;">
+  <h3>Section notes for precision statistics</h3>
+  <p>We need several precision statistics to standardize effect sizes using reported treatment effects. The survey will guide you to help extract a sequence of precision values, and it will stop once the minimum set of values are captured. The information on the type of precision statistics and the value is often found in the notes in tables that report the treatment effects in the main paper or in the appendix. It is possible that different precision values for the same treatment effect are reported in various parts of the paper. Please check both the main paper and the appendix carefully.</p>
+  
+  <p><strong>For continuous variable:</strong></p>
+  <ul>
+    <li>We always get the SE and t-stat. If both present, we stop.</li>
+    <li>If either one is missing, we pick up the p-value (not adjusted for multiple inference) which can be used in combination with other fields to back out SE and t-stat.</li>
+    <li>If none of them are present, pick up the CI and the significance level, and F-ratio for one-way ANCOVA.</li>
+  </ul>
+  
+  <p><strong>For binary variables:</strong></p>
+  <ul>
+    <li>We always get the Z-stat. If Z-stat is not present we pick up the t-stat or p-value (not adjusted for multiple-inference).</li>
+  </ul>
+</div>
+
+<details>
+<summary>Standard error of treatment effect estimate</summary>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Level</h3>
+    <p>Treatment effect</p>
+    <h3>Definition</h3>
+    <p>Standard error of the estimate for treatment effect.</p>
+    <h3>Response options</h3>
+    <p>Numeric</p>
+    <h3>Controlled Vocabulary</h3>
+    <p></p>
+    <h3>Cardinality (extraction)</h3>
+    <p>1..n Mandatory and repeatable</p>
+    <h3>Instruction for data entry mask</h3>
+    <p>Repeat this for every treatment effect.</p>
+  </div>
+  <div>
+    <h3>Instruction for coders (This will go to the "Hints" for surveyCTO)</h3>
+    <ul>
+      <li>Enter the numerical value of the reported standard error for the treatment effect, in exact decimal places as reported in the table or in the text of the paper.</li>
+      <li>Please note that the standard error may not be reported for the estimate. If the paper does not provide a value, leave the cell blank.</li>
+      <li>Include any information for the following categories (table columns):</li>
+      <li>Unadjusted Value: Values reported with no corrections applied (explicitly stated by the authors).</li>
+      <li>Adjusted Value: Values of statistics that are corrected to improve precision or in cases when assumptions are violated.</li>
+      <li>Adjustment method: Common correction methods account for heteroscedasticity (Robust SEs), clustering (Clustered Robust SEs), or small sample sizes (Bootstrap estimation). Other adjustment methods include specific tests (Welch's t-test). If not specified in the paper, please write "Unknown".</li>
+    </ul>
+    <h3>Descriptive examples for coding</h3>
+    <p>See descriptive examples in paper.</p>
+  </div>
+</div>
+</details>
+
+<details>
+<summary>T-statistic of treatment effect estimate</summary> 
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Level</h3>
+    <p>Treatment effect</p>
+    <h3>Definition</h3>
+    <p>T-statistic of the estimate for treatment effect.</p>
+    <h3>Response options</h3>
+    <p>Numeric</p>
+    <h3>Controlled Vocabulary</h3>
+    <p></p>
+    <h3>Cardinality (extraction)</h3>
+    <p>1..n Mandatory and repeatable</p>
+    <h3>Instruction for data entry mask</h3>
+    <p>Repeat this for every treatment effect of a non-binary outcome.</p>
+  </div>
+  <div>
+    <h3>Instruction for coders (This will go to the "Hints" for surveyCTO)</h3>
+    <ul>
+      <li>Enter the numerical value of the reported t-statistic for the treatment effect, in exact decimal places as reported in the table or in the text of the paper.</li>
+      <li>Please note that it is possible that t-statistic is not reported for the estimate. If the paper does not provide a value, leave the cell blank.</li>
+      <li>Include any information for the following categories (table columns):</li>
+      <li>Unadjusted Value: Values reported with no corrections applied (explicitly stated by the authors).</li>
+      <li>Adjusted Value: Values of statistics that are corrected to improve precision or in cases when assumptions are violated.</li>
+      <li>Adjustment method: Common correction methods account for heteroscedasticity (Robust SEs), clustering (Clustered Robust SEs), or small sample sizes (Bootstrap estimation). Other adjustment methods include specific tests (Welch's t-test). If not specified in the paper, please write "Unknown".</li>
+    </ul>
+    <h3>Descriptive examples for coding</h3>
+    <p>See descriptive examples in paper.</p>
+  </div>
+</div>
+</details>
+
+<details>
+<summary>Z-statistic of treatment effect estimate</summary> 
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Level</h3>
+    <p>Treatment effect</p>
+    <h3>Definition</h3>
+    <p>Z-statistic of the estimate for treatment effect.</p>
+    <h3>Response options</h3>
+    <p>Numeric</p>
+    <h3>Controlled Vocabulary</h3>
+    <p></p>
+    <h3>Cardinality (extraction)</h3>
+    <p>1..n Mandatory and repeatable</p>
+    <h3>Instruction for data entry mask</h3>
+    <p>Repeat this for every treatment effect of a binary outcome.</p>
+  </div>
+  <div>
+    <h3>Instruction for coders (This will go to the "Hints" for surveyCTO)</h3>
+    <ul>
+      <li>Enter the numerical value of the reported Z-statistic for the treatment effect, in exact decimal places as reported in the table or in the text of the paper.</li>
+      <li>Please note that it is possible that Z-statistic is not reported for the estimate. If the paper does not provide a value, leave the cell blank.</li>
+      <li>Include any information for the following categories (table columns):</li>
+      <li>Unadjusted Value: Values reported with no corrections applied (explicitly stated by the authors).</li>
+      <li>Adjusted Value: Values of statistics that are corrected to improve precision or in cases when assumptions are violated.</li>
+      <li>Adjustment method: Common correction methods account for heteroscedasticity (Robust SEs), clustering (Clustered Robust SEs), or small sample sizes (Bootstrap estimation). Other adjustment methods include specific tests (Welch's t-test). If not specified in the paper, please write "Unknown".</li>
+    </ul>
+    <h3>Descriptive examples for coding</h3>
+    <p>See descriptive examples in paper.</p>
+  </div>
+</div>
+</details>
+
+<details>
+<summary>P-value of treatment effect estimate</summary>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Level</h3>
+    <p>Treatment effect</p>
+    <h3>Definition</h3>
+    <p>P-value of the estimate for treatment effect.</p>
+    <h3>Response options</h3>
+    <p>Numeric</p>
+    <h3>Controlled Vocabulary</h3>
+    <p></p>
+    <h3>Cardinality (extraction)</h3>
+    <p>1..n Mandatory and repeatable</p>
+    <h3>Instruction for data entry mask</h3>
+    <p>Display a table showing multiple p-value types for the categories described below.</p>
+  </div>
+  <div>
+    <h3>Instruction for coders (This will go to the "Hints" for surveyCTO)</h3>
+    <ul>
+      <li>Enter the numerical value of the reported p-value for the treatment effect, in exact decimal places as reported in the table or in the text of the paper.</li>
+      <li>Please note that it is possible that p-value is not reported for the estimate If the paper does not provide a value, leave the cell blank.</li>
+      <li>Include any p-value reported for the following adjustment methods:</li>
+      <li>Unadjusted: Basic p-values reported in statistical tests, with no corrections applied (explicitly stated by the authors).</li>
+      <li>Covariate adjustment: P-values derived from models that incorporate additional variables and controls (e.g., ANCOVA).</li>
+      <li>Multiple-hypothesis correction: P-values adjusted for multiple comparisons to control for false positives (e.g., Bonferroni correction, Holm's step-down procedure, False Discovery Rate correction).</li>
+      <li>Bootstrap: P-values estimated through repeated resampling techniques (e.g., Percentile Bootstrap, Bias-Corrected and Accelerated Bootstrap, Wild Bootstrap).</li>
+      <li>Small-sample correction: P-values adjusted for studies with limited sample sizes or a small number of clusters (e.g., Satterthwaite approximation, Welch's t-test).</li>
+      <li>Permutation tests: P-values calculated using random shuffling of data (e.g., Monte Carlo Permutation Procedure, randomization inference methods).</li>
+      <li>Unknown adjustment: P-values from any adjustment not explicitly described by the authors.</li>
+      <li>Other, specify</li>
+    </ul>
+    <h3>Descriptive examples for coding</h3>
+    <p>See descriptive examples in paper.</p>
+  </div>
+</div>
+</details>
+
+<details>
+<summary>Confidence interval</summary> 
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Level</h3>
+    <p>Treatment effect</p>
+    <h3>Definition</h3>
+    <p>Confidence interval for the treatment effect</p>
+    <h3>Response options</h3>
+    <p>Numeric</p>
+    <h3>Controlled Vocabulary</h3>
+    <p></p>
+    <h3>Cardinality (extraction)</h3>
+    <p>0..n Optional and repeatable</p>
+    <h3>Instruction for data entry mask</h3>
+    <p>Repeat this for the treatment effect, when SE, t-statistic and p-value are all answered with "-99" for non-binary outcomes. Repeat this for the treatment effect, when z-stat, SE, t-statistic and p-value are all answered with "-99" for binary outcomes. Please display two fields for this question. Lower bound [numeric value] Upper bound [numeric value]</p>
+  </div>
+  <div>
+    <h3>Instruction for coders (This will go to the "Hints" for surveyCTO)</h3>
+    <ul>
+      <li>Please enter the numerical values for the lower bound and upper bound of the confidence interval, using the exact decimal places as reported in the table or in the text of the paper.</li>
+      <li>If there is no confidence interval reported for the treatment effect, please enter "-99" in both the "Lower bound" and "Upper bound".</li>
+    </ul>
+    <h3>Descriptive examples for coding</h3>
+    <p>See descriptive examples in paper.</p>
+  </div>
+</div>
+</details>
+
+<details>
+<summary>Confidence interval significance level</summary>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Level</h3>
+    <p>Treatment effect</p>
+    <h3>Definition</h3>
+    <p>Significance level for confidence interval for treatment effect.</p>
+    <h3>Response options</h3>
+    <p>Text-CV select one</p>
+    <h3>Controlled Vocabulary</h3>
+    <ul>
+      <li>95% confidence interval</li>
+      <li>90% confidence interval</li>
+      <li>80% confidence interval</li>
+      <li>Other, specify</li>
+      <li>Not reported</li>
+    </ul>
+    <h3>Cardinality (extraction)</h3>
+    <p>0..n Optional and repeatable</p>
+    <h3>Instruction for data entry mask</h3>
+    <p>Repeat this for the treatment effect, when SE, t-statistic and p-value are all answered with "-99" for non-binary outcomes. Repeat this for the treatment effect, when z-stat, SE, t-statistic and p-value are all answered with "-99" for binary outcomes.</p>
+  </div>
+  <div>
+    <h3>Instruction for coders (This will go to the "Hints" for surveyCTO)</h3>
+    <ul>
+      <li>Select the significance level for the confidence interval entered in the previous field, as indicated in the paper.</li>
+      <li>If there is no confidence interval reported for the treatment effect, please select "Not reported".</li>
+    </ul>
+    <h3>Descriptive examples for coding</h3>
+    <p>See descriptive examples in paper.</p>
+  </div>
+</div>
+</details>
+
+<details>
+<summary>F-Ratio</summary>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Level</h3>
+    <p>Treatment effect</p>
+    <h3>Definition</h3>
+    <p>F-statistic of the estimate for treatment effect.</p>
+    <h3>Response options</h3>
+    <p>Numeric</p>
+    <h3>Controlled Vocabulary</h3>
+    <p></p>
+    <h3>Cardinality (extraction)</h3>
+    <p>1..n Optional and repeatable</p>
+    <h3>Instruction for data entry mask</h3>
+    <p>Repeat this for every treatment effect reported using ANCOVA</p>
+  </div>
+  <div>
+    <h3>Instruction for coders (This will go to the "Hints" for surveyCTO)</h3>
+    <ul>
+      <li>Enter the numerical value of the reported F-statistic for the treatment effect, in exact decimal places as reported in the table or in the text of the paper.</li>
+      <li>Only include this information if no other precision information is reported in the paper for the treatment effect.</li>
+      <li>Please note that it is possible that F-statistic is not reported for the estimate. If the paper does not provide a value, leave the cell blank.</li>
+    </ul>
+    <h3>Descriptive examples for coding</h3>
+    <p>See descriptive examples in paper.</p>
+  </div>
+</div>
+</details>
+
+<div style="padding: 1rem;">
+  <h3>Additional precision information</h3>
+  <p><strong>Subsection notes:</strong> The following three questions are meant for you to include any information about any additional precision statistics reported by the authors that have not capture in the previous questions. An open-ended question will appear to encode the information, if any, you may want to report.</p>
+</div>
+
+<details>
+<summary>Additional precision value</summary>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Level</h3>
+    <p>Treatment effect</p>
+    <h3>Definition</h3>
+    <p>Enter the numeric precision value for the treatment effect using non-sample-based inference method.</p>
+    <h3>Response options</h3>
+    <p>Numeric</p>
+    <h3>Controlled Vocabulary</h3>
+    <p></p>
+    <h3>Cardinality (extraction)</h3>
+    <p>0..n Optional and repeatable</p>
+    <h3>Instruction for data entry mask</h3>
+    <p></p>
+  </div>
+  <div>
+    <h3>Instruction for coders (This will go to the "Hints" for surveyCTO)</h3>
+    <ul>
+      <li>Please enter each of the precision values estimated using non-sampling-based inference method for the treatment effect.</li>
+      <li>These values may not exist for all the papers and sometimes are reported in the appendix rather than the text. Please read the results section closely to see if there is any reference for those values.</li>
+    </ul>
+    <h3>Descriptive examples for coding</h3>
+    <p>See descriptive examples in paper.</p>
+  </div>
+</div>
+</details>
+
+<details>
+<summary>Additional precision value type</summary>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Level</h3>
+    <p>Treatment effect</p>
+    <h3>Definition</h3>
+    <p>Select the type of the reported additional precision value.</p>
+    <h3>Response options</h3>
+    <p>Text-CV select one</p>
+    <h3>Controlled Vocabulary</h3>
+    <ul>
+      <li>Standard error</li>
+      <li>P-value</li>
+      <li>T-stat</li>
+      <li>Confidence interval, 95%</li>
+      <li>Confidence interval, 90%</li>
+      <li>Other, specify</li>
+    </ul>
+    <h3>Cardinality (extraction)</h3>
+    <p>0..n Optional and repeatable</p>
+    <h3>Instruction for data entry mask</h3>
+    <p></p>
+  </div>
+  <div>
+    <h3>Instruction for coders (This will go to the "Hints" for surveyCTO)</h3>
+    <ul>
+      <li>Please select the type of the non-sampling-based precision value reported for the treatment effect.</li>
+    </ul>
+    <h3>Descriptive examples for coding</h3>
+    <p>See descriptive examples in paper.</p>
+  </div>
+</div>
+</details>
+
+<details>
+<summary>Additional precision value inference method</summary>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Level</h3>
+    <p>Treatment effect</p>
+    <h3>Definition</h3>
+    <p>Select the inference method for the additional precision value.</p>
+    <h3>Response options</h3>
+    <p>Text-CV, select one</p>
+    <h3>Controlled Vocabulary</h3>
+    <ul>
+      <li>Randomization inference</li>
+      <li>Adjustment for multiple inference</li>
+      <li>Non-parametric</li>
+      <li>Other</li>
+    </ul>
+    <h3>Cardinality (extraction)</h3>
+    <p>0..n Optional and repeatable</p>
+    <h3>Instruction for data entry mask</h3>
+    <p></p>
+  </div>
+  <div>
+    <h3>Instruction for coders (This will go to the "Hints" for surveyCTO)</h3>
+    <ul>
+      <li>Please enter each of the precision values estimated using non-sample-based inference method for the treatment effect.</li>
+      <li>These values may not exist for all the papers and sometimes are reported in the appendix rather than the text. Please read the results section closely to see if there is any reference for those values.</li>
+    </ul>
+    <h3>Descriptive examples for coding</h3>
+    <p>See descriptive examples in paper.</p>
+  </div>
+</div>
+</details>
+
+<div style="padding: 1rem;">
+  <h3>Subsection notes</h3>
+  <p>The following questions ask the mean, standard deviation, and sample size for the outcome of the treatment effect. They loop through the study arms in comparison at baseline and at the period over which the treatment effect was estimated. Please read the prompts carefully before entering your answers.</p>
+  
+  <p><strong>SurveyCTO instructions:</strong> For the evaluation arm, reference arm and the two arms combined, display the mean, Standard deviation, Standard error and Sample size question for each of them, at baseline and at the period (used to estimate the treatment effect). Please see a presentation of the questions in tables, which would be ideally how the questions presented without the limitations of SurveyCTO. [Please check if we can use this table grid plug-in https://github.com/surveycto/table-grid].</p>
+  
+  <p><strong>Table 1: Baseline</strong></p>
+  <table style="border-collapse: collapse; width: 100%;">
+    <tr>
+      <th style="border: 1px solid #ddd; padding: 8px;">(1)</th>
+      <th style="border: 1px solid #ddd; padding: 8px;">(2)</th>
+      <th style="border: 1px solid #ddd; padding: 8px;">(3)</th>
+      <th style="border: 1px solid #ddd; padding: 8px;">(4)</th>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 8px;">Mean</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">Standard deviation</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">Standard error</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">Sample Size (N)</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 8px;">Eval arm</td>
+      <td style="border: 1px solid #ddd; padding: 8px;"></td>
+      <td style="border: 1px solid #ddd; padding: 8px;"></td>
+      <td style="border: 1px solid #ddd; padding: 8px;"></td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 8px;">Reference arm</td>
+      <td style="border: 1px solid #ddd; padding: 8px;"></td>
+      <td style="border: 1px solid #ddd; padding: 8px;"></td>
+      <td style="border: 1px solid #ddd; padding: 8px;"></td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 8px;">Eval+Reference combined</td>
+      <td style="border: 1px solid #ddd; padding: 8px;"></td>
+      <td style="border: 1px solid #ddd; padding: 8px;"></td>
+      <td style="border: 1px solid #ddd; padding: 8px;"></td>
+    </tr>
+  </table>
+  
+  <p>A different format of Baseline outcome is reported [Yes/No] - If yes, specify the format of baseline outcome</p>
+  
+  <p><strong>Table 2: {Period} (pulled from Stage 2 that is associated with the treatment effect)</strong></p>
+  <table style="border-collapse: collapse; width: 100%;">
+    <tr>
+      <th style="border: 1px solid #ddd; padding: 8px;">(1)</th>
+      <th style="border: 1px solid #ddd; padding: 8px;">(2)</th>
+      <th style="border: 1px solid #ddd; padding: 8px;">(3)</th>
+      <th style="border: 1px solid #ddd; padding: 8px;">(4)</th>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 8px;">Mean</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">Standard Deviation</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">Standard error</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">Sample Size(N)</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 8px;">Eval arm</td>
+      <td style="border: 1px solid #ddd; padding: 8px;"></td>
+      <td style="border: 1px solid #ddd; padding: 8px;"></td>
+      <td style="border: 1px solid #ddd; padding: 8px;"></td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 8px;">Reference arm</td>
+      <td style="border: 1px solid #ddd; padding: 8px;"></td>
+      <td style="border: 1px solid #ddd; padding: 8px;"></td>
+      <td style="border: 1px solid #ddd; padding: 8px;"></td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 8px;">Eval+Reference combined</td>
+      <td style="border: 1px solid #ddd; padding: 8px;"></td>
+      <td style="border: 1px solid #ddd; padding: 8px;"></td>
+      <td style="border: 1px solid #ddd; padding: 8px;"></td>
+    </tr>
+  </table>
+</div>
+
+<details>
+<summary>Baseline outcome variable format</summary> 
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Level</h3>
+    <p>Treatment effect</p>
+    <h3>Definition</h3>
+    <p>Indicates whether the outcome variable was in the same format at baseline as it entered estimation.</p>
+    <h3>Response options</h3>
+    <p>Text-CV select one</p>
+    <h3>Controlled Vocabulary</h3>
+    <ul>
+      <li>Yes</li>
+      <li>No, specify the format at baseline</li>
+    </ul>
+    <h3>Cardinality (extraction)</h3>
+    <p>1..n Mandatory and repeatable</p>
+    <h3>Instruction for data entry mask</h3>
+    <p>Repeat for each treatment effect * baseline & period* contrast arms</p>
+  </div>
+  <div>
+    <h3>Instruction for coders (This will go to the "Hints" for surveyCTO)</h3>
+    <ul>
+      <li>Please indicate whether the unit of measurement of the outcome (that is specified in the prompt) was the same as reported at baseline.</li>
+      <li>In IDEAL, the default unit of measurement is the one that entered estimation. Sometimes, authors transformed the baseline outcome variable from the originally collected format into a unit more suitable for estimation, but they reported the baseline statistics for the outcome variable in the original unit. In that case, please select "No", and then specify the unit used at baseline.</li>
+      <li>Choose "Yes", if the same unit of measurement was used at baseline and in estimation.</li>
+    </ul>
+    <h3>Descriptive examples for coding</h3>
+    <p>See descriptive examples in paper.</p>
+  </div>
+</div>
+</details>
+
+<details>
+<summary>Outcome variable mean</summary>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Level</h3>
+    <p>Treatment effect</p>
+    <h3>Definition</h3>
+    <p>The mean value of the outcome variable.</p>
+    <h3>Response options</h3>
+    <p>Numeric</p>
+    <h3>Controlled Vocabulary</h3>
+    <p></p>
+    <h3>Cardinality (extraction)</h3>
+    <p>1..n Mandatory and repeatable</p>
+    <h3>Instruction for data entry mask</h3>
+    <p>Repeat for each treatment effect's evaluation arm, reference arm, and both arms combined at baseline & the estimation period</p>
+  </div>
+  <div>
+    <h3>Instruction for coders (This will go to the "Hints" for surveyCTO)</h3>
+    <ul>
+      <li>Enter the mean of the outcome, exactly up to the decimal point as reported in the paper.</li>
+    </ul>
+    <h3>Descriptive examples for coding</h3>
+    <p>The outcome of "Intimidation during voting" has three means at baseline Asunka et al, 2019 (Table 1): Full sample, Treatment and Control. This question will be asked three times for each of the means.</p>
+    <p>For the control arm, the answer would be "0.12".</p>
+    <p>For the treatment arm, "0.05".</p>
+    <p>For the full sample (control + treatment), "0.07".</p>
+  </div>
+</div>
+</details>
+
+<details>
+<summary>Outcome variable standard deviation</summary>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Level</h3>
+    <p>Treatment effect</p>
+    <h3>Definition</h3>
+    <p>Standard deviation of the reported mean of the outcome variable.</p>
+    <h3>Response options</h3>
+    <p>Numeric</p>
+    <h3>Controlled Vocabulary</h3>
+    <p></p>
+    <h3>Cardinality (extraction)</h3>
+    <p>1..n Mandatory and repeatable</p>
+    <h3>Instruction for data entry mask</h3>
+    <p>Repeat for each treatment effect * baseline & period* contrast arms</p>
+  </div>
+  <div>
+    <h3>Instruction for coders (This will go to the "Hints" for surveyCTO)</h3>
+    <ul>
+      <li>Enter the standard deviation of the outcome variable mean, exactly up to the decimal point as reported in the paper.</li>
+      <li>This information may be found in the descriptive statistics tables, bottoms of results tables, and sometimes in results tables notes or the text. This is also often reported in supplementary materials, so check there if it is not found in the main text of the paper.</li>
+      <li>Enter "-99" if the main text of the paper or its supplementary materials do not mention the standard deviation of the mean.</li>
+    </ul>
+    <h3>Descriptive examples for coding</h3>
+    <p>The outcome of "Intimidation during voting" has three means at baseline Asunka et al, 2019 (Table 1): Full sample, Treatment and Control. The corresponding standard deviation for the three means are:</p>
+    <p>Control: 0.33</p>
+    <p>Treatment: 0.22</p>
+    <p>Full sample (control + treatment): 0.26</p>
+  </div>
+</div>
+</details>
+
+<details>
+<summary>Outcome sample size</summary>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; padding: 1rem;">
+  <div>
+    <h3>Level</h3>
+    <p>Treatment effect</p>
+    <h3>Definition</h3>
+    <p>Number of observations in the sample to measure the outcome variable.</p>
+    <h3>Response options</h3>
+    <p>Numeric</p>
+    <h3>Controlled Vocabulary</h3>
+    <p></p>
+    <h3>Cardinality (extraction)</h3>
+    <p>1..n Mandatory and repeatable</p>
+    <h3>Instruction for data entry mask</h3>
+    <p>Repeat for each treatment effect * baseline & period* contrast arms</p>
+  </div>
+  <div>
+    <h3>Instruction for coders (This will go to the "Hints" for surveyCTO)</h3>
+    <ul>
+      <li>Enter the sample size of the outcome variable for the specified study arms and period.</li>
+    </ul>
+    <h3>Descriptive examples for coding</h3>
+    <p>In Ganimian, Mulralidharan, and Walters 2023, only one sample size is reported for the outcome "Math" at baseline (Table 1) for all arms combined, which is 4,675.</p>
+  </div>
+</div>
+</details>
+
+</details>
