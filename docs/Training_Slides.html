@@ -3,107 +3,12 @@
 <head>
 <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  
+
   <title>IDEAL Training Slides</title>
   
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
   <style>
   
- <style>
-    body {
-      font-family: "Gill Sans", sans-serif;
-      margin: 2rem;
-      background-color: #f9f9f9;
-    }
-    h1 {
-      color: #2c3e50;
-    }
-    details {
-      margin-bottom: 1.5rem;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      background: #fff;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-    summary {
-      background-color: #3c3d4a;
-      cursor: pointer;
-      padding: 1rem;
-      font-weight: normal;
-      color: #FFFFFF;
-      border-bottom: 1px solid #ccc;
-    }
-    table {
-      border-left: 4px solid #3498db;
-      width: 100%;
-      border-collapse: collapse;
-      margin: 0;
-    }
-    th:nth-child(3), td:nth-child(3) {
-      min-width: 200px;
-    }
-    th:nth-child(6), td:nth-child(6),
-    th:nth-child(7), td:nth-child(7) {
-      min-width: 100px;
-    }
-    th, td {
-      border: 1px solid #ddd;
-      padding: 0.5rem;
-      text-align: left;
-      vertical-align: top;
-      background-color: #fff;
-    }
-    th {
-      background-color: #f5c550;
-      color: #5D6D7E;
-      font-weight: normal;
-      text-align: center;
-      vertical-align: middle;
-    }
-    tbody tr:nth-child(odd) {
-      background-color: #f9f9f9;
-    }
-    #toc {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      background: #fff;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      padding: 0.5rem 1rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-      z-index: 1000;
-    }
-    #toc select {
-      padding: 0.5rem;
-      font-size: 1rem;
-      width: 100%;
-    }
-    
-   .grid-container {
-  	display: grid;
- 	 gap: 5px;
- 	 grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));;
-  	background-color: #FFFEFE;
-  	padding: 10px;
-	text-align: center;
-	vertical-align: middle;
-	place-items: center;
-   }
-  
-  a:link {
-  color: #5e807a;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #63bfb2;
-  background-color: transparent;
-  text-decoration: underline;
-}
-    
- </style>
 body {
     margin: 0;
     padding: 0;
@@ -325,7 +230,7 @@ strong {
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     min-width: 200px;
-  D     display: none;
+    display: none;
     z-index: 1001;
     margin-top: 0.5rem;
 }
@@ -339,7 +244,7 @@ strong {
     padding: 0.75rem 1rem;
     color: #1f3667;
     text-decoration: none;
-a     transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
@@ -353,6 +258,50 @@ a     transition: background-color 0.2s ease;
 
 .dropdown-container {
     position: relative;
+}
+
+/* Hero Section (Keep styles for other pages, but not used here) */
+.hero {
+    height: 100vh;
+    background: url('Copilot-books.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 2rem;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    opacity: 0.95;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
     
 /* Main Layout */
@@ -488,6 +437,73 @@ footer {
     margin-bottom: 2rem;
 }
 
+/* --- NEW STYLES FOR SLIDE DROPDOWNS --- */
+.slide-dropdown {
+    margin-bottom: 1rem;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background: #fdfdfd;
+    transition: all 0.2s ease-in-out;
+}
+.slide-dropdown:hover {
+    border-color: #ddd;
+}
+
+.dropdown-title {
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1f3667; /* Matches your site's heading color */
+    list-style: none; /* Removes default triangle in some browsers */
+    position: relative;
+    user-select: none;
+}
+
+.dropdown-title::-webkit-details-marker {
+    display: none; /* Hide default triangle in Chrome/Safari */
+}
+
+/* This creates the '+' and '–' icons */
+.dropdown-title::before {
+    content: '+'; /* Collapsed state icon */
+    font-weight: 700;
+    color: #63bfb2; /* Matches your site's accent color */
+    margin-right: 0.75rem;
+    font-size: 1.4rem;
+    line-height: 1;
+    display: inline-block;
+    transition: transform 0.2s ease-in-out;
+    position: relative;
+    top: 1px;
+}
+
+.slide-dropdown[open] > .dropdown-title::before {
+    content: '–'; /* Expanded state icon */
+    transform: rotate(180deg);
+}
+
+.slide-list {
+    list-style: disc;
+    padding: 0 1.5rem 1.5rem 3.5rem; /* Indent list */
+    margin: 0;
+    line-height: 1.8;
+    border-top: 1px solid #eee;
+}
+
+.slide-list a {
+    color: #1f3366; /* Matches your sidebar link color */
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.slide-list a:hover {
+    color: #7ec5bb; /* Matches your sidebar hover color */
+    text-decoration: underline;
+}
+/* --- END NEW STYLES --- */
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .header-inner {
@@ -540,7 +556,7 @@ footer {
 
     .footer-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+      .     gap: 20px;
     }
 
     .footer-second-row {
@@ -570,13 +586,20 @@ html {
 
 <body>
     
+    <!-- HEADER -->
     <header class="header" id="header">
         <div class="header-container">
             <div class="header-inner">
                 <div class="logo-wrapper">
-                    <a href="#" class="logo"> <div class="logo-icon">
-                        <img src="ideal_logo_reversed.png" alt="IDEAL Logo" class="logo-white">
-                        <img src="ideal_logo.png" alt="IDEAL Logo" class="logo-dark">
+                    <!-- This link assumes your homepage is Schema_Index.html -->
+                    <a href="Schema_Index.html" class="logo"> 
+                     <div class="logo-icon">
+                        <!-- 
+                          These image paths go UP one folder (../) from /Schema/ 
+                          to find the images.
+                        -->
+                        <img src="../ideal_logo_reversed.png" alt="IDEAL Logo" class="logo-white">
+                        <img src="../ideal_logo.png" alt="IDEAL Logo" class="logo-dark">
                      </div>
                      <span class="logo-tagline">Impact Data and Evidence Aggregation Library</span>
                    </a>
@@ -584,7 +607,7 @@ html {
                 
                 <div class="header-buttons">
                     <div class="search-wrapper">
-                        <form class="search-form" action="#" method="get">
+                        <form class.search-form" action="#" method="get">
                             <input 
                                 class="search-input" 
                                 type="text" 
@@ -611,10 +634,16 @@ html {
         </div>
     </header>
 
+    <!-- This offsets the content from the fixed header -->
     <div class="main" style="padding-top: 100px;">
     
+        <!-- SIDEBAR -->
         <nav class="sidebar">
             <ul class="sidebar-links">
+                <!-- 
+                  These links are relative to /Schema/ folder.
+                  They assume the other pages are ALSO in the /Schema/ folder.
+                -->
                 <li><a href="Schema_Index.html">IDEAL Metadata Schema</a></li>
                 <li><a href="Stage_1_Protocol_Index.html">IDEAL Coding Protocol</a></li>
                 <li><a href="Training_Slides.html">Training Slides</a></li>
@@ -622,33 +651,49 @@ html {
             </ul>
         </nav>
 
+        <!-- NEW CONTENT SECTION WITH DROPDOWNS -->
         <div class="content">
             
             <div class="card">
                 <h2>Training Slides & Resources</h2>
-                <p>Below are links to training materials and presentations for the IDEAL project. These resources are intended for internal team members and collaborators.</p>
+                <p>Below are links to training materials and presentations for the IDEAL project. Click on a category to expand the list of slides.</p>
                 
                 <hr style="border: 0; border-top: 1px solid #eee; margin: 1.5rem 0;">
-                
-                <h3>General Onboarding</h3>
-                <ul style="line-height: 1.8;">
-                    <li><a href="slides/Introduction_to_IDEAL.pdf" target="_blank">Introduction to IDEAL (PDF)</a></li>
-                    <li><a href="slides/Coding_Protocol_Overview.pptx" target="_blank">Coding Protocol Overview (PPTX)</a></li>
-                    <li><a href="slides/SurveyCTO_Basics.pdf" target="_blank">SurveyCTO Basics (PDF)</a></li>
-                </ul>
-                
-                <h3 style="margin-top: 2rem;">Specific Modules</h3>
-                <ul style="line-height: 1.8;">
-                    <li><a href="slides/Module_1_Study_Level_Data.pdf" target="_blank">Module 1: Study-Level Data (PDF)</a></li>
-                    <li><a href="slides/Module_2_Outcomes_and_Effect_Sizes.pdf" target="_blank">Module 2: Outcome & Effect Size (PDF)</a></li>
-                    <li><a href="slides/Module_3_Subgroups.pdf" target="_blank">Module 3: Subgroup Analysis (PDF)</a></li>
-                </ul>
-
-                </div>
             
+                <!-- 
+                  DROPDOWN 1: 'open' makes this one visible by default.
+                -->
+                <details class="slide-dropdown" open>
+                    <summary class="dropdown-title">Introduction to IDEAL Data Extraction</summary>
+                    <ul class="slide-list">
+                        <!-- 
+                          These links point to docs/slides/ from this file's location.
+                          e.g., Schema/docs/slides/Introduction to IDEAL.pdf
+                        -->
+                        <li><a href="docs/slides/Introduction to IDEAL.pdf" target="_blank">Introduction to IDEAL</a></li>
+                        <li><a href="docs/slides/Survey CTO Introduction.pdf" target="_blank">Survey CTO Introduction</a></li>
+                        <li><a href="docs/slides/IDEAL Data Extraction.pdf" target="_blank">IDEAL Data Extraction</a></li>
+                    </ul>
+                </details>
+            
+                <!-- 
+                  DROPDOWN 2: Now open by default and title is updated.
+                -->
+                <details class="slide-dropdown" open>
+                    <summary class="dropdown-title">Concept Reviews and Applied Field Extraction</summary>
+                    <ul class="slide-list">
+                        <li><a href="docs/slides/Fields_ RCT Design.pdf" target="_blank">Fields: RCT Design</a></li>
+                        <li><a href="docs/slides/Interventions Concept Review.pdf" target="_blank">Interventions Concept Review</a></li>
+                        <li><a href="docs/slides/Outcomes Concept Review.pdf" target="_blank">Outcomes Concept Review</a></li>
+                        <li><a href="docs/slides/RCT Design Concept Review.pdf" target="_blank">RCT Design Concept Review</a></li>
+                    </ul>
+                </details>
             </div>
+            
+        </div>
     </div>
 
+    <!-- FOOTER -->
     <footer>
         <hr style="color: #F1F1F1">
         <p style="color: #63bfb2; margin: 0% 0% 0% 0%">IDEAL Consortium Members:</p>
@@ -694,7 +739,8 @@ html {
             
             <div class="footer-grid-item">
                 <a target="_blank" rel="noopener noreferrer" href="#">
-                    <img src="DECRG_logo.png" style="object-fit: contain; width: 130px;" alt="DECRG Logo" />
+                    <!-- This image path goes UP one folder (../) -->
+                    <img src="../DECRG_logo.png" style="object-fit: contain; width: 130px;" alt="DECRG Logo" />
                 </a>
             </div>
         </div>
@@ -702,6 +748,7 @@ html {
         <hr style="color: #F1F1F1">
     </footer>
 
+    <!-- SCRIPT -->
     <script>
         // Header scroll effect
         window.addEventListener('scroll', function() {
@@ -724,14 +771,12 @@ html {
             const dropdownContainer = document.querySelector('.dropdown-container');
             const dropdownMenu = document.getElementById('dropdownMenu');
             
-            if (!dropdownContainer.contains(event.target)) {
+            if (dropdownContainer && !dropdownContainer.contains(event.target)) {
                 dropdownMenu.classList.remove('show');
             }
         });
 
-        // *** NEW SCRIPT FOR THIS PAGE ***
         // Force header to 'scrolled' state on sub-pages
-        // since there is no hero image.
         document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('header').classList.add('scrolled');
         });
