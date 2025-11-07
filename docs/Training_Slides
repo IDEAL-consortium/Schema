@@ -5,4 +5,736 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   
   <title>IDEAL Training Slides</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+  
+ <style>
+    body {
+      font-family: "Gill Sans", sans-serif;
+      margin: 2rem;
+      background-color: #f9f9f9;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    details {
+      margin-bottom: 1.5rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    summary {
+      background-color: #3c3d4a;
+      cursor: pointer;
+      padding: 1rem;
+      font-weight: normal;
+      color: #FFFFFF;
+      border-bottom: 1px solid #ccc;
+    }
+    table {
+      border-left: 4px solid #3498db;
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0;
+    }
+    th:nth-child(3), td:nth-child(3) {
+      min-width: 200px;
+    }
+    th:nth-child(6), td:nth-child(6),
+    th:nth-child(7), td:nth-child(7) {
+      min-width: 100px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 0.5rem;
+      text-align: left;
+      vertical-align: top;
+      background-color: #fff;
+    }
+    th {
+      background-color: #f5c550;
+      color: #5D6D7E;
+      font-weight: normal;
+      text-align: center;
+      vertical-align: middle;
+    }
+    tbody tr:nth-child(odd) {
+      background-color: #f9f9f9;
+    }
+    #toc {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      padding: 0.5rem 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      z-index: 1000;
+    }
+    #toc select {
+      padding: 0.5rem;
+      font-size: 1rem;
+      width: 100%;
+    }
+    
+   .grid-container {
+  	display: grid;
+ 	 gap: 5px;
+ 	 grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));;
+  	background-color: #FFFEFE;
+  	padding: 10px;
+	text-align: center;
+	vertical-align: middle;
+	place-items: center;
+   }
+  
+  a:link {
+  color: #5e807a;
+  background-color: transparent;
+  text-decoration: none;
+}
 
+a:hover {
+  color: #63bfb2;
+  background-color: transparent;
+  text-decoration: underline;
+}
+    
+ </style>
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif; 
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+div.content h2 {
+  color: #1f3667;
+}
+strong {
+  color: #1f3667;
+}
+
+/* Header Styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 0;
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* NEW: pushes left and right apart */
+    gap: 2rem;
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.header.scrolled .logo {
+    color: #1f3667;
+}
+
+.logo-icon {
+    width: 80px;
+    height: 80px;
+    margin-right: 0.5rem;
+    position: relative;
+}
+
+/* Logo image switching */
+.logo-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.3s ease;
+}
+
+.logo-icon .logo-white {
+    opacity: 1;
+}
+
+.logo-icon .logo-dark {
+    opacity: 0;
+}
+
+.header.scrolled .logo-icon .logo-white {
+    opacity: 0;
+}
+
+.header.scrolled .logo-icon .logo-dark {
+    opacity: 1;
+}
+
+.logo-tagline {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.header.scrolled .logo-tagline {
+    color: #1f3667;
+}
+
+.header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: auto;
+}
+
+/* Search Form Styles */
+.search-wrapper {
+    position: relative;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    max-width: 300px;
+}
+
+.header.scrolled .search-form {
+    background: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.search-input {
+    background: none;
+    border: none;
+    padding: 0.75rem 1rem;
+    color: white;
+    font-size: 0.9rem;
+    width: 200px;
+    transition: color 0.3s ease;
+}
+
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    transition: color 0.3s ease;
+}
+
+.header.scrolled .search-input {
+    color: #1f3667;
+}
+
+.header.scrolled .search-input::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.search-input:focus {
+    outline: none;
+}
+
+.search-button {
+    background: none;
+    border: none;
+    padding: 0.75rem;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.header.scrolled .search-button {
+    color: #1f3667;
+}
+
+.search-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.search-icon {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+/* Button Styles */
+.mobile-menu-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    padding: 0.5rem;
+}
+
+.header.scrolled .mobile-menu-button {
+    color: #1f3667;
+}
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    min-width: 200px;
+  D     display: none;
+    z-index: 1001;
+    margin-top: 0.5rem;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #1f3667;
+    text-decoration: none;
+a     transition: background-color 0.2s ease;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dropdown-menu a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f8f9fa;
+}
+
+.dropdown-container {
+    position: relative;
+}
+    
+/* Main Layout */
+.main {
+    display: flex;
+    flex: 1;
+}
+
+.sidebar {
+    width: 220px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+}
+
+.sidebar {
+  position: sticky;
+  top: 80px; /* Adjust based on header height */
+}
+    
+.sidebar-links {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.sidebar-links li {
+    margin: 17px 0;
+}
+
+.sidebar a {
+    color: #1f3366;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+.sidebar a:hover {
+    color: #7ec5bb;
+}
+
+.sidebar-links li a {
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+    font-size: 1.07em;
+    transition: color 0.2s, background 0.2s;
+    padding: 0.4em 0.7em;
+    border-radius: 6px;
+}
+.sidebar-links li a:hover {
+    background: #f0f7f6;
+    color: #63bfb2;
+}
+
+.content {
+    flex: 1;
+    padding: 40px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin: 20px;
+}
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin: 20px 0;
+    align-items: center;
+    justify-items: center;
+}
+
+.footer-grid-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    width: 100%;
+}
+
+.footer-grid-item img {
+    object-fit: contain;
+    max-height: 60px;
+    transition: transform 0.3s ease;
+}
+
+.footer-grid-item img:hover {
+    transform: scale(1.05);
+}
+
+.footer-grid-item a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+}
+
+.footer-second-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin: 20px 0;
+    align-items: center;
+    justify-items: center;
+}
+
+.footer-second-row .footer-grid-item {
+    height: 60px;
+    width: 100%;
+}
+
+.footer-second-row .footer-grid-item img {
+    max-height: 45px;
+}
+
+.content {
+    flex: 1;
+    padding: 40px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 16px rgba(31,54,103,0.07);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-inner {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .logo-tagline {
+        display: none;
+    }
+
+    .search-form {
+        max-width: 200px;
+    }
+
+    .search-input {
+        width: 120px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .header-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    .dropdown-menu {
+        right: -1rem;
+        left: auto;
+        min-width: 180px;
+    }
+
+    .main {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .footer-second-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .footer-second-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+  </style>
+</head>
+
+<body>
+    
+    <header class="header" id="header">
+        <div class="header-container">
+            <div class="header-inner">
+                <div class="logo-wrapper">
+                    <a href="#" class="logo"> <div class="logo-icon">
+                        <img src="ideal_logo_reversed.png" alt="IDEAL Logo" class="logo-white">
+                        <img src="ideal_logo.png" alt="IDEAL Logo" class="logo-dark">
+                     </div>
+                     <span class="logo-tagline">Impact Data and Evidence Aggregation Library</span>
+                   </a>
+                </div>
+                
+                <div class="header-buttons">
+                    <div class="search-wrapper">
+                        <form class="search-form" action="#" method="get">
+                            <input 
+                                class="search-input" 
+                                type="text" 
+                                placeholder="Search..." 
+                                name="s"
+                            >
+                            <button class="search-button" type="submit">
+                                <svg class="search-icon" viewBox="0 0 24 24">
+                                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <div class="dropdown-container">
+                        <button class="mobile-menu-button" id="menuButton">☰</button>
+                        <div class="dropdown-menu" id="dropdownMenu">
+                            <a href="https://survey.wb.surveycto.com/" target="_blank">Access SurveyCTO</a>
+                            <a href="https://github.com/orgs/IDEAL-consortium/projects/11" target="_blank">Access GitHub Paper Tracking</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="main" style="padding-top: 100px;">
+    
+        <nav class="sidebar">
+            <ul class="sidebar-links">
+                <li><a href="Schema_Index.html">IDEAL Metadata Schema</a></li>
+                <li><a href="Stage_1_Protocol_Index.html">IDEAL Coding Protocol</a></li>
+                <li><a href="Training_Slides.html">Training Slides</a></li>
+                <li>Meet the IDEAL Team</li>
+            </ul>
+        </nav>
+
+        <div class="content">
+            
+            <div class="card">
+                <h2>Training Slides & Resources</h2>
+                <p>Below are links to training materials and presentations for the IDEAL project. These resources are intended for internal team members and collaborators.</p>
+                
+                <hr style="border: 0; border-top: 1px solid #eee; margin: 1.5rem 0;">
+                
+                <h3>General Onboarding</h3>
+                <ul style="line-height: 1.8;">
+                    <li><a href="slides/Introduction_to_IDEAL.pdf" target="_blank">Introduction to IDEAL (PDF)</a></li>
+                    <li><a href="slides/Coding_Protocol_Overview.pptx" target="_blank">Coding Protocol Overview (PPTX)</a></li>
+                    <li><a href="slides/SurveyCTO_Basics.pdf" target="_blank">SurveyCTO Basics (PDF)</a></li>
+                </ul>
+                
+                <h3 style="margin-top: 2rem;">Specific Modules</h3>
+                <ul style="line-height: 1.8;">
+                    <li><a href="slides/Module_1_Study_Level_Data.pdf" target="_blank">Module 1: Study-Level Data (PDF)</a></li>
+                    <li><a href="slides/Module_2_Outcomes_and_Effect_Sizes.pdf" target="_blank">Module 2: Outcome & Effect Size (PDF)</a></li>
+                    <li><a href="slides/Module_3_Subgroups.pdf" target="_blank">Module 3: Subgroup Analysis (PDF)</a></li>
+                </ul>
+
+                </div>
+            
+            </div>
+    </div>
+
+    <footer>
+        <hr style="color: #F1F1F1">
+        <p style="color: #63bfb2; margin: 0% 0% 0% 0%">IDEAL Consortium Members:</p>
+        
+        <div class="footer-grid">
+            <div class="footer-grid-item">
+                <a target="_blank" rel="noopener noreferrer" href="https://www.aidgrade.org">
+                    <img src="https://www.aidgrade.org/wp-content/uploads/2013/03/AidGrade-logo.jpg" style="object-fit: contain; width: 130px;" alt="AidGrade Logo" />
+                </a>
+            </div>
+            
+            <div class="footer-grid-item">
+                <a target="_blank" rel="noopener noreferrer" href="https://cega.berkeley.edu/our-work/">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/CEGA_Logo.png/800px-CEGA_Logo.png" style="object-fit: contain; width: 130px;" alt="CEGA Logo" />
+                </a>
+            </div>
+            
+            <div class="footer-grid-item">
+                <a target="_blank" rel="noopener noreferrer" href="https://www.kellogg.northwestern.edu/academics-research/global-poverty-research-lab//">
+                    <img src="https://bpb-us-e1.wpmucdn.com/sites.northwestern.edu/dist/8/4150/files/2020/02/GPRL_vertical-768x394.png" style="object-fit: contain; width: 120px;" alt="GPRL Logo" />
+                </a>
+            </div>
+        </div>
+        
+        <div class="footer-second-row">
+            <div class="footer-grid-item">
+                <a target="_blank" rel="noopener noreferrer" href="https://www.worldbank.org/en/research/brief/ideal">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/World_Bank_Group_logo.svg/300px-World_Bank_Group_logo.svg.png" style="object-fit: contain; width: 160px;" alt="World Bank Logo" />
+                </a>
+            </div>
+            
+            <div class="footer-grid-item">
+                <a target="_blank" rel="noopener noreferrer" href="https://www.worldbank.org/en/programs/sief-trust-fund">
+                    <img src="https://poverty-action.org/sites/default/files/atoms/image/2020/08/21/SIEF-Logo.jpg" style="object-fit: contain; width: 200px;" alt="SIEF Logo" />
+                </a>
+            </div>
+            
+            <div class="footer-grid-item">
+                <a target="_blank" rel="noopener noreferrer" href="https://www.worldbank.org/en/about/unit/unit-dec/impactevaluation">
+                    <img src="https://worldbank.scene7.com/is/image/worldbankprod/new-logo-1?wid=780&hei=439&qlt=85,0&resMode=sharp" style="object-fit: contain; width: 120px;" alt="DIME Logo" />
+                </a>
+            </div>
+            
+            <div class="footer-grid-item">
+                <a target="_blank" rel="noopener noreferrer" href="#">
+                    <img src="DECRG_logo.png" style="object-fit: contain; width: 130px;" alt="DECRG Logo" />
+                </a>
+            </div>
+        </div>
+        
+        <hr style="color: #F1F1F1">
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        document.getElementById('menuButton').addEventListener('click', function() {
+            const dropdownMenu = document.getElementById('dropdownMenu');
+            dropdownMenu.classList.toggle('show');
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdownContainer = document.querySelector('.dropdown-container');
+            const dropdownMenu = document.getElementById('dropdownMenu');
+            
+            if (!dropdownContainer.contains(event.target)) {
+                dropdownMenu.classList.remove('show');
+            }
+        });
+
+        // *** NEW SCRIPT FOR THIS PAGE ***
+        // Force header to 'scrolled' state on sub-pages
+        // since there is no hero image.
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('header').classList.add('scrolled');
+        });
+    </script>
+</body>
+</html>
